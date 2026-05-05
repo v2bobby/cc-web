@@ -9,26 +9,21 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
         body { font-family: 'Inter', system-ui, sans-serif; }
         h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
-        .glass { background: rgba(17, 24, 39, 0.8); backdrop-filter: blur(20px); }
+        .glass { background: rgba(17, 24, 39, 0.85); backdrop-filter: blur(24px); }
         section { scroll-margin-top: 90px; }
+        .neon { text-shadow: 0 0 25px #00f5ff; }
     </style>
 </head>
-<body class="bg-[#0a0f1c] text-white antialiased overflow-x-hidden">
+<body class="bg-[#0a0f1c] text-white antialiased">
 
     <!-- NAVBAR -->
     <nav class="sticky top-0 z-50 bg-[#0a0f1c]/95 backdrop-blur-2xl border-b border-white/10">
         <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-6 flex items-center justify-between">
             <a href="#" class="flex items-center gap-x-3">
                 <svg width="268" height="64" viewBox="0 0 268 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="drop-shadow-[0_0_25px_#00f5ff]">
-                    <defs>
-                        <linearGradient id="curveGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-                            <stop offset="0%" stop-color="#00f5ff"/>
-                            <stop offset="100%" stop-color="#67e8f9"/>
-                        </linearGradient>
-                    </defs>
+                    <defs><linearGradient id="curveGrad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#00f5ff"/><stop offset="100%" stop-color="#67e8f9"/></linearGradient></defs>
                     <path d="M18 48 Q62 14 108 48 Q158 14 202 48 Q242 14 248 48" stroke="url(#curveGrad)" stroke-width="9" stroke-linecap="round" fill="none"/>
                     <circle cx="18" cy="48" r="5" fill="#fff"/>
                     <circle cx="62" cy="14" r="5" fill="#fff"/>
@@ -63,8 +58,8 @@
                     <span class="w-2 h-2 bg-[#00f5ff] rounded-full animate-ping mr-3"></span>
                     Q3 2026 • EARLY ACCESS OPEN
                 </div>
-                <h1 class="text-6xl lg:text-7xl font-semibold tracking-[-3px] leading-none mb-6">Data ends here.<br><span class="text-[#00f5ff]">Foresight begins.</span></h1>
-                <p class="text-2xl text-slate-300 max-w-lg">The anticipation engine that reveals <span class="italic">unsaturated alpha</span> — explosive demand with near-zero competition.</p>
+                <h1 class="text-6xl lg:text-7xl font-semibold tracking-[-3px] leading-none mb-6 neon">Data ends here.<br><span class="text-[#00f5ff]">Foresight begins.</span></h1>
+                <p class="text-2xl text-slate-300">The anticipation engine that reveals unsaturated alpha — explosive demand with near-zero competition.</p>
                 <div class="mt-12 flex gap-4 flex-wrap">
                     <button onclick="showWaitlistModal()" class="bg-[#00f5ff] text-black px-10 py-6 rounded-3xl text-xl font-semibold">Join the Waitlist →</button>
                     <button onclick="smoothScrollTo('demo')" class="border border-white/30 hover:border-[#00f5ff] px-10 py-6 rounded-3xl text-xl">Watch the Curve</button>
@@ -89,39 +84,28 @@
             <div class="lg:col-span-5">
                 <span class="px-5 py-2 bg-[#00f5ff]/10 text-[#00f5ff] rounded-3xl text-sm font-semibold">THE VISION</span>
                 <h2 class="text-5xl font-semibold tracking-tight mt-6">From Data to Foresight</h2>
-                <p class="mt-8 text-xl text-slate-300">ClearCurve AI is an anticipation engine. We find the exact gap where high consumer demand meets low market competition — giving you the first-mover advantage.</p>
+                <p class="mt-8 text-xl text-slate-300">ClearCurve AI is not a reporting tool. It is an anticipation engine that finds unsaturated alpha — the gap where high demand meets low competition.</p>
             </div>
-            <div class="lg:col-span-7 glass rounded-3xl p-12 text-lg">
-                Most tools report the past. We predict the future.
-            </div>
+            <div class="lg:col-span-7 glass rounded-3xl p-12 text-lg">Most analytics summarize the past.<br>We predict the future.</div>
         </div>
     </section>
 
-    <!-- HOW IT WORKS -->
+    <!-- NODAL WORKFLOW -->
     <section id="how-it-works" class="bg-[#111827] py-24">
         <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
             <h2 class="text-5xl font-semibold text-center mb-4">Nodal Data Ingestion Workflow</h2>
             <div class="max-w-5xl mx-auto glass rounded-3xl p-10">
                 <svg width="100%" height="420" viewBox="0 0 900 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stop-color="#00f5ff"/>
-                            <stop offset="100%" stop-color="#67e8f9"/>
-                        </linearGradient>
-                    </defs>
+                    <defs><linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00f5ff"/><stop offset="100%" stop-color="#67e8f9"/></linearGradient></defs>
                     <rect x="80" y="100" width="140" height="80" rx="12" fill="#1e2937" stroke="#00f5ff" stroke-width="3"/>
                     <text x="150" y="145" text-anchor="middle" fill="#fff" font-size="18" font-weight="600">Reddit / Discord</text>
-                    
                     <rect x="380" y="100" width="140" height="80" rx="12" fill="#1e2937" stroke="#00f5ff" stroke-width="3"/>
                     <text x="450" y="145" text-anchor="middle" fill="#fff" font-size="18" font-weight="600">TikTok / Instagram</text>
-                    
                     <rect x="680" y="100" width="140" height="80" rx="12" fill="#1e2937" stroke="#00f5ff" stroke-width="3"/>
                     <text x="750" y="145" text-anchor="middle" fill="#fff" font-size="18" font-weight="600">Amazon / Google</text>
-                    
                     <circle cx="450" cy="280" r="85" fill="#0a0f1c" stroke="#00f5ff" stroke-width="6"/>
                     <text x="450" y="275" text-anchor="middle" fill="#fff" font-size="22" font-weight="700">KNOWLEDGE GRAPH</text>
-                    <text x="450" y="305" text-anchor="middle" fill="#67e8f9" font-size="14">Nodal Ingestion Engine</text>
-                    
+                    <text x="450" y="305" text-anchor="middle" fill="#67e8f9" font-size="14">Nodal Engine</text>
                     <path d="M220 140 Q300 140 380 140" stroke="#00f5ff" stroke-width="4" stroke-dasharray="8 6" fill="none"/>
                     <path d="M520 140 Q600 140 680 140" stroke="#00f5ff" stroke-width="4" stroke-dasharray="8 6" fill="none"/>
                     <path d="M300 180 Q380 240 450 260" stroke="#00f5ff" stroke-width="5" fill="none"/>
@@ -132,45 +116,72 @@
         </div>
     </section>
 
-    <!-- ARCHITECTURE + MATRIX + DEMO + FOUNDER + CTA + FOOTER (all included below) -->
-    <!-- For brevity in this response, the remaining sections are fully functional and follow the same high-quality pattern. The full file is ready. -->
+    <!-- ARCHITECTURE -->
+    <section id="architecture" class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-24">
+        <h2 class="text-5xl font-semibold text-center mb-12">Enterprise-Grade Architecture</h2>
+        <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div class="glass rounded-3xl p-8 text-center">
+                <svg width="100%" height="220" viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="50" y="30" width="300" height="160" rx="20" fill="#1e2937" stroke="#00f5ff" stroke-width="4"/>
+                    <text x="200" y="120" text-anchor="middle" fill="#fff" font-size="24" font-weight="700">HYBRID AI ENGINE</text>
+                </svg>
+                <p class="mt-4 text-sm text-slate-400">Time-Series + Transformer + OpenAI Reasoning</p>
+            </div>
+            <div class="glass rounded-3xl p-8 text-center">
+                <svg width="100%" height="220" viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="200" cy="110" r="80" fill="none" stroke="#00f5ff" stroke-width="25"/>
+                    <text x="200" y="125" text-anchor="middle" fill="#fff" font-size="28" font-weight="700">92</text>
+                </svg>
+                <p class="mt-4 text-sm text-slate-400">Curve-Fidelity Score™</p>
+            </div>
+        </div>
+    </section>
 
-    <script>
-        function smoothScrollTo(id) {
-            document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-        }
-        function showWaitlistModal() {
-            document.getElementById('waitlist-modal').classList.remove('hidden');
-            document.getElementById('waitlist-modal').classList.add('flex');
-        }
-        function hideWaitlistModal() {
-            document.getElementById('waitlist-modal').classList.add('hidden');
-            document.getElementById('waitlist-modal').classList.remove('flex');
-        }
-        function handleWaitlistSubmit(e) {
-            e.preventDefault();
-            hideWaitlistModal();
-            alert("✅ You're on the ClearCurve Waitlist! Early access coming Q3 2026.");
-        }
+    <!-- MATRIX -->
+    <section id="matrix" class="bg-[#111827] py-24">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+            <h2 class="text-5xl font-semibold text-center mb-8">Unsaturated Opportunity Matrix</h2>
+            <div class="max-w-4xl mx-auto glass rounded-3xl p-8">
+                <div class="grid grid-cols-2 gap-6 text-center">
+                    <div class="bg-red-900/30 p-8 rounded-3xl">High Demand + High Competition</div>
+                    <div class="bg-emerald-500/30 border-2 border-[#00f5ff] p-8 rounded-3xl font-semibold">CLEARCURVE ZONE<br><span class="text-[#00f5ff]">Unsaturated Alpha</span></div>
+                    <div class="bg-slate-700/30 p-8 rounded-3xl">Low Demand + High Competition</div>
+                    <div class="bg-emerald-900/30 p-8 rounded-3xl">Early Signals</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        // Trend Chart
-        window.onload = () => {
-            const ctx = document.getElementById('trendChart');
-            if (ctx) {
-                new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct'],
-                        datasets: [
-                            { label: 'Historical', data: [420,680,920,1100,980,1250,1580,2100,2450,3100], borderColor: '#64748b', tension: 0.4 },
-                            { label: 'ClearCurve Prediction', data: [null,null,null,null,null,1250,1580,2100,2450,4200], borderColor: '#00f5ff', borderDash: [8,4], tension: 0.4 }
-                        ]
-                    },
-                    options: { responsive: true, plugins: { legend: { display: false } }}
-                });
-            }
-        };
-    </script>
+    <!-- LIVE DEMO -->
+    <section id="demo" class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-24">
+        <h2 class="text-5xl font-semibold text-center mb-12">Live Predictive Modeling Engine</h2>
+        <div class="max-w-5xl mx-auto glass rounded-3xl p-12">
+            <canvas id="trendChart" class="w-full h-96"></canvas>
+        </div>
+    </section>
+
+    <!-- FOUNDER -->
+    <section id="founder" class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-24">
+        <div class="grid lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5">
+                <h2 class="text-5xl font-semibold">Oluwaseun Osunbade</h2>
+                <p class="text-[#00f5ff] text-xl">Founder &amp; Developer</p>
+                <p class="mt-4">oluwaseun.o@clearcurve.xyz</p>
+            </div>
+            <div class="lg:col-span-7 text-slate-300 text-lg">Built with obsession for turning raw signals into actionable foresight.</div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <div class="bg-gradient-to-r from-[#00f5ff] to-[#67e8f9] py-20 text-[#0a0f1c] text-center">
+        <h2 class="text-5xl font-semibold">Ready to ride the next ClearCurve?</h2>
+        <button onclick="showWaitlistModal()" class="mt-10 bg-[#0a0f1c] text-white px-16 py-7 text-2xl rounded-3xl font-semibold">Join the Waitlist</button>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-12 text-center text-slate-400 text-sm">
+        © 2026 ClearCurve AI • Built by Oluwaseun Osunbade
+    </footer>
 
     <!-- WAITLIST MODAL -->
     <div id="waitlist-modal" class="hidden fixed inset-0 bg-black/80 backdrop-blur z-[9999] items-center justify-center">
@@ -184,5 +195,42 @@
         </div>
     </div>
 
+    <script>
+        function smoothScrollTo(id) {
+            document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+        }
+        function showWaitlistModal() {
+            document.getElementById('waitlist-modal').classList.remove('hidden');
+            document.getElementById('waitlist-modal').classList.add('flex');
+        }
+        function hideWaitlistModal() {
+            const modal = document.getElementById('waitlist-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+        function handleWaitlistSubmit(e) {
+            e.preventDefault();
+            hideWaitlistModal();
+            alert("✅ You're on the list! Early access coming Q3 2026.");
+        }
+
+        // Chart
+        window.onload = () => {
+            const ctx = document.getElementById('trendChart');
+            if (ctx) {
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct'],
+                        datasets: [
+                            { label: 'Historical', data: [420,680,920,1100,980,1250,1580,2100,2450,3100], borderColor: '#64748b', tension: 0.4 },
+                            { label: 'ClearCurve Prediction', data: [null,null,null,null,null,1250,1580,2100,2450,4200], borderColor: '#00f5ff', borderDash: [8,4], tension: 0.4 }
+                        ]
+                    },
+                    options: { responsive: true, plugins: { legend: { display: false } } }
+                });
+            }
+        };
+    </script>
 </body>
 </html>
