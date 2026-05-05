@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="ClearCurve AI — Predictive Intelligence for the Next Market Frontier. The anticipation engine that finds unsaturated alpha before anyone else.">
-    <meta name="author" content="Oluwaseun Osunbade">
+        content="ClearCurve AI — Predictive Intelligence for the Next Market Frontier. The most advanced anticipation engine for unsaturated alpha.">
     <title>ClearCurve AI | Predictive Intelligence</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
@@ -14,217 +13,359 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap"
         rel="stylesheet">
-    <link rel="icon"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 52'%3E%3Cpath d='M12 38 Q42 12 78 38 Q115 12 150 38 Q185 12 205 38' stroke='%2300f5ff' stroke-width='7' fill='transparent'/%3E%3C/svg%3E">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&amp;family=Inter:wght@400;500;600&display=swap');
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .hero {
+            min-height: 100vh;
+        }
+
+        section {
+            scroll-margin-top: 80px;
+        }
+
+        .glass {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(20px);
+        }
+
+        .neon-text {
+            text-shadow: 0 0 20px #00f5ff;
+        }
+    </style>
 </head>
 
 <body class="bg-[#0a0f1c] text-white overflow-x-hidden antialiased">
-    <!-- NAVBAR – Premium glassmorphic + refined spacing -->
-    <nav class="sticky top-0 z-50 bg-[#0a0f1c]/80 backdrop-blur-2xl border-b border-white/5">
+
+    <!-- NAVBAR -->
+    <nav class="sticky top-0 z-50 bg-[#0a0f1c]/95 backdrop-blur-2xl border-b border-white/10">
         <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-6 flex items-center justify-between">
-            <!-- PREMIUM LOGO (vector, glowing, scalable) -->
-            <a href="/" class="flex items-center gap-x-3 group">
-                <svg id="logo-svg" width="268" height="64" viewBox="0 0 268 64" fill="none"
-                    xmlns="http://www.w3.org/2000/svg" class="drop-shadow-[0_0_20px_#00f5ff]">
+            <a href="#" class="flex items-center gap-x-3">
+                <svg width="268" height="64" viewBox="0 0 268 64" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="drop-shadow-[0_0_25px_#00f5ff]">
                     <defs>
-                        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-                            <feGaussianBlur stdDeviation="4" result="coloredBlur" />
-                            <feMerge>
-                                <feMergeNode in="coloredBlur" />
-                                <feMergeNode in="SourceGraphic" />
-                            </feMerge>
-                        </filter>
                         <linearGradient id="curveGrad" x1="0%" y1="100%" x2="100%" y2="0%">
                             <stop offset="0%" stop-color="#00f5ff" />
                             <stop offset="100%" stop-color="#67e8f9" />
                         </linearGradient>
                     </defs>
-                    <!-- Main predictive curve -->
                     <path d="M18 48 Q62 14 108 48 Q158 14 202 48 Q242 14 248 48" stroke="url(#curveGrad)"
-                        stroke-width="9" stroke-linecap="round" fill="none" filter="url(#glow)" />
-                    <!-- Data nodes -->
+                        stroke-width="9" stroke-linecap="round" fill="none" />
                     <circle cx="18" cy="48" r="5" fill="#fff" />
                     <circle cx="62" cy="14" r="5" fill="#fff" />
                     <circle cx="108" cy="48" r="5" fill="#fff" />
                     <circle cx="158" cy="14" r="5" fill="#fff" />
                     <circle cx="202" cy="48" r="5" fill="#fff" />
                     <circle cx="248" cy="48" r="5" fill="#fff" />
-                    <!-- Wordmark -->
                     <text x="28" y="58" font-family="'Space Grotesk', sans-serif" font-size="34" font-weight="600"
-                        fill="#f8fafc" letter-spacing="-2px" class="drop-shadow-md">ClearCurve</text>
-                    <!-- AI badge -->
-                    <rect x="215" y="12" width="52" height="28" rx="8" ry="8" fill="#00f5ff" />
+                        fill="#f8fafc" letter-spacing="-2px">ClearCurve</text>
+                    <rect x="215" y="12" width="52" height="28" rx="8" fill="#00f5ff" />
                     <text x="225" y="31" font-family="'Inter', sans-serif" font-size="17" font-weight="700"
                         fill="#0a0f1c">AI</text>
                 </svg>
             </a>
 
-            <!-- Desktop Menu -->
             <div class="hidden lg:flex items-center gap-x-10 text-sm font-medium tracking-wide">
                 <a href="#vision" onclick="smoothScrollTo('vision')"
-                    class="hover:text-[#00f5ff] transition-colors duration-200">Vision</a>
-                <a href="#mechanics" onclick="smoothScrollTo('mechanics')"
-                    class="hover:text-[#00f5ff] transition-colors duration-200">Mechanics</a>
+                    class="hover:text-[#00f5ff] transition-colors">Vision</a>
+                <a href="#how-it-works" onclick="smoothScrollTo('how-it-works')"
+                    class="hover:text-[#00f5ff] transition-colors">How It Works</a>
+                <a href="#architecture" onclick="smoothScrollTo('architecture')"
+                    class="hover:text-[#00f5ff] transition-colors">Architecture</a>
                 <a href="#matrix" onclick="smoothScrollTo('matrix')"
-                    class="hover:text-[#00f5ff] transition-colors duration-200">Matrix</a>
-                <a href="#demo" onclick="smoothScrollTo('demo')"
-                    class="hover:text-[#00f5ff] transition-colors duration-200">Live Demo</a>
+                    class="hover:text-[#00f5ff] transition-colors">Opportunity Matrix</a>
+                <a href="#demo" onclick="smoothScrollTo('demo')" class="hover:text-[#00f5ff] transition-colors">Live
+                    Demo</a>
                 <a href="#founder" onclick="smoothScrollTo('founder')"
-                    class="hover:text-[#00f5ff] transition-colors duration-200">Founder</a>
+                    class="hover:text-[#00f5ff] transition-colors">Founder</a>
             </div>
 
             <div class="flex items-center gap-x-4">
-                <a href="mailto:oluwaseun.o@clearcurve.xyz"
-                    class="px-7 py-3 text-sm font-medium border border-white/20 hover:border-[#00f5ff] hover:text-[#00f5ff] rounded-3xl transition-all duration-300">
-                    Contact
-                </a>
                 <button onclick="showWaitlistModal()"
-                    class="bg-gradient-to-r from-[#00f5ff] to-[#67e8f9] text-[#0a0f1c] px-8 py-3 rounded-3xl font-semibold text-sm flex items-center gap-x-2 shadow-[0_0_20px_-4px_#00f5ff] hover:shadow-[0_0_30px_-2px_#00f5ff] transition-all">
-                    <span>Join Waitlist</span>
-                    <span class="text-lg leading-none">→</span>
-                </button>
-
-                <!-- Mobile Hamburger -->
+                    class="bg-gradient-to-r from-[#00f5ff] to-[#67e8f9] text-[#0a0f1c] px-8 py-3 rounded-3xl font-semibold flex items-center gap-x-2 hover:shadow-[0_0_30px_#00f5ff] transition-all">Join
+                    Waitlist →</button>
                 <button onclick="toggleMobileMenu()" class="lg:hidden w-12 h-12 flex items-center justify-center">
-                    <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                            d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-[#0a0f1c] border-t border-white/10 px-6 py-8">
-            <div class="flex flex-col gap-y-6 text-lg font-medium">
-                <a href="#vision" onclick="smoothScrollTo('vision');toggleMobileMenu()" class="py-2">Vision</a>
-                <a href="#mechanics" onclick="smoothScrollTo('mechanics');toggleMobileMenu()" class="py-2">Mechanics</a>
-                <a href="#matrix" onclick="smoothScrollTo('matrix');toggleMobileMenu()" class="py-2">Opportunity
-                    Matrix</a>
-                <a href="#demo" onclick="smoothScrollTo('demo');toggleMobileMenu()" class="py-2">Live Demo</a>
-                <a href="#founder" onclick="smoothScrollTo('founder');toggleMobileMenu()" class="py-2">Founder</a>
-                <button onclick="showWaitlistModal();toggleMobileMenu()"
-                    class="mt-6 w-full bg-gradient-to-r from-[#00f5ff] to-[#67e8f9] text-[#0a0f1c] py-5 rounded-3xl font-semibold text-base">
-                    Join the Waitlist
                 </button>
             </div>
         </div>
     </nav>
 
-    <!-- HERO – Litho.quest inspired: massive typography, glowing accent curve, generous space -->
-    <header class="relative min-h-screen flex items-center pt-16 lg:pt-0">
-        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-12 items-center">
+    <!-- HERO -->
+    <header id="hero" class="hero flex items-center relative">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-16 items-center">
             <div class="lg:col-span-7">
                 <div
-                    class="inline-flex items-center rounded-3xl bg-white/5 border border-white/10 px-6 h-10 text-xs font-medium tracking-[0.5px] mb-8 backdrop-blur-xl">
-                    <span class="relative flex h-2 w-2 mr-2">
-                        <span
-                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00f5ff] opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-[#00f5ff]"></span>
-                    </span>
-                    Q3 2026 • EARLY ACCESS NOW OPEN
+                    class="inline-flex items-center bg-white/5 border border-white/10 rounded-3xl px-6 py-2 text-sm mb-8">
+                    <span class="w-2 h-2 bg-[#00f5ff] rounded-full animate-ping mr-3"></span>
+                    Q3 2026 • EARLY ACCESS OPEN
                 </div>
-
-                <h1 class="text-6xl md:text-7xl lg:text-[82px] leading-none font-semibold tracking-[-3px] mb-6">
+                <h1 class="text-6xl lg:text-7xl font-semibold tracking-[-3px] leading-none mb-6 neon-text">
                     Data ends here.<br>
-                    <span
-                        class="bg-clip-text text-transparent bg-gradient-to-r from-[#00f5ff] via-[#67e8f9] to-[#00f5ff]">Foresight
-                        begins.</span>
+                    <span class="text-[#00f5ff]">Foresight begins.</span>
                 </h1>
+                <p class="text-2xl text-slate-300 max-w-lg">ClearCurve AI is the proprietary anticipation engine that
+                    identifies unsaturated alpha — explosive consumer demand paired with near-zero competition.</p>
 
-                <p class="text-2xl md:text-3xl text-slate-300 max-w-xl mb-12">
-                    The anticipation engine that reveals <span class="italic">unsaturated alpha</span> — where demand
-                    explodes and competition is invisible.
-                </p>
-
-                <div class="flex flex-wrap gap-4">
+                <div class="mt-12 flex flex-wrap gap-4">
                     <button onclick="showWaitlistModal()"
-                        class="group bg-[#00f5ff] hover:bg-white text-[#0a0f1c] px-10 py-7 rounded-3xl text-2xl font-semibold flex items-center gap-x-4 transition-all hover:scale-[1.03] shadow-xl shadow-[#00f5ff]/30">
-                        Join the Waitlist
-                        <span class="text-4xl group-active:rotate-45 transition-transform">→</span>
-                    </button>
-
-                    <a href="#demo" onclick="smoothScrollTo('demo')"
-                        class="border border-white/30 hover:border-[#00f5ff] px-9 py-7 rounded-3xl text-2xl font-medium flex items-center transition-all">
-                        Watch the Curve
-                    </a>
+                        class="bg-[#00f5ff] hover:bg-white text-black px-10 py-6 rounded-3xl text-xl font-semibold transition-all">Join
+                        the Waitlist →</button>
+                    <button onclick="smoothScrollTo('demo')"
+                        class="border border-white/30 hover:border-[#00f5ff] px-10 py-6 rounded-3xl text-xl font-medium transition-all">Watch
+                        the Curve</button>
                 </div>
 
-                <div class="mt-16 flex items-center gap-x-8 text-sm text-slate-400">
-                    <div class="flex items-center">
-                        <div class="flex -space-x-4">
-                            <div
-                                class="w-8 h-8 rounded-2xl bg-[#00f5ff]/10 flex items-center justify-center text-lg border-2 border-[#0a0f1c]">
-                                📈</div>
-                            <div
-                                class="w-8 h-8 rounded-2xl bg-[#00f5ff]/10 flex items-center justify-center text-lg border-2 border-[#0a0f1c]">
-                                🔍</div>
-                            <div
-                                class="w-8 h-8 rounded-2xl bg-[#00f5ff]/10 flex items-center justify-center text-lg border-2 border-[#0a0f1c]">
-                                🚀</div>
-                        </div>
+                <div class="mt-16 flex items-center gap-8 text-sm">
+                    <div class="flex -space-x-4">
+                        <div
+                            class="w-8 h-8 rounded-2xl bg-[#00f5ff]/10 flex items-center justify-center border-2 border-[#0a0f1c]">
+                            📈</div>
+                        <div
+                            class="w-8 h-8 rounded-2xl bg-[#00f5ff]/10 flex items-center justify-center border-2 border-[#0a0f1c]">
+                            🔬</div>
+                        <div
+                            class="w-8 h-8 rounded-2xl bg-[#00f5ff]/10 flex items-center justify-center border-2 border-[#0a0f1c]">
+                            🚀</div>
                     </div>
-                    <p class="leading-tight">1,842 visionaries already on the list.<br><span class="text-[#00f5ff]">Be
-                            the next to ride the curve.</span></p>
+                    <p class="text-slate-400">1,842 visionaries already on the list.<br><span class="text-[#00f5ff]">Be
+                            the first to capture the next ClearCurve.</span></p>
                 </div>
             </div>
 
-            <!-- Hero visual – refined glowing curve with premium depth -->
-            <div class="lg:col-span-5 relative flex justify-center lg:justify-end">
-                <div class="relative w-full max-w-lg lg:max-w-none">
-                    <div class="bg-[#111827]/70 backdrop-blur-3xl border border-white/10 rounded-3xl p-8 shadow-2xl">
-                        <svg width="100%" height="340" viewBox="0 0 520 340" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="heroGrad" x1="10%" y1="90%" x2="90%" y2="10%">
-                                    <stop offset="0%" stop-color="#00f5ff" />
-                                    <stop offset="100%" stop-color="#67e8f9" />
-                                </linearGradient>
-                                <filter id="heroGlow" x="-30%" y="-30%" width="160%" height="160%">
-                                    <feGaussianBlur stdDeviation="12" result="blur" />
-                                    <feMerge>
-                                        <feMergeNode in="blur" />
-                                        <feMergeNode in="SourceGraphic" />
-                                    </feMerge>
-                                </filter>
-                            </defs>
-                            <path id="hero-curve" d="M40 280 Q140 60 260 260 Q380 70 480 270" stroke="url(#heroGrad)"
-                                stroke-width="22" stroke-linecap="round" fill="none" filter="url(#heroGlow)"
-                                opacity="0.95" />
-                            <path d="M40 280 Q140 60 260 260 Q380 70 480 270" stroke="#ffffff" stroke-width="3"
-                                stroke-dasharray="6 12" fill="none" />
-                            <!-- Pulsing nodes -->
-                            <circle cx="140" cy="60" r="11" fill="#fff">
-                                <animate attributeName="r" values="11;15;11" dur="2.2s" repeatCount="indefinite" />
-                            </circle>
-                            <circle cx="260" cy="260" r="11" fill="#fff">
-                                <animate attributeName="r" values="11;15;11" dur="1.8s" repeatCount="indefinite" />
-                            </circle>
-                            <circle cx="380" cy="70" r="11" fill="#fff">
-                                <animate attributeName="r" values="11;15;11" dur="2.5s" repeatCount="indefinite" />
-                            </circle>
-                        </svg>
-                    </div>
-                    <div
-                        class="absolute -bottom-4 -right-4 bg-white/10 backdrop-blur-2xl px-6 py-3 rounded-3xl text-sm font-medium shadow-xl flex items-center gap-x-3 border border-white/10">
-                        <span class="px-3 py-1 bg-emerald-400 text-black text-xs rounded-2xl font-semibold">LIVE</span>
-                        Minimalist Wallets → RFID Tech (+340% projected)
-                    </div>
+            <!-- Hero Illustration -->
+            <div class="lg:col-span-5">
+                <div class="glass rounded-3xl p-8 border border-white/10">
+                    <img src="https://www.uidux.com/wp-content/uploads/2024/05/futuristic-neural-interface-dashboard-design-for-figma-and-adobe-xd.jpg"
+                        alt="Futuristic AI Predictive Dashboard" class="rounded-2xl w-full shadow-2xl">
                 </div>
             </div>
         </div>
 
-        <div
-            class="absolute bottom-10 left-1/2 flex flex-col items-center text-[10px] tracking-[1.5px] text-slate-400 font-medium">
+        <div class="absolute bottom-12 left-1/2 flex flex-col items-center text-xs tracking-[2px] text-slate-400">
             SCROLL FOR FORESIGHT
-            <div class="w-px h-12 bg-gradient-to-b from-transparent via-[#00f5ff]/40 to-transparent mt-3"></div>
+            <div class="w-px h-12 bg-gradient-to-b from-transparent via-[#00f5ff] to-transparent mt-3"></div>
         </div>
     </header>
 
-    <!-- All other sections remain functionally identical but with premium polish (spacing, glassmorphism, hover states) -->
-    <!-- VISION, MECHANICS, MATRIX, DEMO, FOUNDER, SCALABILITY, FOOTER – updated with refined Tailwind classes for premium feel and perfect mobile responsiveness -->
+    <!-- VISION -->
+    <section id="vision" class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-24 border-t border-white/10">
+        <div class="grid lg:grid-cols-12 gap-16 items-center">
+            <div class="lg:col-span-5">
+                <span class="px-5 py-2 bg-[#00f5ff]/10 text-[#00f5ff] rounded-3xl text-sm font-semibold">THE
+                    VISION</span>
+                <h2 class="text-5xl lg:text-6xl font-semibold tracking-[-1px] mt-6">From Data to Foresight</h2>
+                <p class="mt-8 text-xl text-slate-300">ClearCurve AI is not a reporting tool — it is an anticipation
+                    engine. While most platforms summarize yesterday, we identify tomorrow’s inflection points and the
+                    exact “unsaturated alpha” where demand is surging but supply is virtually non-existent.</p>
+            </div>
+            <div class="lg:col-span-7 glass rounded-3xl p-12 text-lg leading-relaxed">
+                We track concepts across the entire digital ecosystem — from niche forums to visual platforms to retail
+                intent — and surface opportunities months before they become obvious.
+            </div>
+        </div>
+    </section>
 
-    <!-- Full optimized code continues in the same structure as previous version but with elevated design language. For brevity in this response, the complete enhanced files are provided below in separate blocks. -->
+    <!-- HOW IT WORKS + WORKFLOW GRAPHIC -->
+    <section id="how-it-works" class="bg-[#111827] py-24">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <span class="px-5 py-2 bg-[#00f5ff]/10 text-[#00f5ff] rounded-3xl text-sm font-semibold">HOW IT
+                        WORKS</span>
+                    <h2 class="text-5xl font-semibold tracking-tight mt-4">The ClearCurve Workflow</h2>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7">
+                    <div class="space-y-12">
+                        <div class="flex gap-6">
+                            <div class="text-4xl font-mono text-[#00f5ff] w-12">01</div>
+                            <div>
+                                <h3 class="text-2xl font-semibold">Nodal Ingestion Layer</h3>
+                                <p class="text-slate-300">Real-time multi-source ingestion from Reddit, Discord, TikTok,
+                                    Instagram, Amazon, Google Trends, and proprietary APIs. Concepts are modeled as
+                                    nodes in a dynamic knowledge graph.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="text-4xl font-mono text-[#00f5ff] w-12">02</div>
+                            <div>
+                                <h3 class="text-2xl font-semibold">Noise Filtration &amp; Sentiment Reasoning</h3>
+                                <p class="text-slate-300">Transformer-based models distinguish flash fads from
+                                    structural shifts. OpenAI-powered reasoning extracts the “Why” behind every trend
+                                    (e.g., “Physical Security Anxiety” driving minimalist wallet searches).</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="text-4xl font-mono text-[#00f5ff] w-12">03</div>
+                            <div>
+                                <h3 class="text-2xl font-semibold">Predictive Modeling Engine</h3>
+                                <p class="text-slate-300">Hybrid architecture: Time-series forecasting (Prophet + LSTM)
+                                    + Transformer trend extrapolation. Outputs a proprietary Curve-Fidelity Score™
+                                    (0–100) with mutation predictions.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="text-4xl font-mono text-[#00f5ff] w-12">04</div>
+                            <div>
+                                <h3 class="text-2xl font-semibold">Automated Strategic Briefs</h3>
+                                <p class="text-slate-300">Generates actionable roadmaps for e-commerce launches, content
+                                    strategies, and product pivots — complete with timelines, projected ROI, and
+                                    competitive gap analysis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Workflow Illustration -->
+                <div class="lg:col-span-5">
+                    <div class="glass rounded-3xl p-6 border border-white/10">
+                        <img src="https://engineering.fb.com/wp-content/uploads/2022/09/disaggregated-data-ingestion-architecture.png"
+                            alt="Nodal Data Ingestion Workflow" class="rounded-2xl w-full">
+                        <p class="text-center text-xs text-slate-400 mt-4">ClearCurve Nodal Ingestion Architecture</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TECHNICAL ARCHITECTURE -->
+    <section id="architecture" class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-24">
+        <h2 class="text-5xl font-semibold text-center mb-4">Enterprise-Grade Technical Architecture</h2>
+        <p class="text-center text-slate-400 max-w-2xl mx-auto mb-12">Built from the ground up for speed, scale, and
+            precision.</p>
+
+        <div class="grid lg:grid-cols-2 gap-12">
+            <div class="glass rounded-3xl p-10">
+                <h3 class="text-2xl font-semibold mb-6">Core Tech Stack</h3>
+                <img src="https://www.solulab.com/wp-content/uploads/2024/06/AI-Tech-Stack-1.jpg"
+                    alt="AI Tech Stack Architecture" class="rounded-2xl w-full mb-8">
+                <ul class="grid grid-cols-2 gap-6 text-sm">
+                    <li class="flex items-center gap-3"><span class="text-[#00f5ff]">•</span> Nodal Graph Database
+                        (Neo4j + Vector Embeddings)</li>
+                    <li class="flex items-center gap-3"><span class="text-[#00f5ff]">•</span> Real-time Stream
+                        Processing (Kafka + Flink)</li>
+                    <li class="flex items-center gap-3"><span class="text-[#00f5ff]">•</span> Hybrid Forecasting
+                        (Prophet + LSTM + Transformer)</li>
+                    <li class="flex items-center gap-3"><span class="text-[#00f5ff]">•</span> OpenAI Reasoning Layer
+                        (GPT-4o + custom fine-tunes)</li>
+                    <li class="flex items-center gap-3"><span class="text-[#00f5ff]">•</span> Competitive Heatmap Engine
+                        (Custom D3 + Canvas)</li>
+                    <li class="flex items-center gap-3"><span class="text-[#00f5ff]">•</span> Scalable API Gateway
+                        (FastAPI + Redis Cache)</li>
+                </ul>
+            </div>
+
+            <div class="glass rounded-3xl p-10">
+                <h3 class="text-2xl font-semibold mb-6">Enterprise AI Technology Stack Pyramid</h3>
+                <img src="https://media.licdn.com/dms/image/v2/D4E12AQG1ZfKq8X9v0Q/article-inline_image-shrink_1000_1488/0/1720000000000?e=2147483647&amp;v=beta&amp;t=..."
+                    alt="Enterprise AI Stack Pyramid" class="rounded-2xl w-full">
+                <p class="mt-6 text-slate-300">From infrastructure to AI models — every layer is optimized for real-time
+                    foresight.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPPORTUNITY MATRIX -->
+    <section id="matrix" class="bg-[#111827] py-24">
+        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
+            <h2 class="text-5xl font-semibold text-center">Unsaturated Opportunity Matrix</h2>
+            <p class="text-center text-slate-400 mb-12">Live heatmap of every market niche — updated in real time</p>
+
+            <div class="max-w-4xl mx-auto">
+                <img src="https://slidenest.com/wp-content/uploads/2024/05/Market-Trend-Heat-Map-Visualization.png"
+                    alt="Competitive Heatmap" class="rounded-3xl w-full shadow-2xl">
+            </div>
+
+            <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-sm">
+                <div class="glass p-6 rounded-3xl">High Demand • High Competition</div>
+                <div class="glass p-6 rounded-3xl border-2 border-[#00f5ff]">CLEARCURVE ZONE<br><span
+                        class="text-[#00f5ff]">400%+ gap detected</span></div>
+                <div class="glass p-6 rounded-3xl">Low Demand • High Competition</div>
+                <div class="glass p-6 rounded-3xl">Early Signals • Low Competition</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE DEMO -->
+    <section id="demo" class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-24">
+        <h2 class="text-5xl font-semibold text-center mb-12">Live Predictive Modeling Engine</h2>
+        <div class="max-w-5xl mx-auto glass rounded-3xl p-12">
+            <canvas id="trendChart" class="w-full h-96"></canvas>
+            <div class="mt-8 flex justify-center gap-8 text-xs text-slate-400">
+                <div>Historical Trend</div>
+                <div class="text-[#00f5ff]">ClearCurve Prediction (92% Fidelity)</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOUNDER + ROADMAP -->
+    <section id="founder" class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-24 border-t border-white/10">
+        <div class="grid lg:grid-cols-12 gap-12">
+            <div class="lg:col-span-5">
+                <span class="px-5 py-2 bg-[#00f5ff]/10 text-[#00f5ff] rounded-3xl text-sm font-semibold">MEET THE
+                    FOUNDER</span>
+                <h2 class="text-5xl font-semibold mt-6">Oluwaseun Osunbade</h2>
+                <p class="text-2xl text-slate-300">Developer &amp; Founder</p>
+                <p class="mt-8">oluwaseun.o@clearcurve.xyz • LinkedIn: Oluwaseun Osunbade</p>
+            </div>
+            <div class="lg:col-span-7 text-slate-300">
+                Every line of code was written to give creators and founders the unfair advantage of seeing the future
+                before it becomes obvious. ClearCurve is the result of years of building real-time data systems and
+                frustration with lagging analytics tools.
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <div class="bg-gradient-to-r from-[#00f5ff] to-[#67e8f9] py-20 text-[#0a0f1c]">
+        <div class="max-w-screen-2xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-semibold">The future belongs to those who see it first.</h2>
+            <button onclick="showWaitlistModal()"
+                class="mt-10 bg-[#0a0f1c] text-white px-16 py-7 text-2xl rounded-3xl font-semibold">Join the Waitlist —
+                Launch Q3 2026</button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-16 text-slate-400 text-sm">
+        <div class="max-w-screen-2xl mx-auto px-6 text-center">
+            © 2026 ClearCurve AI • Internal Startup Strategy Document • Built by Oluwaseun Osunbade in Zurich
+        </div>
+    </footer>
+
+    <!-- WAITLIST MODAL -->
+    <div id="waitlist-modal" onclick="if(event.target.id==='waitlist-modal')hideWaitlistModal()"
+        class="hidden fixed inset-0 bg-black/70 backdrop-blur z-[9999] items-center justify-center">
+        <div class="bg-[#111827] rounded-3xl p-10 max-w-md w-full mx-4">
+            <h3 class="text-3xl font-semibold mb-6">Join the ClearCurve Inner Circle</h3>
+            <form onsubmit="handleWaitlistSubmit(event)" class="space-y-6">
+                <input id="name" type="text" placeholder="Full Name" required
+                    class="w-full bg-white/10 border border-white/20 rounded-2xl px-6 py-5 outline-none">
+                <input id="email" type="email" placeholder="Email" required
+                    class="w-full bg-white/10 border border-white/20 rounded-2xl px-6 py-5 outline-none">
+                <button type="submit"
+                    class="w-full py-6 bg-[#00f5ff] text-black rounded-3xl text-xl font-semibold">Secure Early
+                    Access</button>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
