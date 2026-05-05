@@ -1,236 +1,712 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ClearCurve AI — Predictive Intelligence for the Next Market Frontier">
-    <title>ClearCurve AI | Predictive Intelligence</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', system-ui, sans-serif; }
-        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
-        .glass { background: rgba(17, 24, 39, 0.85); backdrop-filter: blur(24px); }
-        section { scroll-margin-top: 90px; }
-        .neon { text-shadow: 0 0 25px #00f5ff; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ClearCurve AI — Predictive Intelligence for the Next Market Frontier</title>
+  <meta name="description" content="ClearCurve AI is an anticipation engine that identifies unsaturated market opportunities before they go mainstream. Be weeks ahead of your competition." />
+  <meta property="og:title"       content="ClearCurve AI — Predictive Intelligence" />
+  <meta property="og:description" content="Find the gaps. Ride the curve. ClearCurve AI surfaces where high demand meets zero competition — before anyone else." />
+  <meta property="og:type"        content="website" />
+  <meta name="theme-color"        content="#07d9c0" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23050c16'/><path d='M4 24C10 24 12 18 16 14 20 10 22 8 28 4' fill='none' stroke='%2307d9c0' stroke-width='3' stroke-linecap='round'/><circle cx='16' cy='14' r='2.5' fill='%23f0c040'/></svg>" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-[#0a0f1c] text-white antialiased">
+<body>
 
-    <!-- NAVBAR -->
-    <nav class="sticky top-0 z-50 bg-[#0a0f1c]/95 backdrop-blur-2xl border-b border-white/10">
-        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-6 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-x-3">
-                <svg width="268" height="64" viewBox="0 0 268 64" fill="none" xmlns="http://www.w3.org/2000/svg" class="drop-shadow-[0_0_25px_#00f5ff]">
-                    <defs><linearGradient id="curveGrad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#00f5ff"/><stop offset="100%" stop-color="#67e8f9"/></linearGradient></defs>
-                    <path d="M18 48 Q62 14 108 48 Q158 14 202 48 Q242 14 248 48" stroke="url(#curveGrad)" stroke-width="9" stroke-linecap="round" fill="none"/>
-                    <circle cx="18" cy="48" r="5" fill="#fff"/>
-                    <circle cx="62" cy="14" r="5" fill="#fff"/>
-                    <circle cx="108" cy="48" r="5" fill="#fff"/>
-                    <circle cx="158" cy="14" r="5" fill="#fff"/>
-                    <circle cx="202" cy="48" r="5" fill="#fff"/>
-                    <circle cx="248" cy="48" r="5" fill="#fff"/>
-                    <text x="28" y="58" font-family="'Space Grotesk', sans-serif" font-size="34" font-weight="600" fill="#f8fafc" letter-spacing="-2px">ClearCurve</text>
-                    <rect x="215" y="12" width="52" height="28" rx="8" fill="#00f5ff"/>
-                    <text x="225" y="31" font-family="'Inter', sans-serif" font-size="17" font-weight="700" fill="#0a0f1c">AI</text>
-                </svg>
-            </a>
+<!-- Cursor -->
+<div id="cc-cursor"></div>
+<div id="cc-cursor-ring"></div>
 
-            <div class="hidden lg:flex items-center gap-x-10 text-sm font-medium">
-                <a href="#vision" onclick="smoothScrollTo('vision')">Vision</a>
-                <a href="#how-it-works" onclick="smoothScrollTo('how-it-works')">How It Works</a>
-                <a href="#architecture" onclick="smoothScrollTo('architecture')">Architecture</a>
-                <a href="#matrix" onclick="smoothScrollTo('matrix')">Matrix</a>
-                <a href="#demo" onclick="smoothScrollTo('demo')">Live Demo</a>
-                <a href="#founder" onclick="smoothScrollTo('founder')">Founder</a>
-            </div>
+<!-- ╔══════════════════════════════════════════════════════════╗ -->
+<!-- ║  NAVIGATION                                              ║ -->
+<!-- ╚══════════════════════════════════════════════════════════╝ -->
+<nav id="nav">
+  <a href="#" class="nav__logo">
+    <div class="nav__logo-mark">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+        <rect width="34" height="34" rx="8" fill="#0c1525"/>
+        <path d="M5 26C9 26 11 20 15 16 19 12 21 9 29 5" stroke="#07d9c0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <circle cx="15" cy="16" r="2.5" fill="#f0c040"/>
+        <rect width="34" height="34" rx="8" fill="none" stroke="rgba(7,217,192,.2)" stroke-width="1"/>
+      </svg>
+    </div>
+    <span class="nav__logo-name">Clear<em>Curve</em> AI</span>
+  </a>
 
-            <button onclick="showWaitlistModal()" class="bg-gradient-to-r from-[#00f5ff] to-[#67e8f9] text-[#0a0f1c] px-8 py-3 rounded-3xl font-semibold">Join Waitlist →</button>
-        </div>
-    </nav>
+  <ul class="nav__links" id="nav-links">
+    <li><a href="#vision">Vision</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#usecases">Use Cases</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#founder">Founder</a></li>
+    <li><a href="#waitlist" class="nav__cta">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+      Join Waitlist
+    </a></li>
+  </ul>
 
-    <!-- HERO -->
-    <header class="min-h-screen flex items-center relative">
-        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12 grid lg:grid-cols-12 gap-16 items-center">
-            <div class="lg:col-span-7">
-                <div class="inline-flex items-center bg-white/5 border border-white/10 rounded-3xl px-6 py-2 text-sm mb-8">
-                    <span class="w-2 h-2 bg-[#00f5ff] rounded-full animate-ping mr-3"></span>
-                    Q3 2026 • EARLY ACCESS OPEN
-                </div>
-                <h1 class="text-6xl lg:text-7xl font-semibold tracking-[-3px] leading-none mb-6 neon">Data ends here.<br><span class="text-[#00f5ff]">Foresight begins.</span></h1>
-                <p class="text-2xl text-slate-300">The anticipation engine that reveals unsaturated alpha — explosive demand with near-zero competition.</p>
-                <div class="mt-12 flex gap-4 flex-wrap">
-                    <button onclick="showWaitlistModal()" class="bg-[#00f5ff] text-black px-10 py-6 rounded-3xl text-xl font-semibold">Join the Waitlist →</button>
-                    <button onclick="smoothScrollTo('demo')" class="border border-white/30 hover:border-[#00f5ff] px-10 py-6 rounded-3xl text-xl">Watch the Curve</button>
-                </div>
-            </div>
-            <div class="lg:col-span-5">
-                <div class="glass rounded-3xl p-8 border border-white/10">
-                    <svg width="100%" height="380" viewBox="0 0 600 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M50 320 Q180 80 300 280 Q420 90 550 310" stroke="#00f5ff" stroke-width="28" stroke-linecap="round" fill="none"/>
-                        <circle cx="180" cy="80" r="18" fill="#fff"/>
-                        <circle cx="300" cy="280" r="18" fill="#fff"/>
-                        <circle cx="420" cy="90" r="18" fill="#fff"/>
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </header>
+  <button class="nav__burger" id="nav-burger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
 
-    <!-- VISION -->
-    <section id="vision" class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-24">
-        <div class="grid lg:grid-cols-12 gap-16 items-center">
-            <div class="lg:col-span-5">
-                <span class="px-5 py-2 bg-[#00f5ff]/10 text-[#00f5ff] rounded-3xl text-sm font-semibold">THE VISION</span>
-                <h2 class="text-5xl font-semibold tracking-tight mt-6">From Data to Foresight</h2>
-                <p class="mt-8 text-xl text-slate-300">ClearCurve AI is not a reporting tool. It is an anticipation engine that finds unsaturated alpha — the gap where high demand meets low competition.</p>
-            </div>
-            <div class="lg:col-span-7 glass rounded-3xl p-12 text-lg">Most analytics summarize the past.<br>We predict the future.</div>
-        </div>
-    </section>
+<!-- ╔══════════════════════════════════════════════════════════╗ -->
+<!-- ║  HERO                                                    ║ -->
+<!-- ╚══════════════════════════════════════════════════════════╝ -->
+<section id="hero">
+  <!-- animated background canvas -->
+  <div class="hero__canvas-wrap">
+    <canvas id="heroCanvas"></canvas>
+  </div>
 
-    <!-- NODAL WORKFLOW -->
-    <section id="how-it-works" class="bg-[#111827] py-24">
-        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
-            <h2 class="text-5xl font-semibold text-center mb-4">Nodal Data Ingestion Workflow</h2>
-            <div class="max-w-5xl mx-auto glass rounded-3xl p-10">
-                <svg width="100%" height="420" viewBox="0 0 900 420" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <defs><linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00f5ff"/><stop offset="100%" stop-color="#67e8f9"/></linearGradient></defs>
-                    <rect x="80" y="100" width="140" height="80" rx="12" fill="#1e2937" stroke="#00f5ff" stroke-width="3"/>
-                    <text x="150" y="145" text-anchor="middle" fill="#fff" font-size="18" font-weight="600">Reddit / Discord</text>
-                    <rect x="380" y="100" width="140" height="80" rx="12" fill="#1e2937" stroke="#00f5ff" stroke-width="3"/>
-                    <text x="450" y="145" text-anchor="middle" fill="#fff" font-size="18" font-weight="600">TikTok / Instagram</text>
-                    <rect x="680" y="100" width="140" height="80" rx="12" fill="#1e2937" stroke="#00f5ff" stroke-width="3"/>
-                    <text x="750" y="145" text-anchor="middle" fill="#fff" font-size="18" font-weight="600">Amazon / Google</text>
-                    <circle cx="450" cy="280" r="85" fill="#0a0f1c" stroke="#00f5ff" stroke-width="6"/>
-                    <text x="450" y="275" text-anchor="middle" fill="#fff" font-size="22" font-weight="700">KNOWLEDGE GRAPH</text>
-                    <text x="450" y="305" text-anchor="middle" fill="#67e8f9" font-size="14">Nodal Engine</text>
-                    <path d="M220 140 Q300 140 380 140" stroke="#00f5ff" stroke-width="4" stroke-dasharray="8 6" fill="none"/>
-                    <path d="M520 140 Q600 140 680 140" stroke="#00f5ff" stroke-width="4" stroke-dasharray="8 6" fill="none"/>
-                    <path d="M300 180 Q380 240 450 260" stroke="#00f5ff" stroke-width="5" fill="none"/>
-                    <path d="M600 180 Q520 240 450 260" stroke="#00f5ff" stroke-width="5" fill="none"/>
-                </svg>
-                <p class="text-center text-slate-400 mt-8">Real-time multi-source data flow → Dynamic Knowledge Graph → Predictive Engine</p>
-            </div>
-        </div>
-    </section>
+  <!-- grid + glows -->
+  <div class="hero__grid"></div>
+  <div class="hero__glow hero__glow--teal"></div>
+  <div class="hero__glow hero__glow--gold"></div>
+  <div class="hero__glow hero__glow--teal2"></div>
 
-    <!-- ARCHITECTURE -->
-    <section id="architecture" class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-24">
-        <h2 class="text-5xl font-semibold text-center mb-12">Enterprise-Grade Architecture</h2>
-        <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div class="glass rounded-3xl p-8 text-center">
-                <svg width="100%" height="220" viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="50" y="30" width="300" height="160" rx="20" fill="#1e2937" stroke="#00f5ff" stroke-width="4"/>
-                    <text x="200" y="120" text-anchor="middle" fill="#fff" font-size="24" font-weight="700">HYBRID AI ENGINE</text>
-                </svg>
-                <p class="mt-4 text-sm text-slate-400">Time-Series + Transformer + OpenAI Reasoning</p>
-            </div>
-            <div class="glass rounded-3xl p-8 text-center">
-                <svg width="100%" height="220" viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="200" cy="110" r="80" fill="none" stroke="#00f5ff" stroke-width="25"/>
-                    <text x="200" y="125" text-anchor="middle" fill="#fff" font-size="28" font-weight="700">92</text>
-                </svg>
-                <p class="mt-4 text-sm text-slate-400">Curve-Fidelity Score™</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- MATRIX -->
-    <section id="matrix" class="bg-[#111827] py-24">
-        <div class="max-w-screen-2xl mx-auto px-6 lg:px-12">
-            <h2 class="text-5xl font-semibold text-center mb-8">Unsaturated Opportunity Matrix</h2>
-            <div class="max-w-4xl mx-auto glass rounded-3xl p-8">
-                <div class="grid grid-cols-2 gap-6 text-center">
-                    <div class="bg-red-900/30 p-8 rounded-3xl">High Demand + High Competition</div>
-                    <div class="bg-emerald-500/30 border-2 border-[#00f5ff] p-8 rounded-3xl font-semibold">CLEARCURVE ZONE<br><span class="text-[#00f5ff]">Unsaturated Alpha</span></div>
-                    <div class="bg-slate-700/30 p-8 rounded-3xl">Low Demand + High Competition</div>
-                    <div class="bg-emerald-900/30 p-8 rounded-3xl">Early Signals</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- LIVE DEMO -->
-    <section id="demo" class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-24">
-        <h2 class="text-5xl font-semibold text-center mb-12">Live Predictive Modeling Engine</h2>
-        <div class="max-w-5xl mx-auto glass rounded-3xl p-12">
-            <canvas id="trendChart" class="w-full h-96"></canvas>
-        </div>
-    </section>
-
-    <!-- FOUNDER -->
-    <section id="founder" class="max-w-screen-2xl mx-auto px-6 lg:px-12 py-24">
-        <div class="grid lg:grid-cols-12 gap-12 items-center">
-            <div class="lg:col-span-5">
-                <h2 class="text-5xl font-semibold">Oluwaseun Osunbade</h2>
-                <p class="text-[#00f5ff] text-xl">Founder &amp; Developer</p>
-                <p class="mt-4">oluwaseun.o@clearcurve.xyz</p>
-            </div>
-            <div class="lg:col-span-7 text-slate-300 text-lg">Built with obsession for turning raw signals into actionable foresight.</div>
-        </div>
-    </section>
-
-    <!-- FINAL CTA -->
-    <div class="bg-gradient-to-r from-[#00f5ff] to-[#67e8f9] py-20 text-[#0a0f1c] text-center">
-        <h2 class="text-5xl font-semibold">Ready to ride the next ClearCurve?</h2>
-        <button onclick="showWaitlistModal()" class="mt-10 bg-[#0a0f1c] text-white px-16 py-7 text-2xl rounded-3xl font-semibold">Join the Waitlist</button>
+  <div class="hero__content">
+    <div class="hero__badge">
+      <span class="hero__badge-dot"></span>
+      Q3 2026 · Early Access Now Open
     </div>
 
-    <!-- FOOTER -->
-    <footer class="bg-black py-12 text-center text-slate-400 text-sm">
-        © 2026 ClearCurve AI • Built by Oluwaseun Osunbade
-    </footer>
+    <h1 class="hero__h1">
+      Data ends here.<br>
+      <span class="hl-teal">Foresight</span> begins.
+    </h1>
 
-    <!-- WAITLIST MODAL -->
-    <div id="waitlist-modal" class="hidden fixed inset-0 bg-black/80 backdrop-blur z-[9999] items-center justify-center">
-        <div class="glass rounded-3xl p-10 max-w-md w-full mx-4">
-            <h3 class="text-3xl font-semibold mb-6">Join the ClearCurve Waitlist</h3>
-            <form onsubmit="handleWaitlistSubmit(event)" class="space-y-6">
-                <input type="text" placeholder="Full Name" required class="w-full bg-white/10 border border-white/20 rounded-2xl px-6 py-5">
-                <input type="email" placeholder="Email Address" required class="w-full bg-white/10 border border-white/20 rounded-2xl px-6 py-5">
-                <button type="submit" class="w-full py-6 bg-[#00f5ff] text-black rounded-3xl text-xl font-semibold">Secure My Spot</button>
-            </form>
-        </div>
+    <p class="hero__sub">
+      ClearCurve AI is not a reporting tool — it's an anticipation engine.
+      We surface the inflection points of tomorrow: where explosive consumer
+      demand meets near-zero competition.
+    </p>
+
+    <div class="hero__actions">
+      <a href="#waitlist" class="btn btn--primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        Get Early Access
+      </a>
+      <a href="#how" class="btn btn--ghost">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
+        See How It Works
+      </a>
     </div>
 
-    <script>
-        function smoothScrollTo(id) {
-            document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-        }
-        function showWaitlistModal() {
-            document.getElementById('waitlist-modal').classList.remove('hidden');
-            document.getElementById('waitlist-modal').classList.add('flex');
-        }
-        function hideWaitlistModal() {
-            const modal = document.getElementById('waitlist-modal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-        }
-        function handleWaitlistSubmit(e) {
-            e.preventDefault();
-            hideWaitlistModal();
-            alert("✅ You're on the list! Early access coming Q3 2026.");
-        }
+    <div class="hero__stats">
+      <div class="stat">
+        <span class="stat__val" data-count="48" data-suffix="h">0h</span>
+        <span class="stat__lbl">Ahead of the Market</span>
+      </div>
+      <div class="stat">
+        <span class="stat__val" data-count="400" data-suffix="%">0%</span>
+        <span class="stat__lbl">Content Gap Surfaced</span>
+      </div>
+      <div class="stat">
+        <span class="stat__val" data-count="12" data-suffix="+">0+</span>
+        <span class="stat__lbl">Signal Source Layers</span>
+      </div>
+      <div class="stat">
+        <span class="stat__val" data-count="92" data-suffix="/100">0</span>
+        <span class="stat__lbl">Avg. Curve-Fidelity Score™</span>
+      </div>
+    </div>
+  </div>
 
-        // Chart
-        window.onload = () => {
-            const ctx = document.getElementById('trendChart');
-            if (ctx) {
-                new Chart(ctx, {
-                    type: 'line',
-                    data: {
-                        labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct'],
-                        datasets: [
-                            { label: 'Historical', data: [420,680,920,1100,980,1250,1580,2100,2450,3100], borderColor: '#64748b', tension: 0.4 },
-                            { label: 'ClearCurve Prediction', data: [null,null,null,null,null,1250,1580,2100,2450,4200], borderColor: '#00f5ff', borderDash: [8,4], tension: 0.4 }
-                        ]
-                    },
-                    options: { responsive: true, plugins: { legend: { display: false } } }
-                });
-            }
-        };
-    </script>
+  <div class="hero__scroll">
+    <div class="hero__scroll-line"></div>
+    scroll
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════╗ -->
+<!-- ║  SOCIAL PROOF TICKER                                     ║ -->
+<!-- ╚══════════════════════════════════════════════════════════╝ -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <!-- set 1 -->
+    <span class="ticker-item"><span class="dot"></span>Reddit → TikTok → Amazon signal detection</span>
+    <span class="ticker-item"><span class="dot"></span>Flash Fad vs. Structural Shift classification</span>
+    <span class="ticker-item"><span class="dot"></span>Curve-Fidelity Score™ confidence modeling</span>
+    <span class="ticker-item"><span class="dot"></span>Automated strategic briefs in seconds</span>
+    <span class="ticker-item"><span class="dot"></span>Unsaturated Opportunity Matrix™</span>
+    <span class="ticker-item"><span class="dot"></span>48h edge over mainstream analytics</span>
+    <span class="ticker-item"><span class="dot"></span>The "Why" Factor — underlying demand drivers</span>
+    <span class="ticker-item"><span class="dot"></span>Full API access for enterprise teams</span>
+    <!-- set 2 (duplicate for seamless loop) -->
+    <span class="ticker-item"><span class="dot"></span>Reddit → TikTok → Amazon signal detection</span>
+    <span class="ticker-item"><span class="dot"></span>Flash Fad vs. Structural Shift classification</span>
+    <span class="ticker-item"><span class="dot"></span>Curve-Fidelity Score™ confidence modeling</span>
+    <span class="ticker-item"><span class="dot"></span>Automated strategic briefs in seconds</span>
+    <span class="ticker-item"><span class="dot"></span>Unsaturated Opportunity Matrix™</span>
+    <span class="ticker-item"><span class="dot"></span>48h edge over mainstream analytics</span>
+    <span class="ticker-item"><span class="dot"></span>The "Why" Factor — underlying demand drivers</span>
+    <span class="ticker-item"><span class="dot"></span>Full API access for enterprise teams</span>
+  </div>
+</div>
+
+<!-- ╔══════════════════════════════════════════════════════════╗ -->
+<!-- ║  VISION / PROBLEM                                        ║ -->
+<!-- ╚══════════════════════════════════════════════════════════╝ -->
+<section id="vision" class="section">
+  <div class="section__inner">
+    <div class="vision-grid">
+
+      <div class="vision__chart reveal">
+        <canvas id="visionChart"></canvas>
+      </div>
+
+      <div class="vision__text">
+        <p class="eyebrow">The Problem</p>
+        <h2 class="section__title reveal">
+          Everyone sees the<br>
+          <span class="hl-gold">same data.</span><br>
+          <span class="hl-teal">Nobody sees first.</span>
+        </h2>
+        <p class="section__body reveal">
+          Most analytics platforms summarize the past. By the time a trend
+          surfaces on a dashboard, thousands of competitors have already moved.
+          ClearCurve identifies inflection points <em>before</em> they become obvious.
+        </p>
+
+        <div class="problem-list">
+          <div class="problem-item reveal">
+            <div class="problem-item__icon problem-item__icon--red">🔴</div>
+            <div>
+              <h4>Reactive Intelligence</h4>
+              <p>Traditional tools show what happened. By the time it's on your dashboard, the window has already closed.</p>
+            </div>
+          </div>
+          <div class="problem-item reveal">
+            <div class="problem-item__icon problem-item__icon--gold">⚠️</div>
+            <div>
+              <h4>Flash Fad vs. Structural Shift</h4>
+              <p>Viral moments fool operators into investing in trends that collapse within weeks, burning capital and time.</p>
+            </div>
+          </div>
+          <div class="problem-item reveal">
+            <div class="problem-item__icon problem-item__icon--teal">✦</div>
+            <div>
+              <h4>ClearCurve solves both</h4>
+              <p>Predictive signals that separate durable trends from noise — surfaced weeks before saturation hits.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════╗ -->
+<!-- ║  HOW IT WORKS                                            ║ -->
+<!-- ╚══════════════════════════════════════════════════════════╝ -->
+<section id="how" class="section">
+  <div class="section__inner">
+    <div style="text-align:center; max-width:600px; margin:0 auto 4rem;">
+      <p class="eyebrow eyebrow--center">The Engine</p>
+      <h2 class="section__title reveal">
+        From raw signal to<br><span class="hl-teal">actionable intelligence</span>
+      </h2>
+      <p class="section__body reveal" style="margin:0 auto;">
+        Four precision layers working in concert to surface what every other tool misses.
+      </p>
+    </div>
+
+    <div class="how-timeline">
+      <div class="how-step reveal">
+        <div class="how-step__num">1</div>
+        <span class="how-step__icon">🔬</span>
+        <h3 class="how-step__title">Nodal Ingestion</h3>
+        <p class="how-step__body">Proprietary cross-platform tracking follows a concept from niche forums (Reddit, Discord) → visual platforms (TikTok, Instagram) → retail intent (Amazon, Google).</p>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-step__num">2</div>
+        <span class="how-step__icon">🧠</span>
+        <h3 class="how-step__title">Noise Filtration</h3>
+        <p class="how-step__body">Our AI separates Flash Fads (high velocity, short lifespan) from Structural Shifts (sustainable, long-term trends worth betting on).</p>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-step__num">3</div>
+        <span class="how-step__icon">📈</span>
+        <h3 class="how-step__title">Predictive Modeling</h3>
+        <p class="how-step__body">Hybrid Time-Series Forecasting and Transformer-based Extrapolation produce a <strong>Curve-Fidelity Score™</strong> — a confidence measure for every opportunity.</p>
+      </div>
+      <div class="how-step reveal">
+        <div class="how-step__num">4</div>
+        <span class="how-step__icon">🗺️</span>
+        <h3 class="how-step__title">Strategic Brief</h3>
+        <p class="how-step__body">Not just a graph — a roadmap. ClearCurve delivers timed, specific, ready-to-execute briefs tailored to your niche and business model.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════╗ -->
+<!-- ║  FEATURES                                                ║ -->
+<!-- ╚══════════════════════════════════════════════════════════╝ -->
+<section id="features" class="section" style="background:linear-gradient(180deg,var(--deep) 0%,var(--base) 100%);">
+  <div class="section__inner">
+    <div class="features-header">
+      <div>
+        <p class="eyebrow">Capabilities</p>
+        <h2 class="section__title reveal">Everything you need<br>to move <span class="hl-teal">first</span></h2>
+      </div>
+      <p class="section__body reveal">
+        ClearCurve scales from solo operators to enterprise marketing departments. Every feature is built to close the gap between signal and decision.
+      </p>
+    </div>
+
+    <div class="features-grid">
+
+      <div class="feat-card card card--glow reveal">
+        <div class="feat-icon">🗺️</div>
+        <h3 class="feat-title">Unsaturated Opportunity Matrix™</h3>
+        <p class="feat-body">A proprietary competitive heatmap showing every niche across two axes: demand momentum and competitive saturation. See your window at a glance.</p>
+        <span class="feat-tag">CORE TOOL</span>
+      </div>
+
+      <div class="feat-card card card--glow reveal">
+        <div class="feat-icon">🔮</div>
+        <h3 class="feat-title">Curve-Fidelity Score™</h3>
+        <p class="feat-body">Every opportunity is scored 0–100 for trajectory confidence, blending quantitative search modeling with qualitative AI reasoning. Know how much to bet.</p>
+        <span class="feat-tag">PROPRIETARY</span>
+      </div>
+
+      <div class="feat-card feat-card--gold card reveal">
+        <div class="feat-icon feat-icon--gold">⚡</div>
+        <h3 class="feat-title">Automated Strategic Briefs</h3>
+        <p class="feat-body">Ready-to-act roadmaps. "Launch a bamboo office chair by Q3 to capture a 24% projected demand surge" — specific, timed, immediately actionable.</p>
+        <span class="feat-tag feat-tag--gold">AI-POWERED</span>
+      </div>
+
+      <div class="feat-card card card--glow reveal">
+        <div class="feat-icon">🔗</div>
+        <h3 class="feat-title">Cross-Platform Correlation</h3>
+        <p class="feat-body">Signals tracked across Reddit, Discord, Instagram, TikTok, Amazon, Google, and more. See precisely where in the adoption curve a trend lives.</p>
+        <span class="feat-tag">12+ SOURCES</span>
+      </div>
+
+      <div class="feat-card card card--glow reveal">
+        <div class="feat-icon">💡</div>
+        <h3 class="feat-title">The "Why" Factor</h3>
+        <p class="feat-body">"Minimalist Wallets" trending? The real driver is "Physical Security Anxiety." ClearCurve surfaces the underlying driver, unlocking adjacent niches before anyone else.</p>
+        <span class="feat-tag">DEEP REASONING</span>
+      </div>
+
+      <div class="feat-card feat-card--gold card reveal">
+        <div class="feat-icon feat-icon--gold">🔌</div>
+        <h3 class="feat-title">API + Custom Dashboards</h3>
+        <p class="feat-body">Integrate ClearCurve directly into your workflow. Custom alerts, embeddable intelligence, white-label options. Become the central nervous system of your research.</p>
+        <span class="feat-tag feat-tag--gold">ENTERPRISE</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════╗ -->
+<!-- ║  OPPORTUNITY MATRIX                                      ║ -->
+<!-- ╚══════════════════════════════════════════════════════════╝ -->
+<section id="matrix" class="section">
+  <div class="section__inner">
+    <div class="matrix-layout">
+
+      <div class="reveal">
+        <p class="eyebrow">Live Preview</p>
+        <h2 class="section__title">
+          The <span class="hl-teal">ClearCurve Zone™</span>
+        </h2>
+        <p class="section__body">
+          Our Opportunity Matrix plots every niche across demand momentum and competitive density. The glowing quadrant is where demand accelerates while supply remains stale — your window.
+        </p>
+        <p class="section__body" style="margin-top:1rem;">
+          Hover the bubbles to explore live niche examples. Teal = active opportunity. Grey = saturated or declining.
+        </p>
+        <div class="legend" style="margin-top:1.75rem;">
+          <div class="legend-item"><span class="legend-dot" style="background:rgba(7,217,192,.7)"></span>ClearCurve Opportunities</div>
+          <div class="legend-item"><span class="legend-dot" style="background:rgba(62,78,106,.5)"></span>Saturated / Declining</div>
+          <div class="legend-item"><span class="legend-dot" style="background:var(--red);opacity:.7"></span>Flash Fad Risk Zone</div>
+        </div>
+      </div>
+
+      <div class="matrix-canvas-panel reveal">
+        <h3><span class="dot">◉</span>Opportunity Matrix — Interactive Demo</h3>
+        <canvas id="matrixCanvas"></canvas>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════╗ -->
+<!-- ║  USE CASES                                               ║ -->
+<!-- ╚══════════════════════════════════════════════════════════╝ -->
+<section id="usecases" class="section">
+  <div class="section__inner">
+    <p class="eyebrow">Use Cases</p>
+    <h2 class="section__title reveal">
+      Built for whoever <span class="hl-gold">moves markets</span>
+    </h2>
+
+    <div class="tabs" style="margin-top:2rem;">
+      <button class="tab-btn active" data-tab="ecommerce">E-Commerce</button>
+      <button class="tab-btn" data-tab="content">Content Creators</button>
+      <button class="tab-btn" data-tab="enterprise">Enterprise</button>
+    </div>
+
+    <!-- E-Commerce -->
+    <div class="tab-panel active" id="tab-ecommerce">
+      <div class="tab-text reveal">
+        <h3>Launch the <span class="hl-teal">right product</span><br>at the right moment</h3>
+        <p>Stop guessing what to source next. ClearCurve maps demand curves and tells you exactly which categories are entering their growth phase — before your competitors list the first unit.</p>
+        <div class="uc-metrics">
+          <div class="uc-metric"><span class="val">3–8×</span><span class="lbl">Earlier than competitors</span></div>
+          <div class="uc-metric"><span class="val">+24%</span><span class="lbl">Avg. demand growth surfaced</span></div>
+          <div class="uc-metric"><span class="val">Q3</span><span class="lbl">Precision launch timing</span></div>
+        </div>
+      </div>
+      <div class="brief-card reveal">
+        <div>
+          <h4>Sample Strategic Brief</h4>
+          <p>"Launch a bamboo-based sustainable office chair by Q3 to capture the 24% projected rise in eco-conscious remote work setups. Current content supply is low-quality. Curve-Fidelity Score: 87/100."</p>
+        </div>
+        <div>
+          <h4>Second Opportunity</h4>
+          <p>"RFID-blocking wallet accessories entering exponential growth phase. Physical Security Anxiety spreading from tech early-adopters to mainstream. Window: 6–9 weeks. Act now."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Creators -->
+    <div class="tab-panel" id="tab-content">
+      <div class="tab-text reveal">
+        <h3>Find the <span class="hl-teal">content gap</span><br>before the crowd</h3>
+        <p>'Productivity' is saturated — but 'analog productivity for ADHD' has a 400% gap in high-quality video content. ClearCurve surfaces these gaps at scale, giving creators an unfair algorithmic edge.</p>
+        <div class="uc-metrics">
+          <div class="uc-metric"><span class="val">400%</span><span class="lbl">Content gap detected</span></div>
+          <div class="uc-metric"><span class="val">48h</span><span class="lbl">Ahead of trending topics</span></div>
+          <div class="uc-metric"><span class="val">∞</span><span class="lbl">Niche discovery engine</span></div>
+        </div>
+      </div>
+      <div class="brief-card reveal">
+        <div>
+          <h4>Sample Strategic Brief</h4>
+          <p>"'Analog productivity for ADHD' has 400% gap in high-quality video. First 10 creators to publish thoughtful long-form content will dominate this niche for 18+ months. Curve-Fidelity Score: 92/100."</p>
+        </div>
+        <div>
+          <h4>Trend Mutation Detected</h4>
+          <p>"'Smart recovery tools' emerging from 'at-home fitness' mutation. TikTok signal: 3 weeks. YouTube still empty. First-mover window open. Optimal publish window: next 12 days."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enterprise -->
+    <div class="tab-panel" id="tab-enterprise">
+      <div class="tab-text reveal">
+        <h3>The market intelligence<br><span class="hl-teal">nervous system</span></h3>
+        <p>ClearCurve scales from solopreneurs to full enterprise marketing departments. Via API access, custom dashboarding, and team collaboration, we become the intelligence backbone of your entire operation.</p>
+        <div class="uc-metrics">
+          <div class="uc-metric"><span class="val">API</span><span class="lbl">Full integration</span></div>
+          <div class="uc-metric"><span class="val">∞</span><span class="lbl">Custom dashboards</span></div>
+          <div class="uc-metric"><span class="val">24/7</span><span class="lbl">Live signal monitoring</span></div>
+        </div>
+      </div>
+      <div class="brief-card reveal">
+        <div>
+          <h4>Enterprise Intelligence</h4>
+          <p>"Integrate ClearCurve's signal API directly into your product roadmap, content calendar, and merchandising tools. Set custom alert thresholds. Push notifications when target categories hit ClearCurve Zone entry criteria."</p>
+        </div>
+        <div>
+          <h4>White-Label Available</h4>
+          <p>"Feed live opportunity data to clients under your own branding. ClearCurve becomes the invisible intelligence layer behind your research practice. Custom SLA and dedicated support included."</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════╗ -->
+<!-- ║  PRICING                                                 ║ -->
+<!-- ╚══════════════════════════════════════════════════════════╝ -->
+<section id="pricing" class="section">
+  <div class="section__inner">
+    <div style="text-align:center; max-width:540px; margin:0 auto 1rem;">
+      <p class="eyebrow eyebrow--center">Pricing</p>
+      <h2 class="section__title reveal">Simple pricing.<br><span class="hl-teal">Serious returns.</span></h2>
+      <p class="section__body reveal" style="margin:0 auto;">
+        Join the waitlist to lock in founding member rates — up to 60% off at public launch.
+      </p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <div class="price-card reveal">
+        <p class="price-tier">Starter</p>
+        <h3 class="price-name">Scout</h3>
+        <p class="price-desc">For solo creators and side-hustlers ready to move first.</p>
+        <div class="price-amount">
+          <span class="cur">$</span><span class="num">49</span><span class="per">/mo</span>
+        </div>
+        <ul class="price-features">
+          <li><span class="check">✓</span> 20 Opportunity Scans / month</li>
+          <li><span class="check">✓</span> ClearCurve Zone™ Matrix access</li>
+          <li><span class="check">✓</span> Flash Fad vs. Structural Shift detection</li>
+          <li><span class="check">✓</span> 3 Strategic Briefs / month</li>
+          <li><span class="check">✓</span> Email trend alerts</li>
+          <li><span class="check check--off">—</span> API access</li>
+        </ul>
+        <button class="price-btn price-btn--outline" onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'})">Join Waitlist — Lock Rate</button>
+      </div>
+
+      <div class="price-card price-card--featured reveal">
+        <div class="price-badge">Most Popular</div>
+        <p class="price-tier">Growth</p>
+        <h3 class="price-name">Operator</h3>
+        <p class="price-desc">For serious e-commerce brands and content businesses.</p>
+        <div class="price-amount">
+          <span class="cur">$</span><span class="num">149</span><span class="per">/mo</span>
+        </div>
+        <ul class="price-features">
+          <li><span class="check">✓</span> Unlimited Opportunity Scans</li>
+          <li><span class="check">✓</span> Full Matrix + history</li>
+          <li><span class="check">✓</span> Unlimited Strategic Briefs</li>
+          <li><span class="check">✓</span> The "Why" Factor analysis</li>
+          <li><span class="check">✓</span> Trend Mutation Predictions</li>
+          <li><span class="check">✓</span> 48h edge priority alerts</li>
+        </ul>
+        <button class="price-btn price-btn--teal" onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'})">Join Waitlist — Lock Rate</button>
+      </div>
+
+      <div class="price-card reveal">
+        <p class="price-tier">Enterprise</p>
+        <h3 class="price-name">Command</h3>
+        <p class="price-desc">For agencies and enterprise marketing departments.</p>
+        <div class="price-amount">
+          <span class="cur">$</span><span class="num">499</span><span class="per">/mo</span>
+        </div>
+        <ul class="price-features">
+          <li><span class="check check--gold">✦</span> Everything in Operator</li>
+          <li><span class="check check--gold">✦</span> Full REST API access</li>
+          <li><span class="check check--gold">✦</span> Custom dashboards + white-label</li>
+          <li><span class="check check--gold">✦</span> 10 team seats</li>
+          <li><span class="check check--gold">✦</span> Dedicated account intelligence</li>
+          <li><span class="check check--gold">✦</span> SLA + enterprise support</li>
+        </ul>
+        <button class="price-btn price-btn--gold" onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'})">Join Waitlist — Early Rate</button>
+      </div>
+
+    </div>
+    <p style="text-align:center;font-size:.76rem;color:var(--ink3);margin-top:1.75rem;">
+      ✦ 14-day free trial at launch &nbsp;·&nbsp; No credit card to join waitlist &nbsp;·&nbsp; Founding rates locked 12 months
+    </p>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════╗ -->
+<!-- ║  WAITLIST CTA                                            ║ -->
+<!-- ╚══════════════════════════════════════════════════════════╝ -->
+<section id="waitlist" class="section">
+  <div class="waitlist__orb"></div>
+  <div class="waitlist-inner">
+    <p class="eyebrow eyebrow--center reveal">Early Access</p>
+    <h2 class="section__title reveal">
+      Be a week ahead.<br><span class="hl-teal">Every week.</span>
+    </h2>
+    <p class="section__body reveal" style="margin:0 auto 2.5rem; text-align:center; max-width:480px;">
+      In a world of infinite data, the only true competitive advantage is being a step ahead of the crowd. Join the waitlist — you'll be first to access ClearCurve AI.
+    </p>
+
+    <form class="waitlist-form reveal" id="waitlist-form" novalidate>
+      <input
+        type="email"
+        id="waitlist-email"
+        class="waitlist-input"
+        placeholder="your@email.com"
+        autocomplete="email"
+        required
+      />
+      <button type="submit" class="btn btn--primary">Secure My Spot</button>
+    </form>
+
+    <div class="waitlist-success" id="waitlist-success">
+      <span>🎯 You're on the list.</span>
+      <p>We'll reach out with early access details. Watch your inbox.</p>
+    </div>
+
+    <p class="waitlist-note reveal">No spam. No fluff. Just early access and founding member pricing.</p>
+
+    <div class="signups-badge reveal">
+      <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="var(--teal)" opacity=".3"/><circle cx="4" cy="4" r="1.5" fill="var(--teal)"/></svg>
+      <strong id="signup-count">1,247</strong>&nbsp;people already on the waitlist
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════╗ -->
+<!-- ║  FOUNDER                                                 ║ -->
+<!-- ╚══════════════════════════════════════════════════════════╝ -->
+<section id="founder" class="section">
+  <div class="section__inner">
+    <div class="founder-grid">
+
+      <div class="founder-card reveal">
+        <div class="founder-avatar">O</div>
+        <h3 class="founder-name">Oluwaseun Osunbade</h3>
+        <p class="founder-role">Founder & CEO · Developer</p>
+        <div class="founder-links">
+          <a href="mailto:lumespace@clearcurve.xyz" class="founder-link">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+            Email
+          </a>
+          <a href="https://www.linkedin.com/in/seun-osunbade84/" target="_blank" rel="noopener" class="founder-link">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <div class="founder-text reveal">
+        <p class="eyebrow">The Founder</p>
+        <blockquote>
+          "In a world of infinite data, the only true competitive advantage is being a week ahead of the crowd."
+        </blockquote>
+        <p>Oluwaseun Osunbade is a developer and entrepreneur who saw a glaring gap in how market research was being done. Analytics tools were built to describe the past — impressive dashboards showing what already happened.</p>
+        <p>He believed the real value was in seeing what was <em>about to</em> happen. ClearCurve AI is the answer: an intelligence layer that treats market signals not as a report, but as a prediction engine.</p>
+        <div style="display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem;">
+          <a href="mailto:lumespace@clearcurve.xyz" class="btn btn--ghost" style="font-size:.82rem; padding:.6rem 1.3rem;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
+            lumespace@clearcurve.xyz
+          </a>
+          <a href="https://www.linkedin.com/in/seun-osunbade84/" target="_blank" rel="noopener" class="btn btn--ghost" style="font-size:.82rem; padding:.6rem 1.3rem;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            Connect on LinkedIn
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════╗ -->
+<!-- ║  FAQ                                                     ║ -->
+<!-- ╚══════════════════════════════════════════════════════════╝ -->
+<section id="faq" class="section">
+  <div class="section__inner">
+    <p class="eyebrow">FAQ</p>
+    <h2 class="section__title reveal">Common questions</h2>
+
+    <div class="faq-cols">
+
+      <div class="faq-item reveal">
+        <button class="faq-q"><span>What makes ClearCurve different from Google Trends?</span><span class="faq-chevron">+</span></button>
+        <div class="faq-a">Google Trends shows you what's already trending. ClearCurve identifies signals before they surface on mainstream tools — by tracking niche communities, cross-platform signal propagation, and applying predictive modeling to detect inflection points weeks ahead.</div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q"><span>Who is ClearCurve built for?</span><span class="faq-chevron">+</span></button>
+        <div class="faq-a">Anyone whose success depends on being first: e-commerce founders deciding what to source, content creators choosing their next niche, marketing teams planning campaigns, and enterprise brands mapping product roadmaps.</div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q"><span>How does the Curve-Fidelity Score™ work?</span><span class="faq-chevron">+</span></button>
+        <div class="faq-a">A confidence metric (0–100) assigned to every opportunity. It blends quantitative signals (search volume trajectory, CPC changes, inventory turnover) with qualitative AI reasoning (sentiment analysis, community momentum) to predict trend durability.</div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q"><span>When is ClearCurve launching?</span><span class="faq-chevron">+</span></button>
+        <div class="faq-a">We're building in public and currently accepting early access applications. Founding members will be first to access the platform and receive locked-in pricing for 12 months. Join the waitlist to be notified the moment we open doors.</div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q"><span>What data sources do you use?</span><span class="faq-chevron">+</span></button>
+        <div class="faq-a">Our Nodal Ingestion layer aggregates signals across Reddit, Discord, Instagram, TikTok, YouTube, Amazon, Google Search, Google Shopping, and more — tracking how concepts migrate from early adopters to mainstream demand.</div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q"><span>Is there an API for enterprise use?</span><span class="faq-chevron">+</span></button>
+        <div class="faq-a">Yes. The Command (Enterprise) plan includes full REST API access, enabling you to pipe ClearCurve intelligence directly into your internal tools, product roadmaps, and content calendars. White-label options available for agencies.</div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q"><span>What's the difference between Flash Fad and Structural Shift?</span><span class="faq-chevron">+</span></button>
+        <div class="faq-a">Flash Fads are high-velocity trends with short lifespans — viral moments that collapse quickly. Structural Shifts are sustainable, long-term changes in consumer behavior worth investing in. ClearCurve's AI distinguishes between them so you never waste resources chasing noise.</div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q"><span>How accurate are the predictions?</span><span class="faq-chevron">+</span></button>
+        <div class="faq-a">Our hybrid modeling (Time-Series Forecasting + Transformer-based Extrapolation) is designed to surface opportunities 48 hours to several weeks before mainstream visibility. Accuracy metrics will be published transparently once the platform launches and we accumulate live performance data.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════╗ -->
+<!-- ║  FOOTER                                                  ║ -->
+<!-- ╚══════════════════════════════════════════════════════════╝ -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="nav__logo" style="margin-bottom:.9rem;">
+        <div class="nav__logo-mark">
+          <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+            <rect width="34" height="34" rx="8" fill="#0c1525"/>
+            <path d="M5 26C9 26 11 20 15 16 19 12 21 9 29 5" stroke="#07d9c0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            <circle cx="15" cy="16" r="2.5" fill="#f0c040"/>
+            <rect width="34" height="34" rx="8" fill="none" stroke="rgba(7,217,192,.2)" stroke-width="1"/>
+          </svg>
+        </div>
+        <span class="nav__logo-name">Clear<em>Curve</em> AI</span>
+      </a>
+      <p class="footer-brand__desc">Predictive intelligence for the next market frontier. Find the gaps. Ride the curve.</p>
+      <p class="footer-brand__locale">📍 Building globally · Founder based in Nigeria</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#matrix">Opportunity Matrix</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Use Cases</h4>
+      <ul>
+        <li><a href="#usecases">E-Commerce</a></li>
+        <li><a href="#usecases">Content Creators</a></li>
+        <li><a href="#usecases">Agencies</a></li>
+        <li><a href="#usecases">Enterprise</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#waitlist">Join Waitlist</a></li>
+        <li><a href="mailto:lumespace@clearcurve.xyz">lumespace@clearcurve.xyz</a></li>
+        <li><a href="https://www.linkedin.com/in/seun-osunbade84/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="#founder">About the Founder</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 ClearCurve AI. Built with intention.</p>
+    <p>Founder: <a href="https://www.linkedin.com/in/seun-osunbade84/" target="_blank" rel="noopener">Oluwaseun Osunbade</a></p>
+    <p>All rights reserved · Proprietary & Confidential</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
