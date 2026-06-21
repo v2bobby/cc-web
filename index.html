@@ -14,6 +14,8 @@
   <meta name="theme-color" content="#0E8C7C" />
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23FBFAF7'/><path d='M4 24C10 24 12 18 16 14 20 10 22 9 28 5' fill='none' stroke='%230E8C7C' stroke-width='3' stroke-linecap='round'/><circle cx='16' cy='14' r='2.5' fill='%23B8893B'/></svg>" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="stylesheet" href="./xcurve.css" />
 </head>
 
@@ -50,30 +52,30 @@
     style="min-height:100svh; display:flex; align-items:center; position:relative; overflow:hidden; padding:calc(var(--nav-h) + 2rem) 0 3rem;">
 
     <!-- ambient curve field background -->
-    <svg class="curve-divider" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice"
+    <svg class="curve-divider curve-animated" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice"
       style="position:absolute; inset:0; width:100%; height:100%; opacity:.5;" aria-hidden="true">
       <path d="M-50,650 C 250,650 350,500 500,420 C 650,340 750,200 1000,150 C 1200,110 1350,90 1500,60" fill="none"
-        stroke="#0E8C7C" stroke-width="1.4" opacity=".22" />
+        stroke="#0E8C7C" stroke-width="1.4" opacity=".22" style="--dash-len:2200;" />
       <path d="M-50,750 C 250,760 380,600 550,520 C 720,440 820,300 1050,260 C 1250,225 1380,210 1500,180" fill="none"
-        stroke="#0E8C7C" stroke-width="1" opacity=".14" />
+        stroke="#0E8C7C" stroke-width="1" opacity=".14" style="--dash-len:2200; animation-delay:.6s;" />
       <path d="M-50,560 C 200,520 320,420 460,380 C 640,330 780,260 980,250 C 1180,242 1350,260 1500,300" fill="none"
-        stroke="#B8893B" stroke-width="1" opacity=".16" />
+        stroke="#B8893B" stroke-width="1" opacity=".16" style="--dash-len:2200; animation-delay:.9s;" />
     </svg>
 
-    <div class="wrap g-2-uneven" style="position:relative; z-index:2; gap:3rem; align-items:center;">
+    <div class="wrap g-2-uneven hero-enter" style="position:relative; z-index:2; gap:3rem; align-items:center;">
 
       <div>
-        <div class="eyebrow"><span
+        <div class="eyebrow hero-enter__item" style="--d:0s;"><span class="pulse-dot"
             style="width:6px;height:6px;border-radius:50%;background:var(--teal);display:inline-block;"></span>Predictive
           Intelligence Platform</div>
-        <h1 class="h-display">Data ends here.<br><span class="italic" style="color:var(--teal-deep);">Foresight</span>
-          begins.</h1>
-        <p class="lede" style="margin-top:1.5rem;">
+        <h1 class="h-display hero-enter__item" style="--d:.08s;">Data ends here.<br><span class="italic"
+            style="color:var(--teal-deep);">Foresight</span> begins.</h1>
+        <p class="lede hero-enter__item" style="--d:.16s; margin-top:1.5rem;">
           XCurve AI is not a reporting tool — it's an anticipation engine. We surface
           the inflection points of tomorrow: where explosive consumer demand meets
           near-zero competition, weeks before it's obvious to anyone else.
         </p>
-        <div style="display:flex; gap:1rem; margin-top:2.3rem; flex-wrap:wrap;">
+        <div class="hero-enter__item" style="--d:.24s; display:flex; gap:1rem; margin-top:2.3rem; flex-wrap:wrap;">
           <a href="demo.html" class="btn btn--teal btn--lg">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
@@ -83,8 +85,8 @@
           <a href="investors.html" class="btn btn--ghost btn--lg">For Investors</a>
         </div>
 
-        <div
-          style="display:flex; gap:2.6rem; margin-top:3.5rem; padding-top:2rem; border-top:1px solid var(--line); flex-wrap:wrap;">
+        <div class="hero-enter__item"
+          style="--d:.32s; display:flex; gap:2.6rem; margin-top:3.5rem; padding-top:2rem; border-top:1px solid var(--line); flex-wrap:wrap;">
           <div class="stat-block">
             <span class="val" data-count="48" data-suffix="h">0h</span>
             <span class="lbl">Ahead of the market</span>
@@ -98,27 +100,27 @@
             <span class="lbl">Curve-Fidelity Score™</span>
           </div>
         </div>
-        <p class="fine" style="margin-top:.9rem;">Illustrative figures — performance metrics will be published
-          transparently at launch.</p>
+        <p class="fine hero-enter__item" style="--d:.38s; margin-top:.9rem;">Illustrative figures — performance metrics
+          will be published transparently at launch.</p>
       </div>
 
       <!-- signature curve instrument -->
-      <div class="reveal in card" style="padding:1.75rem; background:var(--card);">
+      <div class="card hero-enter__item" style="--d:.3s; padding:1.75rem; background:var(--card);">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
           <span class="fine" style="text-transform:uppercase;">◉ Live Curve Preview</span>
           <span class="tag">XCurve Zone™</span>
         </div>
-        <svg viewBox="0 0 460 280" style="width:100%; height:auto;" aria-hidden="true">
+        <svg class="curve-animated" viewBox="0 0 460 280" style="width:100%; height:auto;" aria-hidden="true">
           <line x1="40" y1="20" x2="40" y2="240" stroke="#E4E1D8" stroke-width="1" />
           <line x1="40" y1="240" x2="440" y2="240" stroke="#E4E1D8" stroke-width="1" />
           <path d="M40,210 C 90,200 130,160 180,130 C 230,100 280,60 340,42 C 380,30 410,24 440,20" fill="none"
-            stroke="#0E8C7C" stroke-width="2.5" stroke-linecap="round" />
+            stroke="#0E8C7C" stroke-width="2.5" stroke-linecap="round" style="--dash-len:620; animation-delay:.5s;" />
           <path d="M40,230 C 100,225 160,180 220,160 C 280,140 330,150 380,170 C 405,180 425,190 440,196" fill="none"
             stroke="#B8893B" stroke-width="1.6" stroke-dasharray="5 5" stroke-linecap="round" />
-          <circle cx="440" cy="20" r="4.5" fill="#0E8C7C" />
+          <circle cx="440" cy="20" r="4.5" fill="#0E8C7C" class="pulse-dot-svg" />
           <circle cx="440" cy="196" r="4" fill="#B8893B" />
-          <text x="46" y="36" font-family="JetBrains Mono" font-size="9" fill="#8A92A0">DEMAND</text>
-          <text x="350" y="234" font-family="JetBrains Mono" font-size="9" fill="#8A92A0">TIME →</text>
+          <text x="46" y="36" font-family="Satoshi" font-size="9" fill="#8A92A0">DEMAND</text>
+          <text x="350" y="234" font-family="Satoshi" font-size="9" fill="#8A92A0">TIME →</text>
         </svg>
         <div style="display:flex; gap:1.2rem; margin-top:.8rem; flex-wrap:wrap;">
           <span class="fine"><span style="color:var(--teal);">●</span> Structural Shift</span>
@@ -178,25 +180,25 @@
       </div>
 
       <div class="g-4" style="gap:1.5rem;">
-        <div class="reveal" style="border-top:2px solid var(--teal); padding-top:1.2rem;">
+        <div class="reveal step-card" style="border-top:2px solid var(--teal); padding-top:1.2rem;">
           <span class="fine">01 — INGESTION</span>
           <h3 class="h-sub" style="font-size:1.05rem; margin-top:.5rem;">Nodal Ingestion</h3>
           <p class="body-text" style="font-size:.88rem;">Tracks a concept from niche forums to visual platforms to
             retail intent.</p>
         </div>
-        <div class="reveal" style="border-top:2px solid var(--teal); padding-top:1.2rem;">
+        <div class="reveal step-card" style="border-top:2px solid var(--teal); padding-top:1.2rem;">
           <span class="fine">02 — FILTRATION</span>
           <h3 class="h-sub" style="font-size:1.05rem; margin-top:.5rem;">Noise Filtration</h3>
           <p class="body-text" style="font-size:.88rem;">AI separates Flash Fads from Structural Shifts worth betting
             on.</p>
         </div>
-        <div class="reveal" style="border-top:2px solid var(--teal); padding-top:1.2rem;">
+        <div class="reveal step-card" style="border-top:2px solid var(--teal); padding-top:1.2rem;">
           <span class="fine">03 — MODELING</span>
           <h3 class="h-sub" style="font-size:1.05rem; margin-top:.5rem;">Predictive Modeling</h3>
           <p class="body-text" style="font-size:.88rem;">Hybrid forecasting produces a Curve-Fidelity Score™ for every
             opportunity.</p>
         </div>
-        <div class="reveal" style="border-top:2px solid var(--gold); padding-top:1.2rem;">
+        <div class="reveal step-card" style="border-top:2px solid var(--gold); padding-top:1.2rem;">
           <span class="fine" style="color:var(--gold-deep);">04 — DELIVERY</span>
           <h3 class="h-sub" style="font-size:1.05rem; margin-top:.5rem;">Strategic Brief</h3>
           <p class="body-text" style="font-size:.88rem;">A timed, specific, ready-to-execute roadmap — not just a graph.
@@ -204,7 +206,7 @@
         </div>
       </div>
       <div style="margin-top:2.5rem;">
-        <a href="product.html" class="btn btn--ghost">See the full product →</a>
+        <a href="product.html" class="btn btn--ghost link-arrow">See the full product <span>→</span></a>
       </div>
     </div>
   </section>
@@ -221,7 +223,7 @@
           Content creators choosing their next niche. Marketing teams planning a roadmap. XCurve scales with you.</p>
         <a href="product.html#usecases" class="btn btn--teal" style="margin-top:1.5rem;">Explore use cases</a>
       </div>
-      <div class="reveal" style="border-radius:var(--r4); overflow:hidden; aspect-ratio:4/3;">
+      <div class="reveal img-frame" style="border-radius:var(--r4); overflow:hidden; aspect-ratio:4/3;">
         <img src="https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?w=900&q=80&auto=format&fit=crop"
           alt="Team reviewing market data together" style="width:100%; height:100%; object-fit:cover;" loading="lazy" />
       </div>
@@ -264,7 +266,8 @@
         </div>
       </div>
       <div style="margin-top:2.5rem; text-align:center;">
-        <a href="company.html#business-model" class="btn btn--ghost">Read the full business model →</a>
+        <a href="company.html#business-model" class="btn btn--ghost link-arrow">Read the full business model
+          <span>→</span></a>
       </div>
     </div>
   </section>
@@ -338,7 +341,7 @@
     </div>
   </footer>
 
-  <script src="js/shared.js"></script>
+  <script src="./js/shared.js"></script>
 </body>
 
 </html>

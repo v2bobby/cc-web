@@ -1,10 +1,42 @@
 /* ================================================================
-   XCurve AI — shared.js
+   XCurve AI — shared.js v2
    ================================================================ */
 'use strict';
 
 const $  = (sel, ctx = document) => ctx.querySelector(sel);
 const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
+
+/* ── Arm reveal animations ──────────────────────────────────────
+   Content is visible by default in CSS. Only once we know JS is
+   running AND IntersectionObserver exists do we add .js-armed to
+   <html>, which switches .reveal elements to their animated state.
+   This guarantees content is never hidden by a JS failure.       */
+(function armReveal() {
+  if (!('IntersectionObserver' in window)) return; // stay visible, no animation
+  document.documentElement.classList.add('js-armed');
+
+  const els = $$('.reveal');
+  if (!els.length) return;
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    });
+  }, { threshold: .1, rootMargin: '0px 0px -40px 0px' });
+
+  els.forEach((el, i) => {
+    el.style.transitionDelay = ((i % 6) * 60) + 'ms';
+    io.observe(el);
+  });
+
+  // Fail-safe: if for any reason elements haven't revealed within
+  // 2.5s (e.g. observer edge case, layout thrash), force them visible.
+  setTimeout(() => {
+    $$('.reveal:not(.in)').forEach(el => el.classList.add('in'));
+  }, 2500);
+})();
 
 /* ── Navbar ─────────────────────────────────────────────────── */
 (function navbar() {
@@ -39,27 +71,23 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
   });
 })();
 
-/* ── Scroll reveal ──────────────────────────────────────────── */
-(function reveal() {
-  const els = $$('.reveal');
-  if (!els.length) return;
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      e.target.classList.add('in');
-      io.unobserve(e.target);
-    });
-  }, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
-
-  els.forEach((el, i) => {
-    el.style.transitionDelay = ((i % 6) * 60) + 'ms';
-    io.observe(el);
-  });
-})();
-
 /* ── Animated counters ──────────────────────────────────────── */
 (function counters() {
-  $$('[data-count]').forEach(el => {
+  const els = $$('[data-count]');
+  if (!els.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    // fallback: just render final values immediately
+    els.forEach(el => {
+      const target = +el.dataset.count;
+      const suffix = el.dataset.suffix || '';
+      const prefix = el.dataset.prefix || '';
+      el.textContent = prefix + target.toLocaleString() + suffix;
+    });
+    return;
+  }
+
+  els.forEach(el => {
     const target = +el.dataset.count;
     const suffix = el.dataset.suffix || '';
     const prefix = el.dataset.prefix || '';
@@ -83,14 +111,10 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
   });
 })();
 
-/* ── FAQ accordion is handled per-page where present, since some
-   pages need custom max-height animation logic (see inline script) ── */
-
 /* ── Waitlist form (Coming Soon — no real signups) ─────────────*/
 (function waitlist() {
   const form    = $('#waitlist-form');
   const input   = $('#waitlist-email');
-  const role    = $('#waitlist-role');
   const success = $('#waitlist-success');
   if (!form) return;
 
@@ -103,7 +127,9 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
       setTimeout(() => input.classList.remove('input--error'), 1800);
       return;
     }
+    form.style.transition = 'opacity .25s ease, transform .25s ease';
     form.style.opacity = '0';
+    form.style.transform = 'translateY(-6px)';
     form.style.pointerEvents = 'none';
     setTimeout(() => {
       form.style.display = 'none';
@@ -115,9 +141,6 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
   });
 })();
 
-/* ── Tabs are handled per-page (see inline script) to control
-   custom display logic for that page's specific tab-panel layout ── */
-
 /* ── Smooth scroll for in-page anchors ─────────────────────────*/
 $$('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
@@ -127,3 +150,17 @@ $$('a[href^="#"]').forEach(a => {
     if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   });
 });
+
+/* ── Magnetic hover for primary buttons (subtle, premium touch) ─*/
+(function magneticButtons() {
+  if (window.matchMedia('(pointer: coarse)').matches) return; // skip on touch
+  $$('.btn--teal, .btn--primary, .btn--gold').forEach(btn => {
+    btn.addEventListener('mousemove', e => {
+      const r = btn.getBoundingClientRect();
+      const x = (e.clientX - r.left - r.width / 2) * .15;
+      const y = (e.clientY - r.top - r.height / 2) * .25;
+      btn.style.transform = `translate(${x}px, ${y - 2}px)`;
+    });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+  });
+})();

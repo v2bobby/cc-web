@@ -10,6 +10,8 @@
   <meta name="theme-color" content="#0E8C7C" />
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23FBFAF7'/><path d='M4 24C10 24 12 18 16 14 20 10 22 9 28 5' fill='none' stroke='%230E8C7C' stroke-width='3' stroke-linecap='round'/><circle cx='16' cy='14' r='2.5' fill='%23B8893B'/></svg>" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="stylesheet" href="./xcurve.css" />
 </head>
 
@@ -87,47 +89,49 @@
         layer of the business is designed to scale without scaling cost.</p>
 
       <!-- value creation -->
-      <div class="g-2" style="gap:3rem; align-items:center; margin-bottom:5rem;">
-        <div>
-          <span class="fine">01</span>
-          <h3 class="h-sub" style="margin-top:.5rem;">Value Creation</h3>
-          <p class="body-text">XCurve converts unstructured, cross-platform noise into a single decision a customer can
-            act on in minutes. The value isn't the data — it's the time saved between "signal exists" and "I can act on
-            it."</p>
-        </div>
-        <div class="card reveal" style="padding:1.75rem;">
-          <div
-            style="display:flex; justify-content:space-between; font-size:.85rem; padding:.6rem 0; border-bottom:1px solid var(--line);">
-            <span class="body-text" style="margin:0;">Manual research</span><span class="fine">~14 days</span></div>
-          <div
-            style="display:flex; justify-content:space-between; font-size:.85rem; padding:.6rem 0; border-bottom:1px solid var(--line);">
-            <span class="body-text" style="margin:0;">Generic analytics tools</span><span class="fine">~5 days</span>
+      <div class="model-row reveal">
+        <div class="g-2" style="gap:3rem; align-items:center; margin-bottom:5rem;">
+          <div>
+            <span class="fine model-num">01</span>
+            <h3 class="h-sub" style="margin-top:.5rem;">Value Creation</h3>
+            <p class="body-text">XCurve converts unstructured, cross-platform noise into a single decision a customer
+              can act on in minutes. The value isn't the data — it's the time saved between "signal exists" and "I can
+              act on it."</p>
           </div>
-          <div style="display:flex; justify-content:space-between; font-size:.85rem; padding:.6rem 0;"><span
-              style="color:var(--teal-deep); font-weight:600;">XCurve Strategic Brief</span><span class="fine"
-              style="color:var(--teal-deep);">Minutes</span></div>
-          <p class="fine" style="margin-top:1rem;">Illustrative comparison for demonstration purposes.</p>
+          <div class="card" style="padding:1.75rem;">
+            <div
+              style="display:flex; justify-content:space-between; font-size:.85rem; padding:.6rem 0; border-bottom:1px solid var(--line);">
+              <span class="body-text" style="margin:0;">Manual research</span><span class="fine">~14 days</span></div>
+            <div
+              style="display:flex; justify-content:space-between; font-size:.85rem; padding:.6rem 0; border-bottom:1px solid var(--line);">
+              <span class="body-text" style="margin:0;">Generic analytics tools</span><span class="fine">~5 days</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:.85rem; padding:.6rem 0;"><span
+                style="color:var(--teal-deep); font-weight:600;">XCurve Strategic Brief</span><span class="fine"
+                style="color:var(--teal-deep);">Minutes</span></div>
+            <p class="fine" style="margin-top:1rem;">Illustrative comparison for demonstration purposes.</p>
+          </div>
         </div>
       </div>
 
       <!-- revenue streams -->
-      <div style="margin-bottom:5rem;">
-        <span class="fine">02</span>
+      <div class="model-row reveal" style="margin-bottom:5rem;">
+        <span class="fine model-num">02</span>
         <h3 class="h-sub" style="margin-top:.5rem; margin-bottom:1.5rem;">Revenue Streams</h3>
         <div class="g-3" style="gap:1.25rem;">
-          <div class="card reveal" style="padding:1.6rem;">
+          <div class="card" style="padding:1.6rem;">
             <span class="tag">Core</span>
             <h4 style="font-size:1rem; margin:.8rem 0 .4rem;">Tiered SaaS subscriptions</h4>
             <p class="body-text" style="font-size:.85rem;">Scout, Operator, and Command plans — recurring monthly
               revenue scaling with usage and team size.</p>
           </div>
-          <div class="card reveal" style="padding:1.6rem;">
+          <div class="card" style="padding:1.6rem;">
             <span class="tag tag--gold">Expansion</span>
             <h4 style="font-size:1rem; margin:.8rem 0 .4rem;">Usage-based API revenue</h4>
             <p class="body-text" style="font-size:.85rem;">Enterprise customers pay for programmatic access — revenue
               grows with their call volume, not headcount.</p>
           </div>
-          <div class="card reveal" style="padding:1.6rem;">
+          <div class="card" style="padding:1.6rem;">
             <span class="tag">Enterprise</span>
             <h4 style="font-size:1rem; margin:.8rem 0 .4rem;">White-label & custom SLA</h4>
             <p class="body-text" style="font-size:.85rem;">Agencies resell XCurve intelligence under their own brand
@@ -137,16 +141,16 @@
       </div>
 
       <!-- scalability -->
-      <div style="margin-bottom:5rem;">
-        <span class="fine">03</span>
+      <div class="model-row reveal" style="margin-bottom:5rem;">
+        <span class="fine model-num">03</span>
         <h3 class="h-sub" style="margin-top:.5rem; margin-bottom:1.5rem;">Scalability</h3>
         <div class="g-2" style="gap:1.5rem;">
-          <div class="reveal body-text" style="font-size:.92rem;">
+          <div class="body-text" style="font-size:.92rem;">
             <strong style="color:var(--ink);">Zero marginal cost growth.</strong> The ingestion and modeling pipeline
             serves one customer or ten thousand at near-identical infrastructure cost — software economics, not services
             economics.
           </div>
-          <div class="reveal body-text" style="font-size:.92rem;">
+          <div class="body-text" style="font-size:.92rem;">
             <strong style="color:var(--ink);">Solo-preneur to enterprise.</strong> The same core engine serves a single
             creator on the Scout plan and a 10-seat enterprise marketing team on Command — no separate product to build
             per segment.
@@ -155,21 +159,21 @@
       </div>
 
       <!-- competitive moat -->
-      <div style="margin-bottom:5rem;">
-        <span class="fine">04</span>
+      <div class="model-row reveal" style="margin-bottom:5rem;">
+        <span class="fine model-num">04</span>
         <h3 class="h-sub" style="margin-top:.5rem; margin-bottom:1.5rem;">Competitive Moat</h3>
         <div class="g-3" style="gap:1.25rem;">
-          <div class="card reveal" style="padding:1.6rem;">
+          <div class="card" style="padding:1.6rem;">
             <h4 style="font-size:.95rem; margin-bottom:.5rem;">Compounding signal data</h4>
             <p class="body-text" style="font-size:.84rem;">Every scan, every confirmed/denied prediction improves the
               model — the historical dataset becomes harder to replicate the longer XCurve operates.</p>
           </div>
-          <div class="card reveal" style="padding:1.6rem;">
+          <div class="card" style="padding:1.6rem;">
             <h4 style="font-size:.95rem; margin-bottom:.5rem;">Cross-platform correlation IP</h4>
             <p class="body-text" style="font-size:.84rem;">Nodal Ingestion's concept-tracking methodology — not just
               keyword tracking — is the proprietary core, not a wrapper on a single API.</p>
           </div>
-          <div class="card reveal" style="padding:1.6rem;">
+          <div class="card" style="padding:1.6rem;">
             <h4 style="font-size:.95rem; margin-bottom:.5rem;">Switching cost via workflow</h4>
             <p class="body-text" style="font-size:.84rem;">Once briefs are embedded in a customer's sourcing or content
               calendar, the integration itself becomes sticky.</p>
@@ -178,15 +182,15 @@
       </div>
 
       <!-- tech leverage -->
-      <div>
-        <span class="fine">05</span>
+      <div class="model-row reveal">
+        <span class="fine model-num">05</span>
         <h3 class="h-sub" style="margin-top:.5rem; margin-bottom:1.5rem;">Tech Leverage</h3>
         <div class="g-2" style="gap:1.5rem;">
-          <div class="reveal body-text" style="font-size:.92rem;">
+          <div class="body-text" style="font-size:.92rem;">
             <strong style="color:var(--ink);">AI-native cost structure.</strong> A lean team and automated data
             pipelines mean XCurve is built to scale revenue without scaling headcount proportionally.
           </div>
-          <div class="reveal body-text" style="font-size:.92rem;">
+          <div class="body-text" style="font-size:.92rem;">
             <strong style="color:var(--ink);">LLM-powered reasoning, not just statistics.</strong> Integrated reasoning
             models surface the "Why" behind a trend — a layer that's structurally difficult for pure statistical
             competitors to add after the fact.
@@ -257,7 +261,7 @@
     </div>
   </footer>
 
-  <script src="js/shared.js"></script>
+  <script src="./js/shared.js"></script>
 </body>
 
 </html>

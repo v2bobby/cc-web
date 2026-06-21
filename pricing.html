@@ -10,6 +10,8 @@
   <meta name="theme-color" content="#0E8C7C" />
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23FBFAF7'/><path d='M4 24C10 24 12 18 16 14 20 10 22 9 28 5' fill='none' stroke='%230E8C7C' stroke-width='3' stroke-linecap='round'/><circle cx='16' cy='14' r='2.5' fill='%23B8893B'/></svg>" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="stylesheet" href="./xcurve.css" />
 </head>
 
@@ -76,8 +78,8 @@
           <a href="demo.html" class="btn btn--ghost" style="width:100%; justify-content:center;">Join Waitlist</a>
         </div>
 
-        <div class="card reveal"
-          style="padding:2.2rem 1.9rem; border-color:var(--teal); position:relative; box-shadow:0 0 0 1px var(--teal-line);">
+        <div class="card reveal price-featured"
+          style="padding:2.2rem 1.9rem; border-color:var(--teal); position:relative;">
           <div
             style="position:absolute; top:-13px; left:50%; transform:translateX(-50%); background:var(--teal); color:#fff; font-family:var(--f-mono); font-size:.62rem; letter-spacing:.08em; text-transform:uppercase; padding:.25rem .8rem; border-radius:var(--r-pill);">
             Most Popular</div>
@@ -206,9 +208,9 @@
           <button class="faq-q"
             style="width:100%; display:flex; justify-content:space-between; padding:1.1rem 1.3rem; text-align:left;"><span
               style="font-family:var(--f-display); font-weight:700; font-size:.88rem;">When does billing
-              start?</span><span style="color:var(--teal);">+</span></button>
+              start?</span><span class="faq-chevron" style="color:var(--teal);">+</span></button>
           <div class="faq-a"
-            style="max-height:0; overflow:hidden; transition:max-height .35s; font-size:.85rem; color:var(--ink-soft);">
+            style="max-height:0; overflow:hidden; transition:max-height .4s var(--ease-out); font-size:.85rem; color:var(--ink-soft);">
             <p style="padding:0 1.3rem 1.1rem;">Not until public launch. Joining the waitlist requires no payment
               information.</p>
           </div>
@@ -217,9 +219,9 @@
           <button class="faq-q"
             style="width:100%; display:flex; justify-content:space-between; padding:1.1rem 1.3rem; text-align:left;"><span
               style="font-family:var(--f-display); font-weight:700; font-size:.88rem;">Can I switch plans
-              later?</span><span style="color:var(--teal);">+</span></button>
+              later?</span><span class="faq-chevron" style="color:var(--teal);">+</span></button>
           <div class="faq-a"
-            style="max-height:0; overflow:hidden; transition:max-height .35s; font-size:.85rem; color:var(--ink-soft);">
+            style="max-height:0; overflow:hidden; transition:max-height .4s var(--ease-out); font-size:.85rem; color:var(--ink-soft);">
             <p style="padding:0 1.3rem 1.1rem;">Yes — plans will be fully flexible to upgrade or downgrade at any time
               after launch.</p>
           </div>
@@ -228,9 +230,9 @@
           <button class="faq-q"
             style="width:100%; display:flex; justify-content:space-between; padding:1.1rem 1.3rem; text-align:left;"><span
               style="font-family:var(--f-display); font-weight:700; font-size:.88rem;">Is there an annual
-              discount?</span><span style="color:var(--teal);">+</span></button>
+              discount?</span><span class="faq-chevron" style="color:var(--teal);">+</span></button>
           <div class="faq-a"
-            style="max-height:0; overflow:hidden; transition:max-height .35s; font-size:.85rem; color:var(--ink-soft);">
+            style="max-height:0; overflow:hidden; transition:max-height .4s var(--ease-out); font-size:.85rem; color:var(--ink-soft);">
             <p style="padding:0 1.3rem 1.1rem;">We plan to offer annual billing with a discount at launch — final terms
               to be confirmed.</p>
           </div>
@@ -239,9 +241,9 @@
           <button class="faq-q"
             style="width:100%; display:flex; justify-content:space-between; padding:1.1rem 1.3rem; text-align:left;"><span
               style="font-family:var(--f-display); font-weight:700; font-size:.88rem;">What counts as an API
-              call?</span><span style="color:var(--teal);">+</span></button>
+              call?</span><span class="faq-chevron" style="color:var(--teal);">+</span></button>
           <div class="faq-a"
-            style="max-height:0; overflow:hidden; transition:max-height .35s; font-size:.85rem; color:var(--ink-soft);">
+            style="max-height:0; overflow:hidden; transition:max-height .4s var(--ease-out); font-size:.85rem; color:var(--ink-soft);">
             <p style="padding:0 1.3rem 1.1rem;">Each programmatic request to retrieve a score, brief, or matrix dataset.
               Full docs ship with the Command plan.</p>
           </div>
@@ -301,7 +303,7 @@
     </div>
   </footer>
 
-  <script src="js/shared.js"></script>
+  <script src="./js/shared.js"></script>
   <script>
     document.querySelectorAll('.faq-q').forEach(btn => {
       btn.addEventListener('click', () => {
