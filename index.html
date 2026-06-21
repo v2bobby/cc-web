@@ -1,297 +1,347 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>XCurve AI — Predictive Intelligence for the Next Market Frontier</title>
-<meta name="description" content="XCurve AI is an anticipation engine that identifies unsaturated market opportunities before they go mainstream. See the curve before it bends." />
-<meta property="og:title" content="XCurve AI — Predictive Intelligence for the Next Market Frontier" />
-<meta property="og:description" content="Find the gaps. Ride the curve. XCurve AI surfaces where high demand meets zero competition — before anyone else." />
-<meta property="og:type" content="website" />
-<meta name="theme-color" content="#0E8C7C" />
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23FBFAF7'/><path d='M4 24C10 24 12 18 16 14 20 10 22 9 28 5' fill='none' stroke='%230E8C7C' stroke-width='3' stroke-linecap='round'/><circle cx='16' cy='14' r='2.5' fill='%23B8893B'/></svg>" />
-<link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
-<link rel="stylesheet" href="./xcurve.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XCurve AI — Predictive Intelligence for the Next Market Frontier</title>
+  <meta name="description"
+    content="XCurve AI is an anticipation engine that identifies unsaturated market opportunities before they go mainstream. See the curve before it bends." />
+  <meta property="og:title" content="XCurve AI — Predictive Intelligence for the Next Market Frontier" />
+  <meta property="og:description"
+    content="Find the gaps. Ride the curve. XCurve AI surfaces where high demand meets zero competition — before anyone else." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0E8C7C" />
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23FBFAF7'/><path d='M4 24C10 24 12 18 16 14 20 10 22 9 28 5' fill='none' stroke='%230E8C7C' stroke-width='3' stroke-linecap='round'/><circle cx='16' cy='14' r='2.5' fill='%23B8893B'/></svg>" />
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="stylesheet" href="./xcurve.css" />
 </head>
+
 <body>
 
-<!-- ╔══════════════════════════════════════════════════════════╗ -->
-<!-- ║  NAV                                                     ║ -->
-<!-- ╚══════════════════════════════════════════════════════════╝ -->
-<nav id="nav">
-  <a href="index.html" class="nav__logo">
-    <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
-      <rect width="30" height="30" rx="7" fill="#14181D"/>
-      <path d="M4 23C9 23 11 17 14 13.5 17 10 19 8 26 4" stroke="#0E8C7C" stroke-width="2.4" stroke-linecap="round" fill="none"/>
-      <circle cx="14" cy="13.5" r="2.2" fill="#B8893B"/>
-    </svg>
-    <span>X<em>Curve</em></span>
-  </a>
-  <ul class="nav__links" id="nav-links">
-    <li><a href="product.html">Product</a></li>
-    <li><a href="company.html">Company</a></li>
-    <li><a href="investors.html">Investors</a></li>
-    <li><a href="pricing.html">Pricing</a></li>
-    <li><a href="demo.html" class="nav__cta">Launch Demo</a></li>
-  </ul>
-  <button class="nav__burger" id="nav-burger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-</nav>
-
-<!-- ╔══════════════════════════════════════════════════════════╗ -->
-<!-- ║  HERO — full viewport                                    ║ -->
-<!-- ╚══════════════════════════════════════════════════════════╝ -->
-<section style="min-height:100svh; display:flex; align-items:center; position:relative; overflow:hidden; padding:calc(var(--nav-h) + 2rem) 0 3rem;">
-
-  <!-- ambient curve field background -->
-  <svg class="curve-divider curve-animated" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" style="position:absolute; inset:0; width:100%; height:100%; opacity:.5;" aria-hidden="true">
-    <path d="M-50,650 C 250,650 350,500 500,420 C 650,340 750,200 1000,150 C 1200,110 1350,90 1500,60" fill="none" stroke="#0E8C7C" stroke-width="1.4" opacity=".22" style="--dash-len:2200;"/>
-    <path d="M-50,750 C 250,760 380,600 550,520 C 720,440 820,300 1050,260 C 1250,225 1380,210 1500,180" fill="none" stroke="#0E8C7C" stroke-width="1" opacity=".14" style="--dash-len:2200; animation-delay:.6s;"/>
-    <path d="M-50,560 C 200,520 320,420 460,380 C 640,330 780,260 980,250 C 1180,242 1350,260 1500,300" fill="none" stroke="#B8893B" stroke-width="1" opacity=".16" style="--dash-len:2200; animation-delay:.9s;"/>
-  </svg>
-
-  <div class="wrap g-2-uneven hero-enter" style="position:relative; z-index:2; gap:3rem; align-items:center;">
-
-    <div>
-      <div class="eyebrow hero-enter__item" style="--d:0s;"><span class="pulse-dot" style="width:6px;height:6px;border-radius:50%;background:var(--teal);display:inline-block;"></span>Predictive Intelligence Platform</div>
-      <h1 class="h-display hero-enter__item" style="--d:.08s;">Data ends here.<br><span class="italic" style="color:var(--teal-deep);">Foresight</span> begins.</h1>
-      <p class="lede hero-enter__item" style="--d:.16s; margin-top:1.5rem;">
-        XCurve AI is not a reporting tool — it's an anticipation engine. We surface
-        the inflection points of tomorrow: where explosive consumer demand meets
-        near-zero competition, weeks before it's obvious to anyone else.
-      </p>
-      <div class="hero-enter__item" style="--d:.24s; display:flex; gap:1rem; margin-top:2.3rem; flex-wrap:wrap;">
-        <a href="demo.html" class="btn btn--teal btn--lg">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          Launch Demo
-        </a>
-        <a href="investors.html" class="btn btn--ghost btn--lg">For Investors</a>
-      </div>
-
-      <div class="hero-enter__item" style="--d:.32s; display:flex; gap:2.6rem; margin-top:3.5rem; padding-top:2rem; border-top:1px solid var(--line); flex-wrap:wrap;">
-        <div class="stat-block">
-          <span class="val" data-count="48" data-suffix="h">0h</span>
-          <span class="lbl">Ahead of the market</span>
-        </div>
-        <div class="stat-block">
-          <span class="val" data-count="12" data-suffix="+">0+</span>
-          <span class="lbl">Signal source layers</span>
-        </div>
-        <div class="stat-block">
-          <span class="val" data-count="92" data-suffix="/100">0</span>
-          <span class="lbl">Curve-Fidelity Score™</span>
-        </div>
-      </div>
-      <p class="fine hero-enter__item" style="--d:.38s; margin-top:.9rem;">Illustrative figures — performance metrics will be published transparently at launch.</p>
-    </div>
-
-    <!-- signature curve instrument -->
-    <div class="card hero-enter__item" style="--d:.3s; padding:1.75rem; background:var(--card);">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
-        <span class="fine" style="text-transform:uppercase;">◉ Live Curve Preview</span>
-        <span class="tag">XCurve Zone™</span>
-      </div>
-      <svg class="curve-animated" viewBox="0 0 460 280" style="width:100%; height:auto;" aria-hidden="true">
-        <line x1="40" y1="20" x2="40" y2="240" stroke="#E4E1D8" stroke-width="1"/>
-        <line x1="40" y1="240" x2="440" y2="240" stroke="#E4E1D8" stroke-width="1"/>
-        <path d="M40,210 C 90,200 130,160 180,130 C 230,100 280,60 340,42 C 380,30 410,24 440,20" fill="none" stroke="#0E8C7C" stroke-width="2.5" stroke-linecap="round" style="--dash-len:620; animation-delay:.5s;"/>
-        <path d="M40,230 C 100,225 160,180 220,160 C 280,140 330,150 380,170 C 405,180 425,190 440,196" fill="none" stroke="#B8893B" stroke-width="1.6" stroke-dasharray="5 5" stroke-linecap="round"/>
-        <circle cx="440" cy="20" r="4.5" fill="#0E8C7C" class="pulse-dot-svg"/>
-        <circle cx="440" cy="196" r="4" fill="#B8893B"/>
-        <text x="46" y="36" font-family="Satoshi" font-size="9" fill="#8A92A0">DEMAND</text>
-        <text x="350" y="234" font-family="Satoshi" font-size="9" fill="#8A92A0">TIME →</text>
+  <!-- ╔══════════════════════════════════════════════════════════╗ -->
+  <!-- ║  NAV                                                     ║ -->
+  <!-- ╚══════════════════════════════════════════════════════════╝ -->
+  <nav id="nav">
+    <a href="index.html" class="nav__logo">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <rect width="30" height="30" rx="7" fill="#14181D" />
+        <path d="M4 23C9 23 11 17 14 13.5 17 10 19 8 26 4" stroke="#0E8C7C" stroke-width="2.4" stroke-linecap="round"
+          fill="none" />
+        <circle cx="14" cy="13.5" r="2.2" fill="#B8893B" />
       </svg>
-      <div style="display:flex; gap:1.2rem; margin-top:.8rem; flex-wrap:wrap;">
-        <span class="fine"><span style="color:var(--teal);">●</span> Structural Shift</span>
-        <span class="fine"><span style="color:var(--gold);">●</span> Flash Fad</span>
-      </div>
-    </div>
-  </div>
-</section>
+      <span>X<em>Curve</em></span>
+    </a>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="product.html">Product</a></li>
+      <li><a href="company.html">Company</a></li>
+      <li><a href="investors.html">Investors</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <!-- <li><a href="demo.html" class="nav__cta">Launch Demo</a></li> -->
+    </ul>
+    <button class="nav__burger" id="nav-burger"
+      aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </nav>
 
-<!-- ╔══════════════════════════════════════════════════════════╗ -->
-<!-- ║  PROBLEM STRIP                                           ║ -->
-<!-- ╚══════════════════════════════════════════════════════════╝ -->
-<section class="section-pad" style="background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
-  <div class="wrap">
-    <p class="eyebrow eyebrow--center" style="justify-content:center;">The Problem</p>
-    <h2 class="h-section reveal" style="text-align:center; max-width:740px; margin-left:auto; margin-right:auto;">Everyone sees the same data. <span class="italic txt-gold">Nobody sees first.</span></h2>
-    <p class="lede reveal" style="text-align:center; margin:0 auto 3rem;">Most analytics platforms summarize the past. By the time a trend surfaces on a dashboard, thousands of competitors have already moved.</p>
+  <!-- ╔══════════════════════════════════════════════════════════╗ -->
+  <!-- ║  HERO — full viewport                                    ║ -->
+  <!-- ╚══════════════════════════════════════════════════════════╝ -->
+  <section
+    style="min-height:100svh; display:flex; align-items:center; position:relative; overflow:hidden; padding:calc(var(--nav-h) + 2rem) 0 3rem;">
 
-    <div class="g-3" style="gap:1.25rem;">
-      <div class="card reveal" style="padding:1.8rem;">
-        <div class="tag" style="background:var(--red-tint); color:var(--red); margin-bottom:1rem;">Reactive</div>
-        <h3 class="h-sub" style="font-size:1.1rem;">Dashboards show history</h3>
-        <p class="body-text" style="font-size:.92rem;">By the time something appears on a chart, the window to act on it has already closed.</p>
-      </div>
-      <div class="card reveal" style="padding:1.8rem;">
-        <div class="tag tag--gold" style="margin-bottom:1rem;">Misleading</div>
-        <h3 class="h-sub" style="font-size:1.1rem;">Fads fool operators</h3>
-        <p class="body-text" style="font-size:.92rem;">Viral moments lure capital into trends that collapse in weeks, burning time and budget.</p>
-      </div>
-      <div class="card reveal" style="padding:1.8rem; border-color:var(--teal-line);">
-        <div class="tag" style="margin-bottom:1rem;">XCurve</div>
-        <h3 class="h-sub" style="font-size:1.1rem;">We solve both</h3>
-        <p class="body-text" style="font-size:.92rem;">Predictive signals separate durable trends from noise — surfaced weeks before saturation.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- ambient curve field background -->
+    <svg class="curve-divider curve-animated" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice"
+      style="position:absolute; inset:0; width:100%; height:100%; opacity:.5;" aria-hidden="true">
+      <path d="M-50,650 C 250,650 350,500 500,420 C 650,340 750,200 1000,150 C 1200,110 1350,90 1500,60" fill="none"
+        stroke="#0E8C7C" stroke-width="1.4" opacity=".22" style="--dash-len:2200;" />
+      <path d="M-50,750 C 250,760 380,600 550,520 C 720,440 820,300 1050,260 C 1250,225 1380,210 1500,180" fill="none"
+        stroke="#0E8C7C" stroke-width="1" opacity=".14" style="--dash-len:2200; animation-delay:.6s;" />
+      <path d="M-50,560 C 200,520 320,420 460,380 C 640,330 780,260 980,250 C 1180,242 1350,260 1500,300" fill="none"
+        stroke="#B8893B" stroke-width="1" opacity=".16" style="--dash-len:2200; animation-delay:.9s;" />
+    </svg>
 
-<!-- ╔══════════════════════════════════════════════════════════╗ -->
-<!-- ║  HOW IT WORKS (real sequence — numbers justified)        ║ -->
-<!-- ╚══════════════════════════════════════════════════════════╝ -->
-<section class="section-pad">
-  <div class="wrap">
-    <div class="g-2" style="gap:3rem; align-items:end; margin-bottom:3.5rem;">
+    <div class="wrap g-2-uneven hero-enter" style="position:relative; z-index:2; gap:3rem; align-items:center;">
+
       <div>
-        <p class="eyebrow">The Engine</p>
-        <h2 class="h-section reveal">From raw signal to actionable intelligence</h2>
-      </div>
-      <p class="lede reveal">Four sequential layers — each step depends on the last — turning noisy, cross-platform chatter into a single confidence score.</p>
-    </div>
+        <div class="eyebrow hero-enter__item" style="--d:0s;"><span class="pulse-dot"
+            style="width:6px;height:6px;border-radius:50%;background:var(--teal);display:inline-block;"></span>Predictive
+          Intelligence Platform</div>
+        <h1 class="h-display hero-enter__item" style="--d:.08s;">Data ends here.<br><span class="italic"
+            style="color:var(--teal-deep);">Foresight</span> begins.</h1>
+        <p class="lede hero-enter__item" style="--d:.16s; margin-top:1.5rem;">
+          XCurve AI is not a reporting tool — it's an anticipation engine. We surface
+          the inflection points of tomorrow: where explosive consumer demand meets
+          near-zero competition, weeks before it's obvious to anyone else.
+        </p>
+        <div class="hero-enter__item" style="--d:.24s; display:flex; gap:1rem; margin-top:2.3rem; flex-wrap:wrap;">
+          <a href="demo.html" class="btn btn--teal btn--lg">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+            </svg>
+            Launch Demo
+          </a>
+          <a href="investors.html" class="btn btn--ghost btn--lg">For Investors</a>
+        </div>
 
-    <div class="g-4" style="gap:1.5rem;">
-      <div class="reveal step-card" style="border-top:2px solid var(--teal); padding-top:1.2rem;">
-        <span class="fine">01 — INGESTION</span>
-        <h3 class="h-sub" style="font-size:1.05rem; margin-top:.5rem;">Nodal Ingestion</h3>
-        <p class="body-text" style="font-size:.88rem;">Tracks a concept from niche forums to visual platforms to retail intent.</p>
+        <div class="hero-enter__item"
+          style="--d:.32s; display:flex; gap:2.6rem; margin-top:3.5rem; padding-top:2rem; border-top:1px solid var(--line); flex-wrap:wrap;">
+          <div class="stat-block">
+            <span class="val" data-count="48" data-suffix="h">0h</span>
+            <span class="lbl">Ahead of the market</span>
+          </div>
+          <div class="stat-block">
+            <span class="val" data-count="12" data-suffix="+">0+</span>
+            <span class="lbl">Signal source layers</span>
+          </div>
+          <div class="stat-block">
+            <span class="val" data-count="92" data-suffix="/100">0</span>
+            <span class="lbl">Curve-Fidelity Score™</span>
+          </div>
+        </div>
+        <p class="fine hero-enter__item" style="--d:.38s; margin-top:.9rem;">Illustrative figures — performance metrics
+          will be published transparently at launch.</p>
       </div>
-      <div class="reveal step-card" style="border-top:2px solid var(--teal); padding-top:1.2rem;">
-        <span class="fine">02 — FILTRATION</span>
-        <h3 class="h-sub" style="font-size:1.05rem; margin-top:.5rem;">Noise Filtration</h3>
-        <p class="body-text" style="font-size:.88rem;">AI separates Flash Fads from Structural Shifts worth betting on.</p>
-      </div>
-      <div class="reveal step-card" style="border-top:2px solid var(--teal); padding-top:1.2rem;">
-        <span class="fine">03 — MODELING</span>
-        <h3 class="h-sub" style="font-size:1.05rem; margin-top:.5rem;">Predictive Modeling</h3>
-        <p class="body-text" style="font-size:.88rem;">Hybrid forecasting produces a Curve-Fidelity Score™ for every opportunity.</p>
-      </div>
-      <div class="reveal step-card" style="border-top:2px solid var(--gold); padding-top:1.2rem;">
-        <span class="fine" style="color:var(--gold-deep);">04 — DELIVERY</span>
-        <h3 class="h-sub" style="font-size:1.05rem; margin-top:.5rem;">Strategic Brief</h3>
-        <p class="body-text" style="font-size:.88rem;">A timed, specific, ready-to-execute roadmap — not just a graph.</p>
-      </div>
-    </div>
-    <div style="margin-top:2.5rem;">
-      <a href="product.html" class="btn btn--ghost link-arrow">See the full product <span>→</span></a>
-    </div>
-  </div>
-</section>
 
-<!-- ╔══════════════════════════════════════════════════════════╗ -->
-<!-- ║  USE CASE — human photography                            ║ -->
-<!-- ╚══════════════════════════════════════════════════════════╝ -->
-<section class="section-pad" style="background:var(--ink); color:var(--paper);">
-  <div class="wrap g-2" style="gap:4rem; align-items:center;">
-    <div>
-      <p class="eyebrow" style="color:var(--teal);">Built for whoever moves markets</p>
-      <h2 class="h-section reveal" style="color:#fff;">From solo operators to enterprise teams</h2>
-      <p class="lede reveal" style="color:rgba(251,250,247,.65);">E-commerce founders deciding what to source next. Content creators choosing their next niche. Marketing teams planning a roadmap. XCurve scales with you.</p>
-      <a href="product.html#usecases" class="btn btn--teal" style="margin-top:1.5rem;">Explore use cases</a>
-    </div>
-    <div class="reveal img-frame" style="border-radius:var(--r4); overflow:hidden; aspect-ratio:4/3;">
-      <img src="https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?w=900&q=80&auto=format&fit=crop" alt="Team reviewing market data together" style="width:100%; height:100%; object-fit:cover;" loading="lazy"/>
-    </div>
-  </div>
-</section>
-
-<!-- ╔══════════════════════════════════════════════════════════╗ -->
-<!-- ║  BUSINESS MODEL TEASER                                   ║ -->
-<!-- ╚══════════════════════════════════════════════════════════╝ -->
-<section class="section-pad">
-  <div class="wrap">
-    <p class="eyebrow eyebrow--center" style="justify-content:center;">The Business</p>
-    <h2 class="h-section reveal" style="text-align:center; max-width:680px; margin:0 auto 3rem;">A digital-native model built to compound</h2>
-
-    <div class="g-4" style="gap:1.25rem;">
-      <div class="card reveal" style="padding:1.6rem;">
-        <span class="fine">REVENUE</span>
-        <h3 class="h-sub" style="font-size:1rem; margin-top:.5rem;">Tiered SaaS subscriptions</h3>
-        <p class="body-text" style="font-size:.85rem;">Scout, Operator, and Command plans plus usage-based API revenue.</p>
-      </div>
-      <div class="card reveal" style="padding:1.6rem;">
-        <span class="fine">MOAT</span>
-        <h3 class="h-sub" style="font-size:1rem; margin-top:.5rem;">Compounding signal data</h3>
-        <p class="body-text" style="font-size:.85rem;">Every scan improves the model. The dataset gets harder to replicate over time.</p>
-      </div>
-      <div class="card reveal" style="padding:1.6rem;">
-        <span class="fine">SCALE</span>
-        <h3 class="h-sub" style="font-size:1rem; margin-top:.5rem;">Zero marginal cost growth</h3>
-        <p class="body-text" style="font-size:.85rem;">Software-native delivery — the same engine serves one user or one thousand.</p>
-      </div>
-      <div class="card reveal" style="padding:1.6rem;">
-        <span class="fine">LEVERAGE</span>
-        <h3 class="h-sub" style="font-size:1rem; margin-top:.5rem;">AI-native cost structure</h3>
-        <p class="body-text" style="font-size:.85rem;">Lean team, automated pipelines — built to scale without scaling headcount.</p>
+      <!-- signature curve instrument -->
+      <div class="card hero-enter__item" style="--d:.3s; padding:1.75rem; background:var(--card);">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+          <span class="fine" style="text-transform:uppercase;">◉ Live Curve Preview</span>
+          <span class="tag">XCurve Zone™</span>
+        </div>
+        <svg class="curve-animated" viewBox="0 0 460 280" style="width:100%; height:auto;" aria-hidden="true">
+          <line x1="40" y1="20" x2="40" y2="240" stroke="#E4E1D8" stroke-width="1" />
+          <line x1="40" y1="240" x2="440" y2="240" stroke="#E4E1D8" stroke-width="1" />
+          <path d="M40,210 C 90,200 130,160 180,130 C 230,100 280,60 340,42 C 380,30 410,24 440,20" fill="none"
+            stroke="#0E8C7C" stroke-width="2.5" stroke-linecap="round" style="--dash-len:620; animation-delay:.5s;" />
+          <path d="M40,230 C 100,225 160,180 220,160 C 280,140 330,150 380,170 C 405,180 425,190 440,196" fill="none"
+            stroke="#B8893B" stroke-width="1.6" stroke-dasharray="5 5" stroke-linecap="round" />
+          <circle cx="440" cy="20" r="4.5" fill="#0E8C7C" class="pulse-dot-svg" />
+          <circle cx="440" cy="196" r="4" fill="#B8893B" />
+          <text x="46" y="36" font-family="Satoshi" font-size="9" fill="#8A92A0">DEMAND</text>
+          <text x="350" y="234" font-family="Satoshi" font-size="9" fill="#8A92A0">TIME →</text>
+        </svg>
+        <div style="display:flex; gap:1.2rem; margin-top:.8rem; flex-wrap:wrap;">
+          <span class="fine"><span style="color:var(--teal);">●</span> Structural Shift</span>
+          <span class="fine"><span style="color:var(--gold);">●</span> Flash Fad</span>
+        </div>
       </div>
     </div>
-    <div style="margin-top:2.5rem; text-align:center;">
-      <a href="company.html#business-model" class="btn btn--ghost link-arrow">Read the full business model <span>→</span></a>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ╔══════════════════════════════════════════════════════════╗ -->
-<!-- ║  FINAL CTA                                               ║ -->
-<!-- ╚══════════════════════════════════════════════════════════╝ -->
-<section class="section-pad" style="background:var(--teal-tint); border-top:1px solid var(--teal-line);">
-  <div class="wrap" style="text-align:center; max-width:620px; margin:0 auto;">
-    <h2 class="h-section reveal">Be a week ahead. <span class="italic txt-teal">Every week.</span></h2>
-    <p class="lede reveal" style="margin:0 auto 2rem; text-align:center;">See the live demo, or join the waitlist to be first when XCurve opens its doors.</p>
-    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
-      <a href="demo.html" class="btn btn--teal btn--lg">Launch Demo</a>
-      <a href="pricing.html" class="btn btn--ghost btn--lg">View Pricing</a>
-    </div>
-  </div>
-</section>
+  <!-- ╔══════════════════════════════════════════════════════════╗ -->
+  <!-- ║  PROBLEM STRIP                                           ║ -->
+  <!-- ╚══════════════════════════════════════════════════════════╝ -->
+  <section class="section-pad"
+    style="background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--center" style="justify-content:center;">The Problem</p>
+      <h2 class="h-section reveal" style="text-align:center; max-width:740px; margin-left:auto; margin-right:auto;">
+        Everyone sees the same data. <span class="italic txt-gold">Nobody sees first.</span></h2>
+      <p class="lede reveal" style="text-align:center; margin:0 auto 3rem;">Most analytics platforms summarize the past.
+        By the time a trend surfaces on a dashboard, thousands of competitors have already moved.</p>
 
-<!-- ╔══════════════════════════════════════════════════════════╗ -->
-<!-- ║  FOOTER                                                  ║ -->
-<!-- ╚══════════════════════════════════════════════════════════╝ -->
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
+      <div class="g-3" style="gap:1.25rem;">
+        <div class="card reveal" style="padding:1.8rem;">
+          <div class="tag" style="background:var(--red-tint); color:var(--red); margin-bottom:1rem;">Reactive</div>
+          <h3 class="h-sub" style="font-size:1.1rem;">Dashboards show history</h3>
+          <p class="body-text" style="font-size:.92rem;">By the time something appears on a chart, the window to act on
+            it has already closed.</p>
+        </div>
+        <div class="card reveal" style="padding:1.8rem;">
+          <div class="tag tag--gold" style="margin-bottom:1rem;">Misleading</div>
+          <h3 class="h-sub" style="font-size:1.1rem;">Fads fool operators</h3>
+          <p class="body-text" style="font-size:.92rem;">Viral moments lure capital into trends that collapse in weeks,
+            burning time and budget.</p>
+        </div>
+        <div class="card reveal" style="padding:1.8rem; border-color:var(--teal-line);">
+          <div class="tag" style="margin-bottom:1rem;">XCurve</div>
+          <h3 class="h-sub" style="font-size:1.1rem;">We solve both</h3>
+          <p class="body-text" style="font-size:.92rem;">Predictive signals separate durable trends from noise —
+            surfaced weeks before saturation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════════════════════════════════════╗ -->
+  <!-- ║  HOW IT WORKS (real sequence — numbers justified)        ║ -->
+  <!-- ╚══════════════════════════════════════════════════════════╝ -->
+  <section class="section-pad">
+    <div class="wrap">
+      <div class="g-2" style="gap:3rem; align-items:end; margin-bottom:3.5rem;">
+        <div>
+          <p class="eyebrow">The Engine</p>
+          <h2 class="h-section reveal">From raw signal to actionable intelligence</h2>
+        </div>
+        <p class="lede reveal">Four sequential layers — each step depends on the last — turning noisy, cross-platform
+          chatter into a single confidence score.</p>
+      </div>
+
+      <div class="g-4" style="gap:1.5rem;">
+        <div class="reveal step-card" style="border-top:2px solid var(--teal); padding-top:1.2rem;">
+          <span class="fine">01 — INGESTION</span>
+          <h3 class="h-sub" style="font-size:1.05rem; margin-top:.5rem;">Nodal Ingestion</h3>
+          <p class="body-text" style="font-size:.88rem;">Tracks a concept from niche forums to visual platforms to
+            retail intent.</p>
+        </div>
+        <div class="reveal step-card" style="border-top:2px solid var(--teal); padding-top:1.2rem;">
+          <span class="fine">02 — FILTRATION</span>
+          <h3 class="h-sub" style="font-size:1.05rem; margin-top:.5rem;">Noise Filtration</h3>
+          <p class="body-text" style="font-size:.88rem;">AI separates Flash Fads from Structural Shifts worth betting
+            on.</p>
+        </div>
+        <div class="reveal step-card" style="border-top:2px solid var(--teal); padding-top:1.2rem;">
+          <span class="fine">03 — MODELING</span>
+          <h3 class="h-sub" style="font-size:1.05rem; margin-top:.5rem;">Predictive Modeling</h3>
+          <p class="body-text" style="font-size:.88rem;">Hybrid forecasting produces a Curve-Fidelity Score™ for every
+            opportunity.</p>
+        </div>
+        <div class="reveal step-card" style="border-top:2px solid var(--gold); padding-top:1.2rem;">
+          <span class="fine" style="color:var(--gold-deep);">04 — DELIVERY</span>
+          <h3 class="h-sub" style="font-size:1.05rem; margin-top:.5rem;">Strategic Brief</h3>
+          <p class="body-text" style="font-size:.88rem;">A timed, specific, ready-to-execute roadmap — not just a graph.
+          </p>
+        </div>
+      </div>
+      <div style="margin-top:2.5rem;">
+        <a href="product.html" class="btn btn--ghost link-arrow">See the full product <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════════════════════════════════════╗ -->
+  <!-- ║  USE CASE — human photography                            ║ -->
+  <!-- ╚══════════════════════════════════════════════════════════╝ -->
+  <section class="section-pad" style="background:var(--ink); color:var(--paper);">
+    <div class="wrap g-2" style="gap:4rem; align-items:center;">
       <div>
-        <a href="index.html" class="footer-brand">
-          <svg width="28" height="28" viewBox="0 0 30 30" fill="none"><rect width="30" height="30" rx="7" fill="#0E8C7C"/><path d="M4 23C9 23 11 17 14 13.5 17 10 19 8 26 4" stroke="#FBFAF7" stroke-width="2.4" stroke-linecap="round" fill="none"/><circle cx="14" cy="13.5" r="2.2" fill="#B8893B"/></svg>
-          X<em>Curve</em>
-        </a>
-        <p class="footer-desc">Predictive intelligence for the next market frontier. Find the gaps. Ride the curve.</p>
-        <p class="footer-locale">Building globally · Founder based in Nigeria</p>
+        <p class="eyebrow" style="color:var(--teal);">Built for whoever moves markets</p>
+        <h2 class="h-section reveal" style="color:#fff;">From solo operators to enterprise teams</h2>
+        <p class="lede reveal" style="color:rgba(251,250,247,.65);">E-commerce founders deciding what to source next.
+          Content creators choosing their next niche. Marketing teams planning a roadmap. XCurve scales with you.</p>
+        <a href="product.html#usecases" class="btn btn--teal" style="margin-top:1.5rem;">Explore use cases</a>
       </div>
-      <div class="footer-col">
-        <h4>Platform</h4>
-        <ul>
-          <li><a href="product.html">Product</a></li>
-          <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="demo.html">Launch Demo</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="company.html">About</a></li>
-          <li><a href="company.html#business-model">Business Model</a></li>
-          <li><a href="investors.html">Investors</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <ul>
-          <li><a href="mailto:onyeka.ofoegbu@xcurve.co">onyeka.ofoegbu@xcurve.co</a></li>
-          <li><a href="https://www.linkedin.com/in/onyeka-ofoegbu-446b8630a/" target="_blank" rel="noopener">LinkedIn</a></li>
-        </ul>
+      <div class="reveal img-frame" style="border-radius:var(--r4); overflow:hidden; aspect-ratio:4/3;">
+        <img src="https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?w=900&q=80&auto=format&fit=crop"
+          alt="Team reviewing market data together" style="width:100%; height:100%; object-fit:cover;" loading="lazy" />
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 XCurve AI. Built with intention.</p>
-      <p>Founder: <a href="https://www.linkedin.com/in/onyeka-ofoegbu-446b8630a/" target="_blank" rel="noopener">Onyeka Ofoegbu</a></p>
-      <p>Proprietary &amp; Confidential</p>
-    </div>
-  </div>
-</footer>
+  </section>
 
-<script src="./shared.js"></script>
+  <!-- ╔══════════════════════════════════════════════════════════╗ -->
+  <!-- ║  BUSINESS MODEL TEASER                                   ║ -->
+  <!-- ╚══════════════════════════════════════════════════════════╝ -->
+  <section class="section-pad">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--center" style="justify-content:center;">The Business</p>
+      <h2 class="h-section reveal" style="text-align:center; max-width:680px; margin:0 auto 3rem;">A digital-native
+        model built to compound</h2>
+
+      <div class="g-4" style="gap:1.25rem;">
+        <div class="card reveal" style="padding:1.6rem;">
+          <span class="fine">REVENUE</span>
+          <h3 class="h-sub" style="font-size:1rem; margin-top:.5rem;">Tiered SaaS subscriptions</h3>
+          <p class="body-text" style="font-size:.85rem;">Scout, Operator, and Command plans plus usage-based API
+            revenue.</p>
+        </div>
+        <div class="card reveal" style="padding:1.6rem;">
+          <span class="fine">MOAT</span>
+          <h3 class="h-sub" style="font-size:1rem; margin-top:.5rem;">Compounding signal data</h3>
+          <p class="body-text" style="font-size:.85rem;">Every scan improves the model. The dataset gets harder to
+            replicate over time.</p>
+        </div>
+        <div class="card reveal" style="padding:1.6rem;">
+          <span class="fine">SCALE</span>
+          <h3 class="h-sub" style="font-size:1rem; margin-top:.5rem;">Zero marginal cost growth</h3>
+          <p class="body-text" style="font-size:.85rem;">Software-native delivery — the same engine serves one user or
+            one thousand.</p>
+        </div>
+        <div class="card reveal" style="padding:1.6rem;">
+          <span class="fine">LEVERAGE</span>
+          <h3 class="h-sub" style="font-size:1rem; margin-top:.5rem;">AI-native cost structure</h3>
+          <p class="body-text" style="font-size:.85rem;">Lean team, automated pipelines — built to scale without scaling
+            headcount.</p>
+        </div>
+      </div>
+      <div style="margin-top:2.5rem; text-align:center;">
+        <a href="company.html#business-model" class="btn btn--ghost link-arrow">Read the full business model
+          <span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════════════════════════════════════╗ -->
+  <!-- ║  FINAL CTA                                               ║ -->
+  <!-- ╚══════════════════════════════════════════════════════════╝ -->
+  <section class="section-pad" style="background:var(--teal-tint); border-top:1px solid var(--teal-line);">
+    <div class="wrap" style="text-align:center; max-width:620px; margin:0 auto;">
+      <h2 class="h-section reveal">Be a week ahead. <span class="italic txt-teal">Every week.</span></h2>
+      <p class="lede reveal" style="margin:0 auto 2rem; text-align:center;">See the live demo, or join the waitlist to
+        be first when XCurve opens its doors.</p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <a href="demo.html" class="btn btn--teal btn--lg">Launch Demo</a>
+        <a href="pricing.html" class="btn btn--ghost btn--lg">View Pricing</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ╔══════════════════════════════════════════════════════════╗ -->
+  <!-- ║  FOOTER                                                  ║ -->
+  <!-- ╚══════════════════════════════════════════════════════════╝ -->
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="footer-brand">
+            <svg width="28" height="28" viewBox="0 0 30 30" fill="none">
+              <rect width="30" height="30" rx="7" fill="#0E8C7C" />
+              <path d="M4 23C9 23 11 17 14 13.5 17 10 19 8 26 4" stroke="#FBFAF7" stroke-width="2.4"
+                stroke-linecap="round" fill="none" />
+              <circle cx="14" cy="13.5" r="2.2" fill="#B8893B" />
+            </svg>
+            X<em>Curve</em>
+          </a>
+          <p class="footer-desc">Predictive intelligence for the next market frontier. Find the gaps. Ride the curve.
+          </p>
+          <p class="footer-locale">Building globally · Founder based in Nigeria</p>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="demo.html">Launch Demo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="company.html">About</a></li>
+            <li><a href="company.html#business-model">Business Model</a></li>
+            <li><a href="investors.html">Investors</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:onyeka.ofoegbu@xcurve.co">onyeka.ofoegbu@xcurve.co</a></li>
+            <li><a href="https://www.linkedin.com/in/onyeka-ofoegbu-446b8630a/" target="_blank"
+                rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 XCurve AI. Built with intention.</p>
+        <p>Founder: <a href="https://www.linkedin.com/in/onyeka-ofoegbu-446b8630a/" target="_blank"
+            rel="noopener">Onyeka Ofoegbu</a></p>
+        <p>Proprietary &amp; Confidential</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./shared.js"></script>
 </body>
+
 </html>
