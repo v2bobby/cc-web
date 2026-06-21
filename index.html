@@ -1,1601 +1,245 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ClearCurve AI — Predictive Intelligence for the Next Market Frontier</title>
-  <meta name="description" content="ClearCurve AI is an anticipation engine that identifies unsaturated market opportunities before they go mainstream. Be weeks ahead of your competition." />
-  <meta property="og:title"       content="ClearCurve AI — Predictive Intelligence" />
-  <meta property="og:description" content="Find the gaps. Ride the curve. ClearCurve AI surfaces where high demand meets zero competition — before anyone else." />
-  <meta property="og:type"        content="website" />
-  <meta name="theme-color"        content="#07d9c0" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23050c16'/><path d='M4 24C10 24 12 18 16 14 20 10 22 8 28 4' fill='none' stroke='%2307d9c0' stroke-width='3' stroke-linecap='round'/><circle cx='16' cy='14' r='2.5' fill='%23f0c040'/></svg>" />
-  <style>
-/* ================================================================
-   ClearCurve AI — style.css  ·  Peak Premium Tech Landing Page
-   Aesthetic: Intelligence Noir — deep obsidian, surgical teal,
-   warm signal gold. Sharp geometry. Purposeful motion.
-   ================================================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=GeistMono:wght@400;500&display=swap');
-
-/* ── Tokens ─────────────────────────────────────────────────── */
-:root {
-  --void:     #020509;
-  --deep:     #050c16;
-  --base:     #080f1d;
-  --surface:  #0c1525;
-  --raised:   #101e32;
-  --overlay:  #142540;
-
-  --teal:         #07d9c0;
-  --teal-hi:      #3fffea;
-  --teal-lo:      #059e8c;
-  --teal-alpha12: rgba(7,217,192,.12);
-  --teal-alpha06: rgba(7,217,192,.06);
-  --teal-alpha20: rgba(7,217,192,.20);
-  --teal-alpha35: rgba(7,217,192,.35);
-
-  --gold:         #f0c040;
-  --gold-hi:      #ffe082;
-  --gold-lo:      #c49a1e;
-  --gold-alpha10: rgba(240,192,64,.10);
-  --gold-alpha05: rgba(240,192,64,.05);
-
-  --red:          #f05060;
-  --red-alpha10:  rgba(240,80,96,.10);
-
-  --ink:    #e8eeff;
-  --ink2:   #7e96bb;
-  --ink3:   #3a4e6a;
-  --ink4:   #1e2e44;
-
-  --border:    rgba(7,217,192,.10);
-  --border-md: rgba(7,217,192,.20);
-  --border-hi: rgba(7,217,192,.38);
-
-  --f-display: 'Bricolage Grotesque', sans-serif;
-  --f-body:    'Instrument Sans', sans-serif;
-  --f-mono:    'GeistMono', 'Courier New', monospace;
-
-  --r1: 6px;  --r2: 12px;  --r3: 18px;
-  --r4: 28px; --r5: 40px;  --r6: 100px;
-
-  --ease:    cubic-bezier(.4,0,.2,1);
-  --spring:  cubic-bezier(.34,1.56,.64,1);
-  --exit:    cubic-bezier(.4,0,1,1);
-
-  --t1: .15s; --t2: .28s; --t3: .5s; --t4: .8s;
-
-  --max-w: 1160px;
-  --nav-h: 68px;
-}
-
-/* ── Reset ──────────────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
-body {
-  font-family: var(--f-body);
-  background: var(--void);
-  color: var(--ink);
-  line-height: 1.65;
-  overflow-x: hidden;
-  cursor: none;
-  -webkit-font-smoothing: antialiased;
-}
-::selection { background: var(--teal); color: var(--void); }
-a { color: inherit; text-decoration: none; }
-img, svg { display: block; max-width: 100%; }
-button { cursor: pointer; border: 0; background: none; font-family: inherit; color: inherit; }
-
-/* ── Grain overlay ──────────────────────────────────────────── */
-body::after {
-  content: '';
-  position: fixed; inset: 0;
-  pointer-events: none; z-index: 9990;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='400' height='400' filter='url(%23g)' opacity='.028'/%3E%3C/svg%3E");
-  opacity: 1;
-}
-
-/* ── Custom cursor ──────────────────────────────────────────── */
-#cc-cursor {
-  position: fixed; top: 0; left: 0;
-  width: 10px; height: 10px;
-  background: var(--teal-hi);
-  border-radius: 50%;
-  pointer-events: none; z-index: 9999;
-  transform: translate(-50%,-50%);
-  transition: width var(--t1), height var(--t1), background var(--t1), opacity var(--t1);
-  mix-blend-mode: screen;
-  will-change: transform;
-}
-#cc-cursor-ring {
-  position: fixed; top: 0; left: 0;
-  width: 36px; height: 36px;
-  border: 1px solid rgba(7,217,192,.45);
-  border-radius: 50%;
-  pointer-events: none; z-index: 9998;
-  transform: translate(-50%,-50%);
-  will-change: transform;
-  transition: width var(--t2) var(--ease),
-              height var(--t2) var(--ease),
-              border-color var(--t2),
-              opacity var(--t2);
-}
-.is-hovering #cc-cursor       { width: 14px; height: 14px; background: var(--gold-hi); }
-.is-hovering #cc-cursor-ring  { width: 48px; height: 48px; border-color: rgba(240,192,64,.35); }
-@media (pointer: coarse) {
-  #cc-cursor, #cc-cursor-ring { display: none; }
-  body { cursor: auto; }
-}
-
-/* ── Navigation ─────────────────────────────────────────────── */
-#nav {
-  position: fixed; top: 0; left: 0; right: 0;
-  height: var(--nav-h);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 2.5rem;
-  z-index: 1000;
-  transition: background var(--t3) var(--ease),
-              border-color var(--t3) var(--ease),
-              backdrop-filter var(--t3);
-  border-bottom: 1px solid transparent;
-}
-#nav.nav--scrolled {
-  background: rgba(2,5,9,.88);
-  backdrop-filter: blur(28px) saturate(160%);
-  border-color: var(--border);
-}
-
-.nav__logo {
-  display: flex; align-items: center; gap: .6rem;
-  font-family: var(--f-display);
-  font-weight: 700; font-size: 1.15rem;
-  letter-spacing: -.025em;
-  color: var(--ink);
-}
-.nav__logo-mark {
-  width: 34px; height: 34px;
-  display: grid; place-items: center;
-}
-.nav__logo-name em { font-style: normal; color: var(--teal); }
-
-.nav__links {
-  display: flex; align-items: center; gap: 2.25rem;
-  list-style: none;
-}
-.nav__links a {
-  font-size: .83rem; font-weight: 500;
-  color: var(--ink2);
-  letter-spacing: .01em;
-  transition: color var(--t2);
-  position: relative;
-}
-.nav__links a::after {
-  content: '';
-  position: absolute; bottom: -3px; left: 0; right: 0;
-  height: 1px; background: var(--teal);
-  transform: scaleX(0); transform-origin: left;
-  transition: transform var(--t2) var(--ease);
-}
-.nav__links a:hover { color: var(--ink); }
-.nav__links a:hover::after { transform: scaleX(1); }
-
-.nav__cta {
-  display: inline-flex; align-items: center; gap: .4rem;
-  background: var(--teal);
-  color: var(--void) !important;
-  font-weight: 600 !important; font-size: .83rem !important;
-  padding: .5rem 1.2rem;
-  border-radius: var(--r6);
-  transition: background var(--t2), box-shadow var(--t2), transform var(--t2) !important;
-}
-.nav__cta:hover {
-  background: var(--teal-hi);
-  box-shadow: 0 0 24px rgba(7,217,192,.35);
-  transform: translateY(-1px) !important;
-}
-.nav__cta::after { display: none !important; }
-
-/* hamburger */
-.nav__burger {
-  display: none; flex-direction: column; gap: 5px;
-  padding: 4px;
-}
-.nav__burger span {
-  display: block; width: 22px; height: 1.5px;
-  background: var(--ink);
-  border-radius: 2px;
-  transition: transform var(--t2), opacity var(--t2);
-}
-.nav__burger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-.nav__burger.open span:nth-child(2) { opacity: 0; }
-.nav__burger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-/* ── Layout helpers ─────────────────────────────────────────── */
-.container {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-.section { position: relative; z-index: 1; }
-.section__inner { padding: 7rem 2rem; max-width: var(--max-w); margin: 0 auto; }
-
-.eyebrow {
-  display: inline-flex; align-items: center; gap: .65rem;
-  font-family: var(--f-mono); font-size: .68rem;
-  color: var(--teal); letter-spacing: .14em; text-transform: uppercase;
-  margin-bottom: 1.1rem;
-}
-.eyebrow::before {
-  content: '';
-  display: block; width: 28px; height: 1px;
-  background: var(--teal);
-  flex-shrink: 0;
-}
-.eyebrow--center { justify-content: center; }
-.eyebrow--center::before { display: none; }
-
-.section__title {
-  font-family: var(--f-display);
-  font-size: clamp(2rem, 3.8vw, 3rem);
-  font-weight: 800; line-height: 1.1;
-  letter-spacing: -.03em; margin-bottom: 1.1rem;
-}
-.section__body {
-  font-size: 1.05rem; font-weight: 400;
-  color: var(--ink2); line-height: 1.72;
-  max-width: 540px;
-}
-.hl-teal { color: var(--teal); }
-.hl-gold { color: var(--gold); }
-
-/* ── Reveal animation ───────────────────────────────────────── */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity var(--t4) var(--ease),
-              transform var(--t4) var(--ease);
-}
-.reveal.in { opacity: 1; transform: none; }
-
-/* ── Buttons ────────────────────────────────────────────────── */
-.btn {
-  display: inline-flex; align-items: center; gap: .45rem;
-  font-family: var(--f-body); font-size: .92rem; font-weight: 600;
-  border-radius: var(--r6); padding: .8rem 1.8rem;
-  transition: transform var(--t2) var(--spring),
-              box-shadow var(--t2),
-              background var(--t2),
-              color var(--t2),
-              border-color var(--t2);
-  white-space: nowrap;
-}
-.btn:hover { transform: translateY(-2px); }
-.btn:active { transform: translateY(0); }
-
-.btn--primary {
-  background: var(--teal); color: var(--void);
-  box-shadow: 0 0 0 rgba(7,217,192,0);
-}
-.btn--primary:hover { background: var(--teal-hi); box-shadow: 0 0 36px rgba(7,217,192,.4); }
-
-.btn--ghost {
-  background: transparent; color: var(--ink);
-  border: 1px solid var(--border-md);
-}
-.btn--ghost:hover { border-color: var(--teal); color: var(--teal); box-shadow: 0 0 20px var(--teal-alpha12); }
-
-.btn--gold { background: var(--gold); color: var(--void); }
-.btn--gold:hover { background: var(--gold-hi); box-shadow: 0 0 36px rgba(240,192,64,.4); }
-
-/* ── Cards ──────────────────────────────────────────────────── */
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--r3);
-  transition: border-color var(--t3), box-shadow var(--t3), transform var(--t3);
-}
-.card:hover {
-  border-color: var(--border-md);
-  box-shadow: 0 20px 60px rgba(0,0,0,.45);
-  transform: translateY(-4px);
-}
-.card--glow:hover { box-shadow: 0 20px 60px rgba(0,0,0,.45), 0 0 0 1px var(--border-md), 0 0 40px var(--teal-alpha06); }
-
-/* ── Hero ───────────────────────────────────────────────────── */
-#hero {
-  min-height: 100svh;
-  display: flex; align-items: center; justify-content: center;
-  position: relative; overflow: hidden;
-  padding: calc(var(--nav-h) + 4rem) 2rem 5rem;
-}
-
-/* animated grid */
-.hero__grid {
-  position: absolute; inset: 0; pointer-events: none;
-  background-image:
-    linear-gradient(rgba(7,217,192,.032) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(7,217,192,.032) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: radial-gradient(ellipse 75% 65% at 50% 40%, #000 0%, transparent 100%);
-  animation: grid-drift 24s linear infinite;
-}
-@keyframes grid-drift {
-  0%   { background-position: 0 0; }
-  100% { background-position: 56px 56px; }
-}
-
-/* radial glows */
-.hero__glow {
-  position: absolute; pointer-events: none;
-  border-radius: 50%; filter: blur(80px);
-}
-.hero__glow--teal {
-  width: 700px; height: 500px;
-  top: -10%; left: 50%; transform: translateX(-50%);
-  background: radial-gradient(ellipse, rgba(7,217,192,.07) 0%, transparent 70%);
-  animation: glow-breathe 8s ease-in-out infinite alternate;
-}
-.hero__glow--gold {
-  width: 400px; height: 400px;
-  bottom: 5%; right: 5%;
-  background: radial-gradient(ellipse, rgba(240,192,64,.045) 0%, transparent 70%);
-  animation: glow-breathe 11s ease-in-out 2s infinite alternate-reverse;
-}
-.hero__glow--teal2 {
-  width: 300px; height: 300px;
-  bottom: 15%; left: 5%;
-  background: radial-gradient(ellipse, rgba(7,217,192,.04) 0%, transparent 70%);
-  animation: glow-breathe 14s ease-in-out 4s infinite alternate;
-}
-@keyframes glow-breathe {
-  from { opacity: .6; transform: scale(1) translateX(-50%); }
-  to   { opacity: 1;  transform: scale(1.12) translateX(-50%); }
-}
-.hero__glow--gold, .hero__glow--teal2 { animation-name: glow-breathe-simple; }
-@keyframes glow-breathe-simple {
-  from { opacity: .5; transform: scale(1); }
-  to   { opacity: 1;  transform: scale(1.15); }
-}
-
-.hero__content {
-  text-align: center; position: relative; z-index: 2;
-  max-width: 880px;
-}
-
-.hero__badge {
-  display: inline-flex; align-items: center; gap: .5rem;
-  background: var(--teal-alpha06);
-  border: 1px solid var(--border-md);
-  border-radius: var(--r6);
-  padding: .35rem 1rem;
-  font-family: var(--f-mono); font-size: .7rem;
-  color: var(--teal); letter-spacing: .1em; text-transform: uppercase;
-  margin-bottom: 2.2rem;
-  animation: badge-in .7s var(--ease) .1s both;
-}
-@keyframes badge-in {
-  from { opacity: 0; transform: translateY(-8px); }
-  to   { opacity: 1; transform: none; }
-}
-
-.hero__badge-dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--teal);
-  box-shadow: 0 0 0 0 rgba(7,217,192,.5);
-  animation: badge-pulse 2.5s var(--ease) infinite;
-}
-@keyframes badge-pulse {
-  0%   { box-shadow: 0 0 0 0 rgba(7,217,192,.5); }
-  70%  { box-shadow: 0 0 0 7px rgba(7,217,192,0); }
-  100% { box-shadow: 0 0 0 0 rgba(7,217,192,0); }
-}
-
-.hero__h1 {
-  font-family: var(--f-display);
-  font-size: clamp(3.2rem, 8vw, 6.6rem);
-  font-weight: 800;
-  line-height: .97; letter-spacing: -.04em;
-  margin-bottom: 1.6rem;
-  animation: h1-in .9s var(--ease) .2s both;
-}
-@keyframes h1-in {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: none; }
-}
-
-.hero__sub {
-  font-size: clamp(1.05rem, 1.8vw, 1.22rem);
-  font-weight: 400; color: var(--ink2);
-  max-width: 560px; margin: 0 auto 2.8rem;
-  line-height: 1.72;
-  animation: h1-in .9s var(--ease) .35s both;
-}
-
-.hero__actions {
-  display: flex; align-items: center; justify-content: center;
-  gap: .85rem; flex-wrap: wrap;
-  animation: h1-in .9s var(--ease) .5s both;
-}
-
-/* hero canvas */
-.hero__canvas-wrap {
-  position: absolute; inset: 0; z-index: 0;
-  pointer-events: none; opacity: .7;
-}
-#heroCanvas { width: 100%; height: 100%; }
-
-/* scroll cue */
-.hero__scroll {
-  position: absolute; bottom: 2.5rem; left: 50%;
-  transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: .4rem;
-  font-family: var(--f-mono); font-size: .62rem;
-  color: var(--ink3); letter-spacing: .12em; text-transform: uppercase;
-  animation: h1-in 1s var(--ease) 1.2s both;
-}
-.hero__scroll-line {
-  width: 1px; height: 36px;
-  background: linear-gradient(to bottom, var(--teal), transparent);
-  animation: scroll-line 2.2s var(--ease) infinite;
-}
-@keyframes scroll-line {
-  0%,100% { opacity: 1; transform: scaleY(1) translateY(0); }
-  50%      { opacity: .3; transform: scaleY(.5) translateY(4px); }
-}
-
-/* stats row */
-.hero__stats {
-  display: flex; align-items: center; justify-content: center;
-  gap: 3.5rem; flex-wrap: wrap;
-  margin-top: 5rem; padding-top: 3rem;
-  border-top: 1px solid var(--border);
-  animation: h1-in .9s var(--ease) .7s both;
-}
-.stat { text-align: center; }
-.stat__val {
-  font-family: var(--f-display); font-size: 2.2rem; font-weight: 800;
-  color: var(--teal); line-height: 1; display: block;
-  letter-spacing: -.03em;
-}
-.stat__lbl {
-  font-size: .72rem; color: var(--ink3);
-  letter-spacing: .06em; text-transform: uppercase; margin-top: .35rem;
-}
-
-/* ── Ticker / social proof strip ────────────────────────────── */
-.ticker-wrap {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  overflow: hidden; position: relative; z-index: 1;
-  padding: .85rem 0;
-}
-.ticker-wrap::before,
-.ticker-wrap::after {
-  content: '';
-  position: absolute; top: 0; bottom: 0; width: 100px; z-index: 2;
-  pointer-events: none;
-}
-.ticker-wrap::before { left: 0; background: linear-gradient(to right, var(--surface), transparent); }
-.ticker-wrap::after  { right: 0; background: linear-gradient(to left, var(--surface), transparent); }
-
-.ticker-track {
-  display: flex; gap: 0;
-  animation: ticker-scroll 40s linear infinite;
-  width: max-content;
-}
-@keyframes ticker-scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-.ticker-item {
-  display: flex; align-items: center; gap: .6rem;
-  padding: 0 2.5rem;
-  font-family: var(--f-mono); font-size: .72rem;
-  color: var(--ink3); letter-spacing: .06em;
-  white-space: nowrap;
-  border-right: 1px solid var(--border);
-}
-.ticker-item .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
-
-/* ── Vision / Problem ───────────────────────────────────────── */
-.vision-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: center;
-}
-.vision__chart {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--r3);
-  overflow: hidden; position: relative;
-  height: 380px;
-}
-#visionChart { width: 100%; height: 100%; }
-
-.problem-list { display: flex; flex-direction: column; gap: .85rem; margin-top: 2.2rem; }
-.problem-item {
-  display: flex; gap: 1rem; align-items: flex-start;
-  padding: 1.1rem 1.25rem;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--r2);
-  transition: border-color var(--t2), background var(--t2);
-}
-.problem-item:hover { border-color: var(--border-md); background: var(--raised); }
-.problem-item__icon {
-  width: 34px; height: 34px; flex-shrink: 0;
-  border-radius: var(--r1);
-  display: grid; place-items: center;
-  font-size: 1rem;
-}
-.problem-item__icon--red  { background: var(--red-alpha10); }
-.problem-item__icon--gold { background: var(--gold-alpha10); }
-.problem-item__icon--teal { background: var(--teal-alpha06); }
-.problem-item h4 {
-  font-family: var(--f-display); font-size: .9rem; font-weight: 700;
-  margin-bottom: .2rem; line-height: 1.3;
-}
-.problem-item p { font-size: .8rem; color: var(--ink2); line-height: 1.55; }
-
-/* ── How It Works — timeline ────────────────────────────────── */
-#how { background: var(--deep); }
-
-.how-timeline {
-  display: grid; grid-template-columns: repeat(4,1fr);
-  gap: 1.5rem; margin-top: 4rem;
-  position: relative;
-}
-.how-timeline::before {
-  content: '';
-  position: absolute; top: 28px; left: 12.5%; right: 12.5%;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--teal), transparent);
-  opacity: .25;
-}
-.how-step {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--r3); padding: 2rem 1.5rem;
-  text-align: center; position: relative;
-  transition: border-color var(--t3), box-shadow var(--t3), transform var(--t3);
-}
-.how-step:hover {
-  border-color: var(--border-md);
-  box-shadow: 0 24px 60px rgba(0,0,0,.5), 0 0 30px var(--teal-alpha06);
-  transform: translateY(-6px);
-}
-.how-step__num {
-  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
-  background: var(--teal); color: var(--void);
-  width: 28px; height: 28px; border-radius: 50%;
-  font-family: var(--f-display); font-size: .78rem; font-weight: 800;
-  display: grid; place-items: center;
-}
-.how-step__icon { font-size: 2.2rem; margin: 1.1rem 0 1rem; display: block; }
-.how-step__title {
-  font-family: var(--f-display); font-size: .95rem; font-weight: 700;
-  margin-bottom: .5rem;
-}
-.how-step__body { font-size: .8rem; color: var(--ink2); line-height: 1.6; }
-
-/* ── Features grid ──────────────────────────────────────────── */
-.features-header {
-  display: grid; grid-template-columns: 1fr 1fr;
-  align-items: end; gap: 3rem; margin-bottom: 3.5rem;
-}
-.features-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.25rem; }
-
-.feat-card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--r3); padding: 2rem;
-  position: relative; overflow: hidden;
-  transition: border-color var(--t3), box-shadow var(--t3), transform var(--t3);
-}
-.feat-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--teal), transparent);
-  opacity: 0; transition: opacity var(--t3);
-}
-.feat-card:hover {
-  border-color: var(--border-md);
-  box-shadow: 0 24px 60px rgba(0,0,0,.45);
-  transform: translateY(-5px);
-}
-.feat-card:hover::before { opacity: 1; }
-.feat-card--gold::before { background: linear-gradient(90deg, var(--gold), transparent); }
-.feat-card--gold:hover { border-color: var(--border-gold); }
-
-.feat-icon {
-  width: 46px; height: 46px; border-radius: var(--r2);
-  display: grid; place-items: center;
-  font-size: 1.4rem;
-  background: var(--teal-alpha06); border: 1px solid var(--border);
-  margin-bottom: 1.25rem;
-}
-.feat-icon--gold { background: var(--gold-alpha05); border-color: var(--border-gold); }
-
-.feat-title {
-  font-family: var(--f-display); font-size: 1rem; font-weight: 700;
-  margin-bottom: .55rem;
-}
-.feat-body { font-size: .83rem; color: var(--ink2); line-height: 1.62; }
-.feat-tag {
-  display: inline-block; margin-top: 1.1rem;
-  font-family: var(--f-mono); font-size: .62rem;
-  color: var(--teal); letter-spacing: .1em;
-  background: var(--teal-alpha06); padding: .18rem .5rem;
-  border-radius: var(--r1);
-}
-.feat-tag--gold { color: var(--gold); background: var(--gold-alpha05); }
-
-/* ── Opportunity Matrix ─────────────────────────────────────── */
-#matrix { background: var(--base); }
-
-.matrix-layout {
-  display: grid; grid-template-columns: 1fr 1.1fr;
-  gap: 4rem; align-items: center;
-}
-.matrix-canvas-panel {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--r3); padding: 1.75rem;
-}
-.matrix-canvas-panel h3 {
-  font-family: var(--f-mono); font-size: .7rem; font-weight: 500;
-  color: var(--ink2); letter-spacing: .1em; text-transform: uppercase;
-  margin-bottom: 1rem;
-  display: flex; align-items: center; gap: .5rem;
-}
-.matrix-canvas-panel h3 .dot { color: var(--teal); font-size: 1.1rem; }
-#matrixCanvas { width: 100%; height: 300px; border-radius: var(--r2); }
-
-.legend { display: flex; gap: 1.25rem; flex-wrap: wrap; margin-top: 1.6rem; }
-.legend-item {
-  display: flex; align-items: center; gap: .45rem;
-  font-size: .78rem; color: var(--ink2);
-}
-.legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-
-/* ── Use Cases tabs ─────────────────────────────────────────── */
-#usecases { background: var(--deep); }
-
-.tabs {
-  display: inline-flex; gap: .3rem;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--r6); padding: .3rem;
-  margin-bottom: 3rem;
-}
-.tab-btn {
-  font-family: var(--f-body); font-size: .82rem; font-weight: 500;
-  color: var(--ink2); padding: .52rem 1.3rem;
-  border-radius: var(--r6);
-  transition: background var(--t2), color var(--t2);
-}
-.tab-btn.active { background: var(--teal); color: var(--void); font-weight: 600; }
-
-.tab-panel { display: none; }
-.tab-panel.active {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 3rem; align-items: start;
-}
-
-.tab-text h3 {
-  font-family: var(--f-display); font-size: 1.65rem; font-weight: 800;
-  letter-spacing: -.03em; line-height: 1.15; margin-bottom: .9rem;
-}
-.tab-text p { font-size: .93rem; color: var(--ink2); line-height: 1.72; margin-bottom: 1.5rem; }
-
-.uc-metrics { display: flex; gap: 2rem; flex-wrap: wrap; }
-.uc-metric .val {
-  font-family: var(--f-display); font-size: 1.8rem; font-weight: 800;
-  color: var(--gold); line-height: 1; display: block; letter-spacing: -.03em;
-}
-.uc-metric .lbl { font-size: .68rem; color: var(--ink3); text-transform: uppercase; letter-spacing: .06em; }
-
-.brief-card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--r3); padding: 1.75rem;
-  display: flex; flex-direction: column; gap: 1.2rem;
-}
-.brief-card h4 {
-  font-family: var(--f-mono); font-size: .68rem; font-weight: 500;
-  color: var(--teal); letter-spacing: .1em; text-transform: uppercase;
-  margin-bottom: .5rem;
-}
-.brief-card p {
-  font-family: var(--f-mono); font-size: .8rem;
-  color: var(--ink); line-height: 1.72;
-  border-left: 2px solid var(--teal);
-  padding-left: 1rem;
-}
-
-/* ── Pricing ────────────────────────────────────────────────── */
-#pricing { background: var(--base); }
-
-.pricing-grid {
-  display: grid; grid-template-columns: repeat(3,1fr);
-  gap: 1.25rem; margin-top: 3.5rem;
-}
-.price-card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--r3); padding: 2.25rem 2rem;
-  position: relative;
-  transition: border-color var(--t3), box-shadow var(--t3), transform var(--t3);
-}
-.price-card:hover { transform: translateY(-6px); }
-.price-card--featured {
-  border-color: var(--teal);
-  background: linear-gradient(160deg, var(--raised), rgba(7,217,192,.04));
-  box-shadow: 0 0 40px var(--teal-alpha12);
-}
-.price-card--featured:hover { box-shadow: 0 0 60px var(--teal-alpha20); }
-
-.price-badge {
-  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
-  background: var(--teal); color: var(--void);
-  font-family: var(--f-mono); font-size: .63rem; font-weight: 500;
-  letter-spacing: .1em; text-transform: uppercase;
-  padding: .22rem .7rem; border-radius: var(--r6); white-space: nowrap;
-}
-
-.price-tier { font-family: var(--f-mono); font-size: .68rem; color: var(--teal); letter-spacing: .12em; text-transform: uppercase; margin-bottom: .6rem; }
-.price-name { font-family: var(--f-display); font-size: 1.45rem; font-weight: 800; margin-bottom: .4rem; letter-spacing: -.02em; }
-.price-desc { font-size: .8rem; color: var(--ink2); line-height: 1.5; margin-bottom: 1.75rem; }
-
-.price-amount { margin-bottom: 1.75rem; }
-.price-amount .cur { font-size: 1.1rem; color: var(--ink2); vertical-align: top; margin-top: .4rem; display: inline-block; }
-.price-amount .num { font-family: var(--f-display); font-size: 3.2rem; font-weight: 800; line-height: 1; letter-spacing: -.04em; }
-.price-amount .per { font-size: .82rem; color: var(--ink3); }
-
-.price-features { list-style: none; display: flex; flex-direction: column; gap: .65rem; margin-bottom: 1.75rem; }
-.price-features li { font-size: .83rem; color: var(--ink2); display: flex; align-items: flex-start; gap: .55rem; line-height: 1.45; }
-.price-features li .check { color: var(--teal); flex-shrink: 0; margin-top: 1px; }
-.price-features li .check--gold { color: var(--gold); }
-.price-features li .check--off { color: var(--ink4); }
-
-.price-btn {
-  width: 100%; padding: .82rem; border-radius: var(--r6);
-  font-family: var(--f-body); font-size: .88rem; font-weight: 600;
-  transition: all var(--t2);
-}
-.price-btn--outline { border: 1px solid var(--border-md); color: var(--ink); }
-.price-btn--outline:hover { border-color: var(--teal); color: var(--teal); }
-.price-btn--teal { background: var(--teal); color: var(--void); }
-.price-btn--teal:hover { background: var(--teal-hi); box-shadow: 0 0 30px var(--teal-alpha35); }
-.price-btn--gold { background: var(--gold); color: var(--void); }
-.price-btn--gold:hover { background: var(--gold-hi); box-shadow: 0 0 30px rgba(240,192,64,.4); }
-
-/* ── Waitlist CTA ───────────────────────────────────────────── */
-#waitlist {
-  background: linear-gradient(140deg, var(--base) 0%, var(--surface) 50%, var(--base) 100%);
-  overflow: hidden; position: relative;
-}
-.waitlist__orb {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-  width: 700px; height: 400px; pointer-events: none;
-  background: radial-gradient(ellipse, rgba(7,217,192,.055) 0%, transparent 65%);
-  border-radius: 50%; filter: blur(60px);
-}
-.waitlist-inner {
-  max-width: 640px; margin: 0 auto;
-  padding: 7rem 2rem; text-align: center; position: relative; z-index: 1;
-}
-.waitlist-inner .section__title { margin-bottom: .9rem; }
-.waitlist-inner .section__body  { margin: 0 auto 2.5rem; }
-
-.waitlist-form {
-  display: flex; gap: .65rem; max-width: 460px; margin: 0 auto;
-}
-.waitlist-input {
-  flex: 1;
-  background: var(--surface); border: 1px solid var(--border-md);
-  border-radius: var(--r6); padding: .82rem 1.4rem;
-  color: var(--ink); font-family: var(--f-body); font-size: .9rem;
-  outline: none;
-  transition: border-color var(--t2), box-shadow var(--t2);
-}
-.waitlist-input::placeholder { color: var(--ink3); }
-.waitlist-input:focus { border-color: var(--teal); box-shadow: 0 0 0 3px var(--teal-alpha12); }
-.waitlist-input.input--error { border-color: var(--red); box-shadow: 0 0 0 3px var(--red-alpha10); }
-
-.waitlist-success {
-  display: none; flex-direction: column; align-items: center; gap: .4rem;
-  margin-top: 1.5rem;
-  font-family: var(--f-display); font-size: 1.1rem; font-weight: 700;
-  color: var(--teal);
-}
-.waitlist-success.show { display: flex; }
-.waitlist-success p { font-family: var(--f-body); font-size: .85rem; color: var(--ink2); font-weight: 400; }
-
-.waitlist-note { font-size: .75rem; color: var(--ink3); margin-top: .9rem; }
-
-.signups-badge {
-  display: inline-flex; align-items: center; gap: .5rem;
-  background: var(--teal-alpha06); border: 1px solid var(--border);
-  border-radius: var(--r6); padding: .38rem .9rem;
-  font-size: .78rem; color: var(--ink2); margin-top: 1.4rem;
-}
-.signups-badge strong { color: var(--teal); }
-
-/* ── Founder ────────────────────────────────────────────────── */
-#founder { background: var(--deep); }
-.founder-grid { display: grid; grid-template-columns: 340px 1fr; gap: 5rem; align-items: center; }
-
-.founder-card {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--r4); padding: 2.5rem;
-  text-align: center; position: relative; overflow: hidden;
-}
-.founder-card::before {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--teal), var(--gold));
-}
-
-.founder-avatar {
-  width: 88px; height: 88px;
-  border-radius: 50%; border: 2px solid var(--teal);
-  margin: 0 auto 1.1rem;
-  display: grid; place-items: center;
-  font-family: var(--f-display); font-size: 2.2rem; font-weight: 800;
-  background: linear-gradient(135deg, var(--base), var(--raised));
-  color: var(--teal);
-  box-shadow: 0 0 28px rgba(7,217,192,.2);
-}
-.founder-name { font-family: var(--f-display); font-size: 1.3rem; font-weight: 800; letter-spacing: -.02em; margin-bottom: .2rem; }
-.founder-role { font-family: var(--f-mono); font-size: .68rem; color: var(--teal); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 1.5rem; }
-.founder-links { display: flex; gap: .6rem; justify-content: center; flex-wrap: wrap; }
-.founder-link {
-  display: inline-flex; align-items: center; gap: .35rem;
-  font-size: .75rem; color: var(--ink2);
-  border: 1px solid var(--border); padding: .38rem .85rem;
-  border-radius: var(--r6); transition: all var(--t2);
-}
-.founder-link:hover { border-color: var(--teal); color: var(--teal); }
-
-.founder-text blockquote {
-  font-family: var(--f-display); font-size: 1.4rem; font-weight: 600;
-  line-height: 1.45; letter-spacing: -.02em;
-  color: var(--ink); margin-bottom: 1.5rem;
-  position: relative; padding-left: 1.4rem;
-}
-.founder-text blockquote::before {
-  content: '';
-  position: absolute; left: 0; top: .15rem; bottom: .15rem;
-  width: 3px; background: linear-gradient(to bottom, var(--teal), var(--gold));
-  border-radius: 4px;
-}
-.founder-text p { font-size: .93rem; color: var(--ink2); line-height: 1.75; margin-bottom: 1.1rem; }
-
-/* ── FAQ ────────────────────────────────────────────────────── */
-#faq { background: var(--base); }
-.faq-cols { display: grid; grid-template-columns: 1fr 1fr; gap: .85rem; margin-top: 3rem; }
-
-.faq-item {
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--r2); overflow: hidden;
-  transition: border-color var(--t2);
-}
-.faq-item:hover { border-color: var(--border-md); }
-
-.faq-q {
-  width: 100%; display: flex; justify-content: space-between; align-items: center;
-  padding: 1.15rem 1.4rem; gap: 1rem;
-  color: var(--ink); text-align: left;
-}
-.faq-q span:first-child { font-family: var(--f-display); font-size: .88rem; font-weight: 700; line-height: 1.35; }
-.faq-chevron { color: var(--teal); font-size: 1.1rem; flex-shrink: 0; transition: transform var(--t2); line-height: 1; }
-.faq-item.open .faq-chevron { transform: rotate(45deg); }
-
-.faq-a {
-  max-height: 0; overflow: hidden;
-  font-size: .83rem; color: var(--ink2); line-height: 1.65;
-  transition: max-height .4s var(--ease), padding var(--t2);
-}
-.faq-item.open .faq-a { max-height: 260px; padding: 0 1.4rem 1.15rem; }
-
-/* ── Footer ─────────────────────────────────────────────────── */
-footer {
-  background: var(--void);
-  border-top: 1px solid var(--border);
-  padding: 4.5rem 2rem 2rem;
-}
-.footer-grid {
-  max-width: var(--max-w); margin: 0 auto;
-  display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr;
-  gap: 3rem; margin-bottom: 4rem;
-}
-.footer-brand__desc { font-size: .83rem; color: var(--ink3); line-height: 1.7; margin-top: .9rem; max-width: 240px; }
-.footer-brand__locale { font-size: .75rem; color: var(--ink4); margin-top: .65rem; }
-
-.footer-col h4 {
-  font-family: var(--f-display); font-size: .74rem; font-weight: 700;
-  letter-spacing: .1em; text-transform: uppercase;
-  color: var(--ink2); margin-bottom: 1rem;
-}
-.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: .55rem; }
-.footer-col a { font-size: .83rem; color: var(--ink3); transition: color var(--t2); }
-.footer-col a:hover { color: var(--teal); }
-
-.footer-bottom {
-  max-width: var(--max-w); margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: 1rem;
-  padding-top: 2rem; border-top: 1px solid var(--border);
-}
-.footer-bottom p { font-size: .76rem; color: var(--ink4); }
-.footer-bottom a { color: var(--teal); }
-
-/* ── Responsive ─────────────────────────────────────────────── */
-@media (max-width: 1024px) {
-  .how-timeline         { grid-template-columns: repeat(2,1fr); }
-  .how-timeline::before { display: none; }
-  .features-grid        { grid-template-columns: repeat(2,1fr); }
-  .pricing-grid         { grid-template-columns: 1fr; max-width: 380px; margin: 3.5rem auto 0; }
-  .vision-grid          { grid-template-columns: 1fr; }
-  .matrix-layout        { grid-template-columns: 1fr; }
-  .founder-grid         { grid-template-columns: 1fr; gap: 3rem; }
-  .features-header      { grid-template-columns: 1fr; gap: 1.5rem; }
-  .footer-grid          { grid-template-columns: 1fr 1fr; }
-  .faq-cols             { grid-template-columns: 1fr; }
-  .tab-panel.active     { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 768px) {
-  .nav__links { display: none; }
-  .nav__links.open {
-    display: flex; flex-direction: column;
-    position: fixed; inset: 0;
-    background: rgba(2,5,9,.97); backdrop-filter: blur(28px);
-    align-items: center; justify-content: center;
-    gap: 2.2rem; z-index: 999;
-  }
-  .nav__links.open a { font-size: 1.35rem; font-weight: 600; }
-  .nav__burger { display: flex; z-index: 1001; }
-  .how-timeline { grid-template-columns: 1fr; }
-  .features-grid { grid-template-columns: 1fr; }
-  .hero__stats  { gap: 2rem; }
-  .waitlist-form { flex-direction: column; }
-  .footer-grid  { grid-template-columns: 1fr; }
-  .tabs { overflow-x: auto; }
-  #nav { padding: 0 1.25rem; }
-  .section__inner { padding: 5rem 1.25rem; }
-}
-
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>XCurve AI — Predictive Intelligence for the Next Market Frontier</title>
+<meta name="description" content="XCurve AI is an anticipation engine that identifies unsaturated market opportunities before they go mainstream. See the curve before it bends." />
+<meta property="og:title" content="XCurve AI — Predictive Intelligence for the Next Market Frontier" />
+<meta property="og:description" content="Find the gaps. Ride the curve. XCurve AI surfaces where high demand meets zero competition — before anyone else." />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#0E8C7C" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23FBFAF7'/><path d='M4 24C10 24 12 18 16 14 20 10 22 9 28 5' fill='none' stroke='%230E8C7C' stroke-width='3' stroke-linecap='round'/><circle cx='16' cy='14' r='2.5' fill='%23B8893B'/></svg>" />
+<link rel="stylesheet" href="css/xcurve.css" />
 </head>
 <body>
 
-<!-- Cursor -->
-<div id="cc-cursor"></div>
-<div id="cc-cursor-ring"></div>
-
 <!-- ╔══════════════════════════════════════════════════════════╗ -->
-<!-- ║  NAVIGATION                                              ║ -->
+<!-- ║  NAV                                                     ║ -->
 <!-- ╚══════════════════════════════════════════════════════════╝ -->
 <nav id="nav">
-  <a href="#" class="nav__logo">
-    <div class="nav__logo-mark">
-      <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
-        <rect width="34" height="34" rx="8" fill="#0c1525"/>
-        <path d="M5 26C9 26 11 20 15 16 19 12 21 9 29 5" stroke="#07d9c0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-        <circle cx="15" cy="16" r="2.5" fill="#f0c040"/>
-        <rect width="34" height="34" rx="8" fill="none" stroke="rgba(7,217,192,.2)" stroke-width="1"/>
-      </svg>
-    </div>
-    <span class="nav__logo-name">Clear<em>Curve</em> AI</span>
+  <a href="index.html" class="nav__logo">
+    <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+      <rect width="30" height="30" rx="7" fill="#14181D"/>
+      <path d="M4 23C9 23 11 17 14 13.5 17 10 19 8 26 4" stroke="#0E8C7C" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+      <circle cx="14" cy="13.5" r="2.2" fill="#B8893B"/>
+    </svg>
+    <span>X<em>Curve</em></span>
   </a>
-
   <ul class="nav__links" id="nav-links">
-    <li><a href="#vision">Vision</a></li>
-    <li><a href="#how">How It Works</a></li>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#usecases">Use Cases</a></li>
-    <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#founder">Founder</a></li>
-    <li><a href="#waitlist" class="nav__cta">
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-      Join Waitlist
-    </a></li>
+    <li><a href="product.html">Product</a></li>
+    <li><a href="company.html">Company</a></li>
+    <li><a href="investors.html">Investors</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="demo.html" class="nav__cta">Launch Demo</a></li>
   </ul>
-
-  <button class="nav__burger" id="nav-burger" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav__burger" id="nav-burger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- ╔══════════════════════════════════════════════════════════╗ -->
-<!-- ║  HERO                                                    ║ -->
+<!-- ║  HERO — full viewport                                    ║ -->
 <!-- ╚══════════════════════════════════════════════════════════╝ -->
-<section id="hero">
-  <!-- animated background canvas -->
-  <div class="hero__canvas-wrap">
-    <canvas id="heroCanvas"></canvas>
-  </div>
+<section style="min-height:100svh; display:flex; align-items:center; position:relative; overflow:hidden; padding:calc(var(--nav-h) + 2rem) 0 3rem;">
 
-  <!-- grid + glows -->
-  <div class="hero__grid"></div>
-  <div class="hero__glow hero__glow--teal"></div>
-  <div class="hero__glow hero__glow--gold"></div>
-  <div class="hero__glow hero__glow--teal2"></div>
+  <!-- ambient curve field background -->
+  <svg class="curve-divider" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" style="position:absolute; inset:0; width:100%; height:100%; opacity:.5;" aria-hidden="true">
+    <path d="M-50,650 C 250,650 350,500 500,420 C 650,340 750,200 1000,150 C 1200,110 1350,90 1500,60" fill="none" stroke="#0E8C7C" stroke-width="1.4" opacity=".22"/>
+    <path d="M-50,750 C 250,760 380,600 550,520 C 720,440 820,300 1050,260 C 1250,225 1380,210 1500,180" fill="none" stroke="#0E8C7C" stroke-width="1" opacity=".14"/>
+    <path d="M-50,560 C 200,520 320,420 460,380 C 640,330 780,260 980,250 C 1180,242 1350,260 1500,300" fill="none" stroke="#B8893B" stroke-width="1" opacity=".16"/>
+  </svg>
 
-  <div class="hero__content">
-    <div class="hero__badge">
-      <span class="hero__badge-dot"></span>
-      Q3 2026 · Early Access Now Open
-    </div>
+  <div class="wrap g-2-uneven" style="position:relative; z-index:2; gap:3rem; align-items:center;">
 
-    <h1 class="hero__h1">
-      Data ends here.<br>
-      <span class="hl-teal">Foresight</span> begins.
-    </h1>
-
-    <p class="hero__sub">
-      ClearCurve AI is not a reporting tool — it's an anticipation engine.
-      We surface the inflection points of tomorrow: where explosive consumer
-      demand meets near-zero competition.
-    </p>
-
-    <div class="hero__actions">
-      <a href="#waitlist" class="btn btn--primary">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        Get Early Access
-      </a>
-      <a href="#how" class="btn btn--ghost">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
-        See How It Works
-      </a>
-    </div>
-
-    <div class="hero__stats">
-      <div class="stat">
-        <span class="stat__val" data-count="48" data-suffix="h">0h</span>
-        <span class="stat__lbl">Ahead of the Market</span>
-      </div>
-      <div class="stat">
-        <span class="stat__val" data-count="400" data-suffix="%">0%</span>
-        <span class="stat__lbl">Content Gap Surfaced</span>
-      </div>
-      <div class="stat">
-        <span class="stat__val" data-count="12" data-suffix="+">0+</span>
-        <span class="stat__lbl">Signal Source Layers</span>
-      </div>
-      <div class="stat">
-        <span class="stat__val" data-count="92" data-suffix="/100">0</span>
-        <span class="stat__lbl">Avg. Curve-Fidelity Score™</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="hero__scroll">
-    <div class="hero__scroll-line"></div>
-    scroll
-  </div>
-</section>
-
-<!-- ╔══════════════════════════════════════════════════════════╗ -->
-<!-- ║  SOCIAL PROOF TICKER                                     ║ -->
-<!-- ╚══════════════════════════════════════════════════════════╝ -->
-<div class="ticker-wrap">
-  <div class="ticker-track">
-    <!-- set 1 -->
-    <span class="ticker-item"><span class="dot"></span>Reddit → TikTok → Amazon signal detection</span>
-    <span class="ticker-item"><span class="dot"></span>Flash Fad vs. Structural Shift classification</span>
-    <span class="ticker-item"><span class="dot"></span>Curve-Fidelity Score™ confidence modeling</span>
-    <span class="ticker-item"><span class="dot"></span>Automated strategic briefs in seconds</span>
-    <span class="ticker-item"><span class="dot"></span>Unsaturated Opportunity Matrix™</span>
-    <span class="ticker-item"><span class="dot"></span>48h edge over mainstream analytics</span>
-    <span class="ticker-item"><span class="dot"></span>The "Why" Factor — underlying demand drivers</span>
-    <span class="ticker-item"><span class="dot"></span>Full API access for enterprise teams</span>
-    <!-- set 2 (duplicate for seamless loop) -->
-    <span class="ticker-item"><span class="dot"></span>Reddit → TikTok → Amazon signal detection</span>
-    <span class="ticker-item"><span class="dot"></span>Flash Fad vs. Structural Shift classification</span>
-    <span class="ticker-item"><span class="dot"></span>Curve-Fidelity Score™ confidence modeling</span>
-    <span class="ticker-item"><span class="dot"></span>Automated strategic briefs in seconds</span>
-    <span class="ticker-item"><span class="dot"></span>Unsaturated Opportunity Matrix™</span>
-    <span class="ticker-item"><span class="dot"></span>48h edge over mainstream analytics</span>
-    <span class="ticker-item"><span class="dot"></span>The "Why" Factor — underlying demand drivers</span>
-    <span class="ticker-item"><span class="dot"></span>Full API access for enterprise teams</span>
-  </div>
-</div>
-
-<!-- ╔══════════════════════════════════════════════════════════╗ -->
-<!-- ║  VISION / PROBLEM                                        ║ -->
-<!-- ╚══════════════════════════════════════════════════════════╝ -->
-<section id="vision" class="section">
-  <div class="section__inner">
-    <div class="vision-grid">
-
-      <div class="vision__chart reveal">
-        <canvas id="visionChart"></canvas>
+    <div>
+      <div class="eyebrow"><span style="width:6px;height:6px;border-radius:50%;background:var(--teal);display:inline-block;"></span>Predictive Intelligence Platform</div>
+      <h1 class="h-display">Data ends here.<br><span class="italic" style="color:var(--teal-deep);">Foresight</span> begins.</h1>
+      <p class="lede" style="margin-top:1.5rem;">
+        XCurve AI is not a reporting tool — it's an anticipation engine. We surface
+        the inflection points of tomorrow: where explosive consumer demand meets
+        near-zero competition, weeks before it's obvious to anyone else.
+      </p>
+      <div style="display:flex; gap:1rem; margin-top:2.3rem; flex-wrap:wrap;">
+        <a href="demo.html" class="btn btn--teal btn--lg">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          Launch Demo
+        </a>
+        <a href="investors.html" class="btn btn--ghost btn--lg">For Investors</a>
       </div>
 
-      <div class="vision__text">
-        <p class="eyebrow">The Problem</p>
-        <h2 class="section__title reveal">
-          Everyone sees the<br>
-          <span class="hl-gold">same data.</span><br>
-          <span class="hl-teal">Nobody sees first.</span>
-        </h2>
-        <p class="section__body reveal">
-          Most analytics platforms summarize the past. By the time a trend
-          surfaces on a dashboard, thousands of competitors have already moved.
-          ClearCurve identifies inflection points <em>before</em> they become obvious.
-        </p>
-
-        <div class="problem-list">
-          <div class="problem-item reveal">
-            <div class="problem-item__icon problem-item__icon--red">🔴</div>
-            <div>
-              <h4>Reactive Intelligence</h4>
-              <p>Traditional tools show what happened. By the time it's on your dashboard, the window has already closed.</p>
-            </div>
-          </div>
-          <div class="problem-item reveal">
-            <div class="problem-item__icon problem-item__icon--gold">⚠️</div>
-            <div>
-              <h4>Flash Fad vs. Structural Shift</h4>
-              <p>Viral moments fool operators into investing in trends that collapse within weeks, burning capital and time.</p>
-            </div>
-          </div>
-          <div class="problem-item reveal">
-            <div class="problem-item__icon problem-item__icon--teal">✦</div>
-            <div>
-              <h4>ClearCurve solves both</h4>
-              <p>Predictive signals that separate durable trends from noise — surfaced weeks before saturation hits.</p>
-            </div>
-          </div>
+      <div style="display:flex; gap:2.6rem; margin-top:3.5rem; padding-top:2rem; border-top:1px solid var(--line); flex-wrap:wrap;">
+        <div class="stat-block">
+          <span class="val" data-count="48" data-suffix="h">0h</span>
+          <span class="lbl">Ahead of the market</span>
+        </div>
+        <div class="stat-block">
+          <span class="val" data-count="12" data-suffix="+">0+</span>
+          <span class="lbl">Signal source layers</span>
+        </div>
+        <div class="stat-block">
+          <span class="val" data-count="92" data-suffix="/100">0</span>
+          <span class="lbl">Curve-Fidelity Score™</span>
         </div>
       </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ╔══════════════════════════════════════════════════════════╗ -->
-<!-- ║  HOW IT WORKS                                            ║ -->
-<!-- ╚══════════════════════════════════════════════════════════╝ -->
-<section id="how" class="section">
-  <div class="section__inner">
-    <div style="text-align:center; max-width:600px; margin:0 auto 4rem;">
-      <p class="eyebrow eyebrow--center">The Engine</p>
-      <h2 class="section__title reveal">
-        From raw signal to<br><span class="hl-teal">actionable intelligence</span>
-      </h2>
-      <p class="section__body reveal" style="margin:0 auto;">
-        Four precision layers working in concert to surface what every other tool misses.
-      </p>
+      <p class="fine" style="margin-top:.9rem;">Illustrative figures — performance metrics will be published transparently at launch.</p>
     </div>
 
-    <div class="how-timeline">
-      <div class="how-step reveal">
-        <div class="how-step__num">1</div>
-        <span class="how-step__icon">🔬</span>
-        <h3 class="how-step__title">Nodal Ingestion</h3>
-        <p class="how-step__body">Proprietary cross-platform tracking follows a concept from niche forums (Reddit, Discord) → visual platforms (TikTok, Instagram) → retail intent (Amazon, Google).</p>
+    <!-- signature curve instrument -->
+    <div class="reveal in card" style="padding:1.75rem; background:var(--card);">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+        <span class="fine" style="text-transform:uppercase;">◉ Live Curve Preview</span>
+        <span class="tag">XCurve Zone™</span>
       </div>
-      <div class="how-step reveal">
-        <div class="how-step__num">2</div>
-        <span class="how-step__icon">🧠</span>
-        <h3 class="how-step__title">Noise Filtration</h3>
-        <p class="how-step__body">Our AI separates Flash Fads (high velocity, short lifespan) from Structural Shifts (sustainable, long-term trends worth betting on).</p>
-      </div>
-      <div class="how-step reveal">
-        <div class="how-step__num">3</div>
-        <span class="how-step__icon">📈</span>
-        <h3 class="how-step__title">Predictive Modeling</h3>
-        <p class="how-step__body">Hybrid Time-Series Forecasting and Transformer-based Extrapolation produce a <strong>Curve-Fidelity Score™</strong> — a confidence measure for every opportunity.</p>
-      </div>
-      <div class="how-step reveal">
-        <div class="how-step__num">4</div>
-        <span class="how-step__icon">🗺️</span>
-        <h3 class="how-step__title">Strategic Brief</h3>
-        <p class="how-step__body">Not just a graph — a roadmap. ClearCurve delivers timed, specific, ready-to-execute briefs tailored to your niche and business model.</p>
+      <svg viewBox="0 0 460 280" style="width:100%; height:auto;" aria-hidden="true">
+        <line x1="40" y1="20" x2="40" y2="240" stroke="#E4E1D8" stroke-width="1"/>
+        <line x1="40" y1="240" x2="440" y2="240" stroke="#E4E1D8" stroke-width="1"/>
+        <path d="M40,210 C 90,200 130,160 180,130 C 230,100 280,60 340,42 C 380,30 410,24 440,20" fill="none" stroke="#0E8C7C" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M40,230 C 100,225 160,180 220,160 C 280,140 330,150 380,170 C 405,180 425,190 440,196" fill="none" stroke="#B8893B" stroke-width="1.6" stroke-dasharray="5 5" stroke-linecap="round"/>
+        <circle cx="440" cy="20" r="4.5" fill="#0E8C7C"/>
+        <circle cx="440" cy="196" r="4" fill="#B8893B"/>
+        <text x="46" y="36" font-family="JetBrains Mono" font-size="9" fill="#8A92A0">DEMAND</text>
+        <text x="350" y="234" font-family="JetBrains Mono" font-size="9" fill="#8A92A0">TIME →</text>
+      </svg>
+      <div style="display:flex; gap:1.2rem; margin-top:.8rem; flex-wrap:wrap;">
+        <span class="fine"><span style="color:var(--teal);">●</span> Structural Shift</span>
+        <span class="fine"><span style="color:var(--gold);">●</span> Flash Fad</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ╔══════════════════════════════════════════════════════════╗ -->
-<!-- ║  FEATURES                                                ║ -->
+<!-- ║  PROBLEM STRIP                                           ║ -->
 <!-- ╚══════════════════════════════════════════════════════════╝ -->
-<section id="features" class="section" style="background:linear-gradient(180deg,var(--deep) 0%,var(--base) 100%);">
-  <div class="section__inner">
-    <div class="features-header">
+<section class="section-pad" style="background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--center" style="justify-content:center;">The Problem</p>
+    <h2 class="h-section reveal" style="text-align:center; max-width:740px; margin-left:auto; margin-right:auto;">Everyone sees the same data. <span class="italic txt-gold">Nobody sees first.</span></h2>
+    <p class="lede reveal" style="text-align:center; margin:0 auto 3rem;">Most analytics platforms summarize the past. By the time a trend surfaces on a dashboard, thousands of competitors have already moved.</p>
+
+    <div class="g-3" style="gap:1.25rem;">
+      <div class="card reveal" style="padding:1.8rem;">
+        <div class="tag" style="background:var(--red-tint); color:var(--red); margin-bottom:1rem;">Reactive</div>
+        <h3 class="h-sub" style="font-size:1.1rem;">Dashboards show history</h3>
+        <p class="body-text" style="font-size:.92rem;">By the time something appears on a chart, the window to act on it has already closed.</p>
+      </div>
+      <div class="card reveal" style="padding:1.8rem;">
+        <div class="tag tag--gold" style="margin-bottom:1rem;">Misleading</div>
+        <h3 class="h-sub" style="font-size:1.1rem;">Fads fool operators</h3>
+        <p class="body-text" style="font-size:.92rem;">Viral moments lure capital into trends that collapse in weeks, burning time and budget.</p>
+      </div>
+      <div class="card reveal" style="padding:1.8rem; border-color:var(--teal-line);">
+        <div class="tag" style="margin-bottom:1rem;">XCurve</div>
+        <h3 class="h-sub" style="font-size:1.1rem;">We solve both</h3>
+        <p class="body-text" style="font-size:.92rem;">Predictive signals separate durable trends from noise — surfaced weeks before saturation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════════════════╗ -->
+<!-- ║  HOW IT WORKS (real sequence — numbers justified)        ║ -->
+<!-- ╚══════════════════════════════════════════════════════════╝ -->
+<section class="section-pad">
+  <div class="wrap">
+    <div class="g-2" style="gap:3rem; align-items:end; margin-bottom:3.5rem;">
       <div>
-        <p class="eyebrow">Capabilities</p>
-        <h2 class="section__title reveal">Everything you need<br>to move <span class="hl-teal">first</span></h2>
+        <p class="eyebrow">The Engine</p>
+        <h2 class="h-section reveal">From raw signal to actionable intelligence</h2>
       </div>
-      <p class="section__body reveal">
-        ClearCurve scales from solo operators to enterprise marketing departments. Every feature is built to close the gap between signal and decision.
-      </p>
+      <p class="lede reveal">Four sequential layers — each step depends on the last — turning noisy, cross-platform chatter into a single confidence score.</p>
     </div>
 
-    <div class="features-grid">
-
-      <div class="feat-card card card--glow reveal">
-        <div class="feat-icon">🗺️</div>
-        <h3 class="feat-title">Unsaturated Opportunity Matrix™</h3>
-        <p class="feat-body">A proprietary competitive heatmap showing every niche across two axes: demand momentum and competitive saturation. See your window at a glance.</p>
-        <span class="feat-tag">CORE TOOL</span>
+    <div class="g-4" style="gap:1.5rem;">
+      <div class="reveal" style="border-top:2px solid var(--teal); padding-top:1.2rem;">
+        <span class="fine">01 — INGESTION</span>
+        <h3 class="h-sub" style="font-size:1.05rem; margin-top:.5rem;">Nodal Ingestion</h3>
+        <p class="body-text" style="font-size:.88rem;">Tracks a concept from niche forums to visual platforms to retail intent.</p>
       </div>
-
-      <div class="feat-card card card--glow reveal">
-        <div class="feat-icon">🔮</div>
-        <h3 class="feat-title">Curve-Fidelity Score™</h3>
-        <p class="feat-body">Every opportunity is scored 0–100 for trajectory confidence, blending quantitative search modeling with qualitative AI reasoning. Know how much to bet.</p>
-        <span class="feat-tag">PROPRIETARY</span>
+      <div class="reveal" style="border-top:2px solid var(--teal); padding-top:1.2rem;">
+        <span class="fine">02 — FILTRATION</span>
+        <h3 class="h-sub" style="font-size:1.05rem; margin-top:.5rem;">Noise Filtration</h3>
+        <p class="body-text" style="font-size:.88rem;">AI separates Flash Fads from Structural Shifts worth betting on.</p>
       </div>
-
-      <div class="feat-card feat-card--gold card reveal">
-        <div class="feat-icon feat-icon--gold">⚡</div>
-        <h3 class="feat-title">Automated Strategic Briefs</h3>
-        <p class="feat-body">Ready-to-act roadmaps. "Launch a bamboo office chair by Q3 to capture a 24% projected demand surge" — specific, timed, immediately actionable.</p>
-        <span class="feat-tag feat-tag--gold">AI-POWERED</span>
+      <div class="reveal" style="border-top:2px solid var(--teal); padding-top:1.2rem;">
+        <span class="fine">03 — MODELING</span>
+        <h3 class="h-sub" style="font-size:1.05rem; margin-top:.5rem;">Predictive Modeling</h3>
+        <p class="body-text" style="font-size:.88rem;">Hybrid forecasting produces a Curve-Fidelity Score™ for every opportunity.</p>
       </div>
-
-      <div class="feat-card card card--glow reveal">
-        <div class="feat-icon">🔗</div>
-        <h3 class="feat-title">Cross-Platform Correlation</h3>
-        <p class="feat-body">Signals tracked across Reddit, Discord, Instagram, TikTok, Amazon, Google, and more. See precisely where in the adoption curve a trend lives.</p>
-        <span class="feat-tag">12+ SOURCES</span>
+      <div class="reveal" style="border-top:2px solid var(--gold); padding-top:1.2rem;">
+        <span class="fine" style="color:var(--gold-deep);">04 — DELIVERY</span>
+        <h3 class="h-sub" style="font-size:1.05rem; margin-top:.5rem;">Strategic Brief</h3>
+        <p class="body-text" style="font-size:.88rem;">A timed, specific, ready-to-execute roadmap — not just a graph.</p>
       </div>
-
-      <div class="feat-card card card--glow reveal">
-        <div class="feat-icon">💡</div>
-        <h3 class="feat-title">The "Why" Factor</h3>
-        <p class="feat-body">"Minimalist Wallets" trending? The real driver is "Physical Security Anxiety." ClearCurve surfaces the underlying driver, unlocking adjacent niches before anyone else.</p>
-        <span class="feat-tag">DEEP REASONING</span>
-      </div>
-
-      <div class="feat-card feat-card--gold card reveal">
-        <div class="feat-icon feat-icon--gold">🔌</div>
-        <h3 class="feat-title">API + Custom Dashboards</h3>
-        <p class="feat-body">Integrate ClearCurve directly into your workflow. Custom alerts, embeddable intelligence, white-label options. Become the central nervous system of your research.</p>
-        <span class="feat-tag feat-tag--gold">ENTERPRISE</span>
-      </div>
-
+    </div>
+    <div style="margin-top:2.5rem;">
+      <a href="product.html" class="btn btn--ghost">See the full product →</a>
     </div>
   </div>
 </section>
 
 <!-- ╔══════════════════════════════════════════════════════════╗ -->
-<!-- ║  OPPORTUNITY MATRIX                                      ║ -->
+<!-- ║  USE CASE — human photography                            ║ -->
 <!-- ╚══════════════════════════════════════════════════════════╝ -->
-<section id="matrix" class="section">
-  <div class="section__inner">
-    <div class="matrix-layout">
-
-      <div class="reveal">
-        <p class="eyebrow">Live Preview</p>
-        <h2 class="section__title">
-          The <span class="hl-teal">ClearCurve Zone™</span>
-        </h2>
-        <p class="section__body">
-          Our Opportunity Matrix plots every niche across demand momentum and competitive density. The glowing quadrant is where demand accelerates while supply remains stale — your window.
-        </p>
-        <p class="section__body" style="margin-top:1rem;">
-          Hover the bubbles to explore live niche examples. Teal = active opportunity. Grey = saturated or declining.
-        </p>
-        <div class="legend" style="margin-top:1.75rem;">
-          <div class="legend-item"><span class="legend-dot" style="background:rgba(7,217,192,.7)"></span>ClearCurve Opportunities</div>
-          <div class="legend-item"><span class="legend-dot" style="background:rgba(62,78,106,.5)"></span>Saturated / Declining</div>
-          <div class="legend-item"><span class="legend-dot" style="background:var(--red);opacity:.7"></span>Flash Fad Risk Zone</div>
-        </div>
-      </div>
-
-      <div class="matrix-canvas-panel reveal">
-        <h3><span class="dot">◉</span>Opportunity Matrix — Interactive Demo</h3>
-        <canvas id="matrixCanvas"></canvas>
-      </div>
-
+<section class="section-pad" style="background:var(--ink); color:var(--paper);">
+  <div class="wrap g-2" style="gap:4rem; align-items:center;">
+    <div>
+      <p class="eyebrow" style="color:var(--teal);">Built for whoever moves markets</p>
+      <h2 class="h-section reveal" style="color:#fff;">From solo operators to enterprise teams</h2>
+      <p class="lede reveal" style="color:rgba(251,250,247,.65);">E-commerce founders deciding what to source next. Content creators choosing their next niche. Marketing teams planning a roadmap. XCurve scales with you.</p>
+      <a href="product.html#usecases" class="btn btn--teal" style="margin-top:1.5rem;">Explore use cases</a>
+    </div>
+    <div class="reveal" style="border-radius:var(--r4); overflow:hidden; aspect-ratio:4/3;">
+      <img src="https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?w=900&q=80&auto=format&fit=crop" alt="Team reviewing market data together" style="width:100%; height:100%; object-fit:cover;" loading="lazy"/>
     </div>
   </div>
 </section>
 
 <!-- ╔══════════════════════════════════════════════════════════╗ -->
-<!-- ║  USE CASES                                               ║ -->
+<!-- ║  BUSINESS MODEL TEASER                                   ║ -->
 <!-- ╚══════════════════════════════════════════════════════════╝ -->
-<section id="usecases" class="section">
-  <div class="section__inner">
-    <p class="eyebrow">Use Cases</p>
-    <h2 class="section__title reveal">
-      Built for whoever <span class="hl-gold">moves markets</span>
-    </h2>
+<section class="section-pad">
+  <div class="wrap">
+    <p class="eyebrow eyebrow--center" style="justify-content:center;">The Business</p>
+    <h2 class="h-section reveal" style="text-align:center; max-width:680px; margin:0 auto 3rem;">A digital-native model built to compound</h2>
 
-    <div class="tabs" style="margin-top:2rem;">
-      <button class="tab-btn active" data-tab="ecommerce">E-Commerce</button>
-      <button class="tab-btn" data-tab="content">Content Creators</button>
-      <button class="tab-btn" data-tab="enterprise">Enterprise</button>
-    </div>
-
-    <!-- E-Commerce -->
-    <div class="tab-panel active" id="tab-ecommerce">
-      <div class="tab-text reveal">
-        <h3>Launch the <span class="hl-teal">right product</span><br>at the right moment</h3>
-        <p>Stop guessing what to source next. ClearCurve maps demand curves and tells you exactly which categories are entering their growth phase — before your competitors list the first unit.</p>
-        <div class="uc-metrics">
-          <div class="uc-metric"><span class="val">3–8×</span><span class="lbl">Earlier than competitors</span></div>
-          <div class="uc-metric"><span class="val">+24%</span><span class="lbl">Avg. demand growth surfaced</span></div>
-          <div class="uc-metric"><span class="val">Q3</span><span class="lbl">Precision launch timing</span></div>
-        </div>
+    <div class="g-4" style="gap:1.25rem;">
+      <div class="card reveal" style="padding:1.6rem;">
+        <span class="fine">REVENUE</span>
+        <h3 class="h-sub" style="font-size:1rem; margin-top:.5rem;">Tiered SaaS subscriptions</h3>
+        <p class="body-text" style="font-size:.85rem;">Scout, Operator, and Command plans plus usage-based API revenue.</p>
       </div>
-      <div class="brief-card reveal">
-        <div>
-          <h4>Sample Strategic Brief</h4>
-          <p>"Launch a bamboo-based sustainable office chair by Q3 to capture the 24% projected rise in eco-conscious remote work setups. Current content supply is low-quality. Curve-Fidelity Score: 87/100."</p>
-        </div>
-        <div>
-          <h4>Second Opportunity</h4>
-          <p>"RFID-blocking wallet accessories entering exponential growth phase. Physical Security Anxiety spreading from tech early-adopters to mainstream. Window: 6–9 weeks. Act now."</p>
-        </div>
+      <div class="card reveal" style="padding:1.6rem;">
+        <span class="fine">MOAT</span>
+        <h3 class="h-sub" style="font-size:1rem; margin-top:.5rem;">Compounding signal data</h3>
+        <p class="body-text" style="font-size:.85rem;">Every scan improves the model. The dataset gets harder to replicate over time.</p>
+      </div>
+      <div class="card reveal" style="padding:1.6rem;">
+        <span class="fine">SCALE</span>
+        <h3 class="h-sub" style="font-size:1rem; margin-top:.5rem;">Zero marginal cost growth</h3>
+        <p class="body-text" style="font-size:.85rem;">Software-native delivery — the same engine serves one user or one thousand.</p>
+      </div>
+      <div class="card reveal" style="padding:1.6rem;">
+        <span class="fine">LEVERAGE</span>
+        <h3 class="h-sub" style="font-size:1rem; margin-top:.5rem;">AI-native cost structure</h3>
+        <p class="body-text" style="font-size:.85rem;">Lean team, automated pipelines — built to scale without scaling headcount.</p>
       </div>
     </div>
-
-    <!-- Content Creators -->
-    <div class="tab-panel" id="tab-content">
-      <div class="tab-text reveal">
-        <h3>Find the <span class="hl-teal">content gap</span><br>before the crowd</h3>
-        <p>'Productivity' is saturated — but 'analog productivity for ADHD' has a 400% gap in high-quality video content. ClearCurve surfaces these gaps at scale, giving creators an unfair algorithmic edge.</p>
-        <div class="uc-metrics">
-          <div class="uc-metric"><span class="val">400%</span><span class="lbl">Content gap detected</span></div>
-          <div class="uc-metric"><span class="val">48h</span><span class="lbl">Ahead of trending topics</span></div>
-          <div class="uc-metric"><span class="val">∞</span><span class="lbl">Niche discovery engine</span></div>
-        </div>
-      </div>
-      <div class="brief-card reveal">
-        <div>
-          <h4>Sample Strategic Brief</h4>
-          <p>"'Analog productivity for ADHD' has 400% gap in high-quality video. First 10 creators to publish thoughtful long-form content will dominate this niche for 18+ months. Curve-Fidelity Score: 92/100."</p>
-        </div>
-        <div>
-          <h4>Trend Mutation Detected</h4>
-          <p>"'Smart recovery tools' emerging from 'at-home fitness' mutation. TikTok signal: 3 weeks. YouTube still empty. First-mover window open. Optimal publish window: next 12 days."</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Enterprise -->
-    <div class="tab-panel" id="tab-enterprise">
-      <div class="tab-text reveal">
-        <h3>The market intelligence<br><span class="hl-teal">nervous system</span></h3>
-        <p>ClearCurve scales from solopreneurs to full enterprise marketing departments. Via API access, custom dashboarding, and team collaboration, we become the intelligence backbone of your entire operation.</p>
-        <div class="uc-metrics">
-          <div class="uc-metric"><span class="val">API</span><span class="lbl">Full integration</span></div>
-          <div class="uc-metric"><span class="val">∞</span><span class="lbl">Custom dashboards</span></div>
-          <div class="uc-metric"><span class="val">24/7</span><span class="lbl">Live signal monitoring</span></div>
-        </div>
-      </div>
-      <div class="brief-card reveal">
-        <div>
-          <h4>Enterprise Intelligence</h4>
-          <p>"Integrate ClearCurve's signal API directly into your product roadmap, content calendar, and merchandising tools. Set custom alert thresholds. Push notifications when target categories hit ClearCurve Zone entry criteria."</p>
-        </div>
-        <div>
-          <h4>White-Label Available</h4>
-          <p>"Feed live opportunity data to clients under your own branding. ClearCurve becomes the invisible intelligence layer behind your research practice. Custom SLA and dedicated support included."</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ╔══════════════════════════════════════════════════════════╗ -->
-<!-- ║  PRICING                                                 ║ -->
-<!-- ╚══════════════════════════════════════════════════════════╝ -->
-<section id="pricing" class="section">
-  <div class="section__inner">
-    <div style="text-align:center; max-width:540px; margin:0 auto 1rem;">
-      <p class="eyebrow eyebrow--center">Pricing</p>
-      <h2 class="section__title reveal">Simple pricing.<br><span class="hl-teal">Serious returns.</span></h2>
-      <p class="section__body reveal" style="margin:0 auto;">
-        Join the waitlist to lock in founding member rates — up to 60% off at public launch.
-      </p>
-    </div>
-
-    <div class="pricing-grid">
-
-      <div class="price-card reveal">
-        <p class="price-tier">Starter</p>
-        <h3 class="price-name">Scout</h3>
-        <p class="price-desc">For solo creators and side-hustlers ready to move first.</p>
-        <div class="price-amount">
-          <span class="cur">$</span><span class="num">49</span><span class="per">/mo</span>
-        </div>
-        <ul class="price-features">
-          <li><span class="check">✓</span> 20 Opportunity Scans / month</li>
-          <li><span class="check">✓</span> ClearCurve Zone™ Matrix access</li>
-          <li><span class="check">✓</span> Flash Fad vs. Structural Shift detection</li>
-          <li><span class="check">✓</span> 3 Strategic Briefs / month</li>
-          <li><span class="check">✓</span> Email trend alerts</li>
-          <li><span class="check check--off">—</span> API access</li>
-        </ul>
-        <button class="price-btn price-btn--outline" onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'})">Join Waitlist — Lock Rate</button>
-      </div>
-
-      <div class="price-card price-card--featured reveal">
-        <div class="price-badge">Most Popular</div>
-        <p class="price-tier">Growth</p>
-        <h3 class="price-name">Operator</h3>
-        <p class="price-desc">For serious e-commerce brands and content businesses.</p>
-        <div class="price-amount">
-          <span class="cur">$</span><span class="num">149</span><span class="per">/mo</span>
-        </div>
-        <ul class="price-features">
-          <li><span class="check">✓</span> Unlimited Opportunity Scans</li>
-          <li><span class="check">✓</span> Full Matrix + history</li>
-          <li><span class="check">✓</span> Unlimited Strategic Briefs</li>
-          <li><span class="check">✓</span> The "Why" Factor analysis</li>
-          <li><span class="check">✓</span> Trend Mutation Predictions</li>
-          <li><span class="check">✓</span> 48h edge priority alerts</li>
-        </ul>
-        <button class="price-btn price-btn--teal" onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'})">Join Waitlist — Lock Rate</button>
-      </div>
-
-      <div class="price-card reveal">
-        <p class="price-tier">Enterprise</p>
-        <h3 class="price-name">Command</h3>
-        <p class="price-desc">For agencies and enterprise marketing departments.</p>
-        <div class="price-amount">
-          <span class="cur">$</span><span class="num">499</span><span class="per">/mo</span>
-        </div>
-        <ul class="price-features">
-          <li><span class="check check--gold">✦</span> Everything in Operator</li>
-          <li><span class="check check--gold">✦</span> Full REST API access</li>
-          <li><span class="check check--gold">✦</span> Custom dashboards + white-label</li>
-          <li><span class="check check--gold">✦</span> 10 team seats</li>
-          <li><span class="check check--gold">✦</span> Dedicated account intelligence</li>
-          <li><span class="check check--gold">✦</span> SLA + enterprise support</li>
-        </ul>
-        <button class="price-btn price-btn--gold" onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'})">Join Waitlist — Early Rate</button>
-      </div>
-
-    </div>
-    <p style="text-align:center;font-size:.76rem;color:var(--ink3);margin-top:1.75rem;">
-      ✦ 14-day free trial at launch &nbsp;·&nbsp; No credit card to join waitlist &nbsp;·&nbsp; Founding rates locked 12 months
-    </p>
-  </div>
-</section>
-
-<!-- ╔══════════════════════════════════════════════════════════╗ -->
-<!-- ║  WAITLIST CTA                                            ║ -->
-<!-- ╚══════════════════════════════════════════════════════════╝ -->
-<section id="waitlist" class="section">
-  <div class="waitlist__orb"></div>
-  <div class="waitlist-inner">
-    <p class="eyebrow eyebrow--center reveal">Early Access</p>
-    <h2 class="section__title reveal">
-      Be a week ahead.<br><span class="hl-teal">Every week.</span>
-    </h2>
-    <p class="section__body reveal" style="margin:0 auto 2.5rem; text-align:center; max-width:480px;">
-      In a world of infinite data, the only true competitive advantage is being a step ahead of the crowd. Join the waitlist — you'll be first to access ClearCurve AI.
-    </p>
-
-    <form class="waitlist-form reveal" id="waitlist-form" novalidate>
-      <input
-        type="email"
-        id="waitlist-email"
-        class="waitlist-input"
-        placeholder="your@email.com"
-        autocomplete="email"
-        required
-      />
-      <button type="submit" class="btn btn--primary">Secure My Spot</button>
-    </form>
-
-    <div class="waitlist-success" id="waitlist-success">
-      <span>🎯 You're on the list.</span>
-      <p>We'll reach out with early access details. Watch your inbox.</p>
-    </div>
-
-    <p class="waitlist-note reveal">No spam. No fluff. Just early access and founding member pricing.</p>
-
-    <div class="signups-badge reveal">
-      <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="3" fill="var(--teal)" opacity=".3"/><circle cx="4" cy="4" r="1.5" fill="var(--teal)"/></svg>
-      <strong id="signup-count">1,247</strong>&nbsp;people already on the waitlist
+    <div style="margin-top:2.5rem; text-align:center;">
+      <a href="company.html#business-model" class="btn btn--ghost">Read the full business model →</a>
     </div>
   </div>
 </section>
 
 <!-- ╔══════════════════════════════════════════════════════════╗ -->
-<!-- ║  FOUNDER                                                 ║ -->
+<!-- ║  FINAL CTA                                               ║ -->
 <!-- ╚══════════════════════════════════════════════════════════╝ -->
-<section id="founder" class="section">
-  <div class="section__inner">
-    <div class="founder-grid">
-
-      <div class="founder-card reveal">
-        <div class="founder-avatar">O</div>
-        <h3 class="founder-name">Oluwaseun Osunbade</h3>
-        <p class="founder-role">Founder & CEO · Developer</p>
-        <div class="founder-links">
-          <a href="mailto:oluwaseun.o@clearcurve.live" class="founder-link">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
-            Email
-          </a>
-          <a href="https://www.linkedin.com/in/seun-osunbade84/" target="_blank" rel="noopener" class="founder-link">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            LinkedIn
-          </a>
-        </div>
-      </div>
-
-      <div class="founder-text reveal">
-        <p class="eyebrow">The Founder</p>
-        <blockquote>
-          "In a world of infinite data, the only true competitive advantage is being a week ahead of the crowd."
-        </blockquote>
-        <p>Oluwaseun Osunbade is a developer and entrepreneur who saw a glaring gap in how market research was being done. Analytics tools were built to describe the past — impressive dashboards showing what already happened.</p>
-        <p>He believed the real value was in seeing what was <em>about to</em> happen. ClearCurve AI is the answer: an intelligence layer that treats market signals not as a report, but as a prediction engine.</p>
-        <div style="display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem;">
-          <a href="mailto:oluwaseun.o@clearcurve.live" class="btn btn--ghost" style="font-size:.82rem; padding:.6rem 1.3rem;">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
-            oluwaseun.o@clearcurve.live
-          </a>
-          <a href="https://www.linkedin.com/in/seun-osunbade84/" target="_blank" rel="noopener" class="btn btn--ghost" style="font-size:.82rem; padding:.6rem 1.3rem;">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            Connect on LinkedIn
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ╔══════════════════════════════════════════════════════════╗ -->
-<!-- ║  FAQ                                                     ║ -->
-<!-- ╚══════════════════════════════════════════════════════════╝ -->
-<section id="faq" class="section">
-  <div class="section__inner">
-    <p class="eyebrow">FAQ</p>
-    <h2 class="section__title reveal">Common questions</h2>
-
-    <div class="faq-cols">
-
-      <div class="faq-item reveal">
-        <button class="faq-q"><span>What makes ClearCurve different from Google Trends?</span><span class="faq-chevron">+</span></button>
-        <div class="faq-a">Google Trends shows you what's already trending. ClearCurve identifies signals before they surface on mainstream tools — by tracking niche communities, cross-platform signal propagation, and applying predictive modeling to detect inflection points weeks ahead.</div>
-      </div>
-
-      <div class="faq-item reveal">
-        <button class="faq-q"><span>Who is ClearCurve built for?</span><span class="faq-chevron">+</span></button>
-        <div class="faq-a">Anyone whose success depends on being first: e-commerce founders deciding what to source, content creators choosing their next niche, marketing teams planning campaigns, and enterprise brands mapping product roadmaps.</div>
-      </div>
-
-      <div class="faq-item reveal">
-        <button class="faq-q"><span>How does the Curve-Fidelity Score™ work?</span><span class="faq-chevron">+</span></button>
-        <div class="faq-a">A confidence metric (0–100) assigned to every opportunity. It blends quantitative signals (search volume trajectory, CPC changes, inventory turnover) with qualitative AI reasoning (sentiment analysis, community momentum) to predict trend durability.</div>
-      </div>
-
-      <div class="faq-item reveal">
-        <button class="faq-q"><span>When is ClearCurve launching?</span><span class="faq-chevron">+</span></button>
-        <div class="faq-a">We're building in public and currently accepting early access applications. Founding members will be first to access the platform and receive locked-in pricing for 12 months. Join the waitlist to be notified the moment we open doors.</div>
-      </div>
-
-      <div class="faq-item reveal">
-        <button class="faq-q"><span>What data sources do you use?</span><span class="faq-chevron">+</span></button>
-        <div class="faq-a">Our Nodal Ingestion layer aggregates signals across Reddit, Discord, Instagram, TikTok, YouTube, Amazon, Google Search, Google Shopping, and more — tracking how concepts migrate from early adopters to mainstream demand.</div>
-      </div>
-
-      <div class="faq-item reveal">
-        <button class="faq-q"><span>Is there an API for enterprise use?</span><span class="faq-chevron">+</span></button>
-        <div class="faq-a">Yes. The Command (Enterprise) plan includes full REST API access, enabling you to pipe ClearCurve intelligence directly into your internal tools, product roadmaps, and content calendars. White-label options available for agencies.</div>
-      </div>
-
-      <div class="faq-item reveal">
-        <button class="faq-q"><span>What's the difference between Flash Fad and Structural Shift?</span><span class="faq-chevron">+</span></button>
-        <div class="faq-a">Flash Fads are high-velocity trends with short lifespans — viral moments that collapse quickly. Structural Shifts are sustainable, long-term changes in consumer behavior worth investing in. ClearCurve's AI distinguishes between them so you never waste resources chasing noise.</div>
-      </div>
-
-      <div class="faq-item reveal">
-        <button class="faq-q"><span>How accurate are the predictions?</span><span class="faq-chevron">+</span></button>
-        <div class="faq-a">Our hybrid modeling (Time-Series Forecasting + Transformer-based Extrapolation) is designed to surface opportunities 48 hours to several weeks before mainstream visibility. Accuracy metrics will be published transparently once the platform launches and we accumulate live performance data.</div>
-      </div>
-
+<section class="section-pad" style="background:var(--teal-tint); border-top:1px solid var(--teal-line);">
+  <div class="wrap" style="text-align:center; max-width:620px; margin:0 auto;">
+    <h2 class="h-section reveal">Be a week ahead. <span class="italic txt-teal">Every week.</span></h2>
+    <p class="lede reveal" style="margin:0 auto 2rem; text-align:center;">See the live demo, or join the waitlist to be first when XCurve opens its doors.</p>
+    <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="demo.html" class="btn btn--teal btn--lg">Launch Demo</a>
+      <a href="pricing.html" class="btn btn--ghost btn--lg">View Pricing</a>
     </div>
   </div>
 </section>
@@ -1604,540 +248,48 @@ footer {
 <!-- ║  FOOTER                                                  ║ -->
 <!-- ╚══════════════════════════════════════════════════════════╝ -->
 <footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <a href="#" class="nav__logo" style="margin-bottom:.9rem;">
-        <div class="nav__logo-mark">
-          <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
-            <rect width="34" height="34" rx="8" fill="#0c1525"/>
-            <path d="M5 26C9 26 11 20 15 16 19 12 21 9 29 5" stroke="#07d9c0" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-            <circle cx="15" cy="16" r="2.5" fill="#f0c040"/>
-            <rect width="34" height="34" rx="8" fill="none" stroke="rgba(7,217,192,.2)" stroke-width="1"/>
-          </svg>
-        </div>
-        <span class="nav__logo-name">Clear<em>Curve</em> AI</span>
-      </a>
-      <p class="footer-brand__desc">Predictive intelligence for the next market frontier. Find the gaps. Ride the curve.</p>
-      <p class="footer-brand__locale">📍 Building globally · Founder based in Nigeria</p>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="footer-brand">
+          <svg width="28" height="28" viewBox="0 0 30 30" fill="none"><rect width="30" height="30" rx="7" fill="#0E8C7C"/><path d="M4 23C9 23 11 17 14 13.5 17 10 19 8 26 4" stroke="#FBFAF7" stroke-width="2.4" stroke-linecap="round" fill="none"/><circle cx="14" cy="13.5" r="2.2" fill="#B8893B"/></svg>
+          X<em>Curve</em>
+        </a>
+        <p class="footer-desc">Predictive intelligence for the next market frontier. Find the gaps. Ride the curve.</p>
+        <p class="footer-locale">Building globally · Founder based in Nigeria</p>
+      </div>
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="product.html">Product</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="demo.html">Launch Demo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="company.html">About</a></li>
+          <li><a href="company.html#business-model">Business Model</a></li>
+          <li><a href="investors.html">Investors</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:onyeka.ofoegbu@xcurve.co">onyeka.ofoegbu@xcurve.co</a></li>
+          <li><a href="https://www.linkedin.com/in/onyeka-ofoegbu-446b8630a/" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
     </div>
-
-    <div class="footer-col">
-      <h4>Product</h4>
-      <ul>
-        <li><a href="#vision">Vision</a></li>
-        <li><a href="#how">How It Works</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#matrix">Opportunity Matrix</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <p>© 2026 XCurve AI. Built with intention.</p>
+      <p>Founder: <a href="https://www.linkedin.com/in/onyeka-ofoegbu-446b8630a/" target="_blank" rel="noopener">Onyeka Ofoegbu</a></p>
+      <p>Proprietary &amp; Confidential</p>
     </div>
-
-    <div class="footer-col">
-      <h4>Use Cases</h4>
-      <ul>
-        <li><a href="#usecases">E-Commerce</a></li>
-        <li><a href="#usecases">Content Creators</a></li>
-        <li><a href="#usecases">Agencies</a></li>
-        <li><a href="#usecases">Enterprise</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h4>Connect</h4>
-      <ul>
-        <li><a href="#waitlist">Join Waitlist</a></li>
-        <li><a href="mailto:oluwaseun.o@clearcurve.live">oluwaseun.o@clearcurve.live</a></li>
-        <li><a href="https://www.linkedin.com/in/seun-osunbade84/" target="_blank" rel="noopener">LinkedIn</a></li>
-        <li><a href="#founder">About the Founder</a></li>
-        <li><a href="#faq">FAQ</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2026 ClearCurve AI. Built with intention.</p>
-    <p>Founder: <a href="https://www.linkedin.com/in/seun-osunbade84/" target="_blank" rel="noopener">Oluwaseun Osunbade</a></p>
-    <p>All rights reserved · Proprietary & Confidential</p>
   </div>
 </footer>
 
-<script>
-/* ================================================================
-   ClearCurve AI — script.js  ·  Peak Premium Tech Landing Page
-   ================================================================ */
-'use strict';
-
-/* ── Utils ──────────────────────────────────────────────────── */
-const $  = (sel, ctx = document) => ctx.querySelector(sel);
-const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
-const raf = requestAnimationFrame;
-
-/* ── Cursor ─────────────────────────────────────────────────── */
-(function cursor() {
-  const dot  = $('#cc-cursor');
-  const ring = $('#cc-cursor-ring');
-  if (!dot || !ring || window.matchMedia('(pointer:coarse)').matches) return;
-
-  let mx = -100, my = -100, rx = -100, ry = -100;
-
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-  document.addEventListener('mousedown', () => dot.style.transform = 'translate(-50%,-50%) scale(.7)');
-  document.addEventListener('mouseup',   () => dot.style.transform = 'translate(-50%,-50%) scale(1)');
-
-  $$('a, button, [data-hover]').forEach(el => {
-    el.addEventListener('mouseenter', () => document.body.classList.add('is-hovering'));
-    el.addEventListener('mouseleave', () => document.body.classList.remove('is-hovering'));
-  });
-
-  function tick() {
-    dot.style.left = mx + 'px';
-    dot.style.top  = my + 'px';
-    rx += (mx - rx) * .1;
-    ry += (my - ry) * .1;
-    ring.style.left = rx + 'px';
-    ring.style.top  = ry + 'px';
-    raf(tick);
-  }
-  raf(tick);
-})();
-
-/* ── Navbar ─────────────────────────────────────────────────── */
-(function navbar() {
-  const nav    = $('#nav');
-  const burger = $('#nav-burger');
-  const links  = $('#nav-links');
-  if (!nav) return;
-
-  const onScroll = () => nav.classList.toggle('nav--scrolled', scrollY > 40);
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
-
-  burger?.addEventListener('click', () => {
-    const open = burger.classList.toggle('open');
-    links?.classList.toggle('open', open);
-    document.body.style.overflow = open ? 'hidden' : '';
-  });
-
-  $$('#nav-links a').forEach(a => {
-    a.addEventListener('click', () => {
-      burger?.classList.remove('open');
-      links?.classList.remove('open');
-      document.body.style.overflow = '';
-    });
-  });
-})();
-
-/* ── Scroll reveal ──────────────────────────────────────────── */
-(function reveal() {
-  const els = $$('.reveal');
-  if (!els.length) return;
-
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      e.target.classList.add('in');
-      io.unobserve(e.target);
-    });
-  }, { threshold: .1, rootMargin: '0px 0px -50px 0px' });
-
-  els.forEach((el, i) => {
-    el.style.transitionDelay = ((i % 5) * 70) + 'ms';
-    io.observe(el);
-  });
-})();
-
-/* ── Animated counters ──────────────────────────────────────── */
-(function counters() {
-  $$('[data-count]').forEach(el => {
-    const target = +el.dataset.count;
-    const suffix = el.dataset.suffix || '';
-    let started = false;
-
-    const io = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting || started) return;
-      started = true;
-      const dur = 1800;
-      let t0;
-      function step(now) {
-        if (!t0) t0 = now;
-        const p = Math.min((now - t0) / dur, 1);
-        const eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.floor(eased * target) + suffix;
-        if (p < 1) raf(step);
-      }
-      raf(step);
-      io.disconnect();
-    }, { threshold: .5 });
-    io.observe(el);
-  });
-})();
-
-/* ── Hero canvas — flowing curves ───────────────────────────── */
-(function heroCanvas() {
-  const canvas = $('#heroCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let W, H, t = 0;
-
-  function resize() {
-    W = canvas.width  = canvas.offsetWidth  * devicePixelRatio;
-    H = canvas.height = canvas.offsetHeight * devicePixelRatio;
-  }
-  resize();
-  new ResizeObserver(resize).observe(canvas);
-
-  const curves = [
-    { amp: .22, freq: .9,  phase: 0,    thick: 1.5, alpha: .18, color: '#07d9c0' },
-    { amp: .16, freq: 1.3, phase: 1.2,  thick: 1,   alpha: .10, color: '#07d9c0' },
-    { amp: .12, freq: .7,  phase: 2.4,  thick: .8,  alpha: .07, color: '#f0c040' },
-    { amp: .08, freq: 1.7, phase: 3.6,  thick: .6,  alpha: .06, color: '#07d9c0' },
-  ];
-
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-
-    curves.forEach(c => {
-      ctx.beginPath();
-      const steps = 180;
-      for (let i = 0; i <= steps; i++) {
-        const x = (i / steps) * W;
-        const y = H * .5
-          + Math.sin(i / steps * Math.PI * 2 * c.freq + t + c.phase) * H * c.amp
-          + Math.sin(i / steps * Math.PI * 3.1 + t * .7 + c.phase) * H * c.amp * .4;
-        i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-      }
-      ctx.strokeStyle = c.color;
-      ctx.globalAlpha = c.alpha;
-      ctx.lineWidth   = c.thick * devicePixelRatio;
-      ctx.lineJoin    = 'round';
-      ctx.stroke();
-    });
-    ctx.globalAlpha = 1;
-    t += .006;
-    raf(draw);
-  }
-  draw();
-})();
-
-/* ── Vision chart ───────────────────────────────────────────── */
-(function visionChart() {
-  const canvas = $('#visionChart');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let W, H, prog = 0, animId;
-  let started = false;
-
-  function resize() {
-    W = canvas.width  = canvas.offsetWidth  * devicePixelRatio;
-    H = canvas.height = canvas.offsetHeight * devicePixelRatio;
-  }
-  resize();
-  new ResizeObserver(() => { resize(); draw(prog); }).observe(canvas);
-
-  const data = {
-    labels: ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct'],
-    lines: [
-      { pts: [.80,.74,.65,.58,.50,.40,.32,.27,.20,.14], color: '#07d9c0', fill: true,  thick: 2.5, dash: [],   label: 'ClearCurve Zone™' },
-      { pts: [.14,.20,.30,.42,.50,.60,.68,.73,.78,.82], color: '#f05060', fill: false, thick: 1.5, dash: [6,4], label: 'Market Saturation'  },
-      { pts: [.46,.52,.58,.64,.68,.70,.66,.58,.48,.36], color: '#f0c040', fill: false, thick: 1.5, dash: [4,5], label: 'Demand Momentum'    },
-    ]
-  };
-
-  function draw(p) {
-    const DPR = devicePixelRatio;
-    const pad = { t: 28*DPR, r: 16*DPR, b: 44*DPR, l: 44*DPR };
-    const cw = W - pad.l - pad.r;
-    const ch = H - pad.t - pad.b;
-    ctx.clearRect(0, 0, W, H);
-
-    // grid
-    ctx.strokeStyle = 'rgba(7,217,192,.06)';
-    ctx.lineWidth   = .5;
-    for (let i = 0; i <= 5; i++) {
-      const y = pad.t + ch/5*i;
-      ctx.beginPath(); ctx.moveTo(pad.l, y); ctx.lineTo(pad.l+cw, y); ctx.stroke();
-    }
-    for (let i = 0; i <= 9; i++) {
-      const x = pad.l + cw/9*i;
-      ctx.beginPath(); ctx.moveTo(x, pad.t); ctx.lineTo(x, pad.t+ch); ctx.stroke();
-    }
-
-    // axis labels
-    ctx.fillStyle = '#3a4e6a'; ctx.font = `${9*DPR}px "GeistMono","Courier New",monospace`;
-    ctx.textAlign = 'center';
-    data.labels.forEach((l, i) => ctx.fillText(l, pad.l + cw/9*i, pad.t+ch+14*DPR));
-    ctx.textAlign = 'right';
-    for (let i = 0; i <= 4; i++) ctx.fillText((4-i)*25+'%', pad.l-6*DPR, pad.t+ch/4*i+3*DPR);
-
-    // lines
-    const n = Math.max(2, Math.floor(p * (data.lines[0].pts.length - 1)) + 1);
-    data.lines.forEach(line => {
-      const pts = line.pts.slice(0, n);
-      ctx.beginPath();
-      pts.forEach((v, i) => {
-        const x = pad.l + cw/(data.lines[0].pts.length-1)*i;
-        const y = pad.t + ch*(1-v);
-        i === 0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
-      });
-      if (line.fill) {
-        const lx = pad.l + cw/(data.lines[0].pts.length-1)*(pts.length-1);
-        ctx.lineTo(lx, pad.t+ch); ctx.lineTo(pad.l, pad.t+ch); ctx.closePath();
-        const grad = ctx.createLinearGradient(0, pad.t, 0, pad.t+ch);
-        grad.addColorStop(0, 'rgba(7,217,192,.15)');
-        grad.addColorStop(1, 'rgba(7,217,192,.01)');
-        ctx.fillStyle = grad; ctx.fill();
-        ctx.beginPath();
-        pts.forEach((v,i) => {
-          const x = pad.l + cw/(data.lines[0].pts.length-1)*i;
-          const y = pad.t + ch*(1-v);
-          i===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
-        });
-      }
-      ctx.strokeStyle = line.color;
-      ctx.lineWidth   = line.thick * DPR;
-      ctx.lineJoin    = 'round'; ctx.lineCap = 'round';
-      ctx.setLineDash(line.dash.map(d=>d*DPR));
-      ctx.stroke(); ctx.setLineDash([]);
-      // endpoint dot
-      if (pts.length > 1) {
-        const li = pts.length-1;
-        const ex = pad.l + cw/(data.lines[0].pts.length-1)*li;
-        const ey = pad.t + ch*(1-pts[li]);
-        ctx.beginPath(); ctx.arc(ex, ey, 3.5*DPR, 0, Math.PI*2);
-        ctx.fillStyle = line.color; ctx.fill();
-      }
-    });
-
-    // legend
-    data.lines.forEach((l,i) => {
-      const lx = pad.l + (cw/data.lines.length)*i;
-      const ly = pad.t - 14*DPR;
-      ctx.beginPath(); ctx.moveTo(lx, ly); ctx.lineTo(lx+16*DPR, ly);
-      ctx.strokeStyle = l.color; ctx.lineWidth = 1.5*DPR;
-      ctx.setLineDash(l.dash.map(d=>d*DPR)); ctx.stroke(); ctx.setLineDash([]);
-      ctx.fillStyle = '#7e96bb'; ctx.font = `${8.5*DPR}px "GeistMono","Courier New",monospace`;
-      ctx.textAlign = 'left'; ctx.fillText(l.label, lx+20*DPR, ly+3*DPR);
-    });
-  }
-
-  const io = new IntersectionObserver(([e]) => {
-    if (!e.isIntersecting || started) return;
-    started = true;
-    function anim() {
-      prog = Math.min(1, prog + .014);
-      draw(prog);
-      if (prog < 1) animId = raf(anim);
-    }
-    anim();
-    io.disconnect();
-  }, { threshold: .25 });
-  io.observe(canvas);
-})();
-
-/* ── Opportunity matrix canvas ──────────────────────────────── */
-(function matrixCanvas() {
-  const canvas = $('#matrixCanvas');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  let W, H, hovered = null;
-
-  function resize() {
-    W = canvas.width  = canvas.offsetWidth  * devicePixelRatio;
-    H = canvas.height = canvas.offsetHeight * devicePixelRatio;
-    draw();
-  }
-  resize();
-  new ResizeObserver(resize).observe(canvas);
-
-  const niches = [
-    { label:'Bamboo Office Chairs',      x:.78, y:.80, r:18, hot:true  },
-    { label:'Analog ADHD Productivity',  x:.85, y:.70, r:14, hot:true  },
-    { label:'RFID Wallets',              x:.72, y:.62, r:12, hot:true  },
-    { label:'Smart Recovery Tools',      x:.82, y:.52, r:10, hot:true  },
-    { label:'Eco Packaging',             x:.68, y:.76, r: 9, hot:true  },
-    { label:'Generic Fitness',           x:.22, y:.20, r:22, hot:false },
-    { label:'Productivity Apps',         x:.18, y:.28, r:20, hot:false },
-    { label:'Sustainable Fashion',       x:.48, y:.44, r:14, hot:false },
-    { label:'Home Office Decor',         x:.42, y:.58, r:12, hot:false },
-  ];
-
-  const DPR = devicePixelRatio;
-
-  canvas.addEventListener('mousemove', e => {
-    const rect = canvas.getBoundingClientRect();
-    const mx = (e.clientX - rect.left) * DPR;
-    const my = (e.clientY - rect.top)  * DPR;
-    const pad = 52 * DPR;
-    const prev = hovered;
-    hovered = null;
-    niches.forEach(n => {
-      const cx = pad + n.x * (W - pad*2);
-      const cy = H - pad - n.y * (H - pad*2);
-      if (Math.hypot(mx-cx, my-cy) < (n.r+6)*DPR) hovered = n;
-    });
-    if (hovered !== prev) draw();
-  });
-  canvas.addEventListener('mouseleave', () => { hovered = null; draw(); });
-
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    const pad = 52 * DPR;
-    const cw = W - pad*2;
-    const ch = H - pad*2;
-    const mx = pad + cw*.5;
-    const my = pad + ch*.5;
-
-    // quadrant fills
-    const quads = [
-      { x:mx, y:pad,    w:W-mx-pad, h:my-pad,    fill:'rgba(7,217,192,.03)' },  // top-right
-      { x:pad,y:pad,    w:mx-pad,   h:my-pad,    fill:'rgba(240,80,96,.03)'  },  // top-left
-      { x:mx, y:my,     w:W-mx-pad, h:H-my-pad,  fill:'rgba(240,192,64,.03)' },  // bot-right
-      { x:pad,y:my,     w:mx-pad,   h:H-my-pad,  fill:'rgba(255,255,255,.01)'},  // bot-left
-    ];
-    quads.forEach(q => { ctx.fillStyle=q.fill; ctx.fillRect(q.x,q.y,q.w,q.h); });
-
-    // grid
-    ctx.strokeStyle = 'rgba(7,217,192,.06)'; ctx.lineWidth = .5;
-    for (let i=0;i<=4;i++) {
-      const x=pad+cw/4*i, y=pad+ch/4*i;
-      ctx.beginPath();ctx.moveTo(x,pad);ctx.lineTo(x,pad+ch);ctx.stroke();
-      ctx.beginPath();ctx.moveTo(pad,y);ctx.lineTo(pad+cw,y);ctx.stroke();
-    }
-    // axes
-    ctx.strokeStyle='rgba(7,217,192,.18)'; ctx.lineWidth=1;
-    ctx.beginPath();ctx.moveTo(mx,pad);ctx.lineTo(mx,pad+ch);ctx.stroke();
-    ctx.beginPath();ctx.moveTo(pad,my);ctx.lineTo(pad+cw,my);ctx.stroke();
-
-    // labels
-    ctx.fillStyle='#3a4e6a'; ctx.font=`bold ${8*DPR}px "Instrument Sans",sans-serif`;
-    ctx.textAlign='right'; ctx.fillText('CLEARCURVE ZONE™', W-pad-4*DPR, pad+12*DPR);
-    ctx.fillStyle='rgba(240,80,96,.45)'; ctx.textAlign='left'; ctx.fillText('SATURATED', pad+4*DPR, pad+12*DPR);
-    ctx.fillStyle='rgba(240,192,64,.35)'; ctx.textAlign='right'; ctx.fillText('EMERGING', W-pad-4*DPR, H-pad-6*DPR);
-    ctx.fillStyle='rgba(255,255,255,.12)'; ctx.textAlign='left'; ctx.fillText('DECLINING', pad+4*DPR, H-pad-6*DPR);
-
-    // axis text
-    ctx.fillStyle='#3a4e6a'; ctx.font=`${7*DPR}px "GeistMono","Courier New",monospace`;
-    ctx.textAlign='center'; ctx.fillText('← HIGH COMPETITION  |  LOW COMPETITION →', W/2, H-8*DPR);
-    ctx.save(); ctx.translate(12*DPR, H/2); ctx.rotate(-Math.PI/2);
-    ctx.fillText('← LOW DEMAND  |  HIGH DEMAND →', 0, 0); ctx.restore();
-
-    // bubbles
-    niches.forEach(n => {
-      const cx = pad + n.x*cw;
-      const cy = H - pad - n.y*ch;
-      const r  = n.r * DPR;
-      const isHov = hovered === n;
-
-      ctx.beginPath(); ctx.arc(cx, cy, r*(isHov?1.3:1), 0, Math.PI*2);
-      if (n.hot) {
-        const g = ctx.createRadialGradient(cx,cy,0,cx,cy,r);
-        g.addColorStop(0,'rgba(7,217,192,.75)');
-        g.addColorStop(1,'rgba(7,217,192,.12)');
-        ctx.fillStyle=g; ctx.strokeStyle='#07d9c0';
-      } else {
-        ctx.fillStyle='rgba(62,78,106,.28)'; ctx.strokeStyle='rgba(62,78,106,.45)';
-      }
-      ctx.lineWidth=1.5; ctx.fill(); ctx.stroke();
-
-      if (isHov) {
-        ctx.fillStyle = n.hot ? '#07d9c0' : '#7e96bb';
-        ctx.font = `bold ${9*DPR}px "Instrument Sans",sans-serif`;
-        ctx.textAlign = 'center';
-        ctx.fillText(n.label, cx, cy - r - 7*DPR);
-      }
-    });
-  }
-})();
-
-/* ── Tabs ───────────────────────────────────────────────────── */
-(function tabs() {
-  $$('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const id = btn.dataset.tab;
-      $$('.tab-btn').forEach(b => b.classList.remove('active'));
-      $$('.tab-panel').forEach(p => p.classList.remove('active'));
-      btn.classList.add('active');
-      $('#tab-'+id)?.classList.add('active');
-    });
-  });
-})();
-
-/* ── FAQ accordion ──────────────────────────────────────────── */
-(function faq() {
-  $$('.faq-q').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item   = btn.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      $$('.faq-item.open').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-    });
-  });
-})();
-
-/* ── Waitlist form ──────────────────────────────────────────── */
-(function waitlist() {
-  const form    = $('#waitlist-form');
-  const input   = $('#waitlist-email');
-  const success = $('#waitlist-success');
-  const count   = $('#signup-count');
-  if (!form) return;
-
-  let n = 1247;
-
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const val = input.value.trim();
-    if (!val || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)) {
-      input.classList.add('input--error');
-      input.focus();
-      setTimeout(() => input.classList.remove('input--error'), 2000);
-      return;
-    }
-    form.style.opacity = '0';
-    form.style.pointerEvents = 'none';
-    setTimeout(() => {
-      form.style.display = 'none';
-      success?.classList.add('show');
-      if (count) count.textContent = (++n).toLocaleString();
-    }, 300);
-  });
-})();
-
-/* ── Floating particles ─────────────────────────────────────── */
-(function particles() {
-  const hero = $('#hero');
-  if (!hero) return;
-  const style = document.createElement('style');
-  style.textContent = '@keyframes fp{0%{transform:translateY(0) translateX(0);opacity:0}20%{opacity:1}80%{opacity:.6}100%{transform:translateY(-120px) translateX(var(--dx));opacity:0}}';
-  document.head.appendChild(style);
-
-  for (let i = 0; i < 22; i++) {
-    const p = document.createElement('div');
-    const isTeal = Math.random() > .35;
-    p.style.cssText = `
-      position:absolute;
-      width:${Math.random()*2.5+.5}px;
-      height:${Math.random()*2.5+.5}px;
-      border-radius:50%;
-      background:${isTeal ? 'rgba(7,217,192,' : 'rgba(240,192,64,'}${(Math.random()*.25+.08)});
-      left:${Math.random()*100}%;
-      top:${Math.random()*100}%;
-      --dx:${(Math.random()-.5)*50}px;
-      pointer-events:none;
-      animation:fp ${Math.random()*10+8}s ease-in-out ${Math.random()*6}s infinite;
-    `;
-    hero.appendChild(p);
-  }
-})();
-
-/* ── Smooth scroll for anchor links ─────────────────────────── */
-$$('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const t = document.querySelector(a.getAttribute('href'));
-    if (t) { e.preventDefault(); t.scrollIntoView({ behavior:'smooth', block:'start' }); }
-  });
-});
-
-</script>
+<script src="js/shared.js"></script>
 </body>
 </html>

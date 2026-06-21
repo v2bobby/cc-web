@@ -1,49 +1,74 @@
-# README.md
+# XCurve AI — Investor & Product Platform
 
-# ClearCurve AI – Official Landing Page
+**Predictive Intelligence for the Next Market Frontier**
 
-**Premium, futuristic, mobile-first website** for the ClearCurve AI predictive intelligence startup.
+A complete rebrand and rebuild of the former ClearCurve AI site into **XCurve AI** — a multi-page, premium, investor-facing platform built as static HTML/CSS/JS, ready to deploy on Vercel.
 
-Built as a **website builder** deliverable by Grok. No MVP yet — this page is engineered to generate maximum excitement and collect waitlist sign-ups.
+## What changed from the previous build
 
-## Design Philosophy
-- **Premium tech aesthetic** inspired by the clean, glowing, high-contrast style of top-tier AI products (Litho.quest influence: generous whitespace, neon-cyan accents, glassmorphism, refined typography, subtle glows and micro-animations).
-- **Not similar to sabajcore.xyz** — deliberately futuristic and anticipation-focused rather than corporate.
-- **High-quality logo**: Fully vector SVG with glow filter, gradient curve, and professional wordmark — scales perfectly on all devices.
-- **100% responsive** on mobile, tablet, and desktop with Tailwind breakpoints and custom mobile optimizations.
+- **Rebrand**: ClearCurve AI → **XCurve AI**, new founder (Onyeka Ofoegbu), new domain (`xcurve.co`)
+- **Visual direction**: dark "Intelligence Noir" → light, editorial "Instrument" aesthetic — warm paper background, ink text, deepened teal + gold accents for legibility in light mode
+- **Architecture**: single long-scrolling page → **6 dedicated pages** with full internal navigation
+- **Audience shift**: general waitlist growth → **investor/accelerator-first**, fully open and self-serve (no gated content)
+- **New page**: dedicated **Investors** page (market thesis, defensibility, business model snapshot)
+- **New flow**: dedicated **Demo/Signup** page with a polished "Coming Soon" waitlist capture — no real signups are processed
 
-## Files Included
-- `index.html` — Complete single-page website
-- `styles.css` — Premium custom styles + Tailwind
-- `script.js` — Interactivity, Chart.js demo, modals, scroll animations, mobile menu
+## Site map
 
-## How to Run
-1. Download all three files into a single folder.
-2. Open `index.html` in any modern browser (works offline).
-3. Deploy instantly on Vercel, Netlify, Cloudflare Pages, or your own domain (`clearcurve.xyz`).
+| Page | File | Purpose |
+|---|---|---|
+| Home | `index.html` | Full-viewport hero, problem framing, How It Works, use-case teaser, business model teaser, final CTA |
+| Product | `product.html` | Deep dive on all 4 product layers (Nodal Ingestion, Predictive Modeling, Opportunity Matrix, Strategic Briefs), user journeys by segment, technical differentiators |
+| Company | `company.html` | Founder story + full business model breakdown (value creation, revenue streams, scalability, moat, tech leverage) |
+| Investors | `investors.html` | Market thesis, why-now, defensibility, business model snapshot, direct founder contact — fully open, no gating |
+| Demo | `demo.html` | "Coming Soon" waitlist capture with role selector — polished success state, no real account creation |
+| Pricing | `pricing.html` | Three-tier pricing (Scout / Operator / Command), comparison table, FAQ |
 
-## Tech Stack
-- Tailwind CSS (via CDN + custom config)
-- Chart.js for live predictive demo
-- Pure vanilla JavaScript + Intersection Observer
-- Google Fonts (Space Grotesk + Inter)
+## Design system
 
-## Founder Details (reflected on site)
-- **Oluwaseun Osunbade** – Developer & Founder
-- Email: oluwaseun.o@clearcurve.xyz
-- LinkedIn: [Oluwaseun Osunbade](https://www.linkedin.com/in/oluwaseun-osunbade)
+- **Typography**: Fraunces (display, editorial serif) + Inter (body) + JetBrains Mono (data/labels)
+- **Palette**: warm paper (`#FBFAF7`), near-black ink (`#14181D`), deepened teal (`#0E8C7C`), muted gold (`#B8893B`)
+- **Signature element**: the forecast-curve line motif, used consistently across hero, dividers, and data visualizations — it's literally the artifact the product produces
+- All shared styles live in `css/xcurve.css`; all shared behavior in `js/shared.js`
 
-## Features
-- Stunning glowing SVG logo
-- Litho.quest-inspired hero with animated curve
-- Interactive Opportunity Matrix
-- Live predictive trend chart
-- Glassmorphic cards + premium hover states
-- Fully accessible & SEO-ready
-- Waitlist modal with simulated submission + success screen
+## Files
 
-**Ready for launch.**  
-The site perfectly communicates the “anticipation engine” vision and positions ClearCurve AI as the next premium AI product.
+```
+index.html        Home
+product.html       Product
+company.html       Company (story + business model)
+investors.html     Investors
+demo.html          Demo / waitlist signup
+pricing.html       Pricing
+css/xcurve.css     Shared design system
+js/shared.js       Shared nav, reveal animations, counters, waitlist form logic
+vercel.json        Deployment config (multi-page static)
+CNAME              xcurve.co
+```
 
-Made with precision for 𝔹𝕆𝔹𝕓𝕪 in Zurich.  
-Questions or next iteration? Just say the word.
+## Images
+
+Two human-centric photographs are used (Product and Home pages), both verified under the free **Unsplash License** (no attribution required, free for commercial use):
+- Photo by Vitaly Gariev — team collaboration
+- Photo by Christina @ wocintechchat.com — team meeting
+
+All other visuals (hero curve graphics, Opportunity Matrix preview, Curve-Fidelity Score gauge, signal-flow diagram) are original SVG, built specifically for XCurve's brand — zero licensing risk.
+
+## Data & figures disclosure
+
+All market-size and traction figures are explicitly labeled **illustrative** per the founder's direction. The Investors page carries a visible disclaimer stating figures are for demonstrating the model's structure, not validated research, with a commitment to publish sourced data as the company progresses.
+
+## How to deploy
+
+1. Push this folder to `v2bobby/cc-web` (or a new repo)
+2. Connect to Vercel — `vercel.json` is already configured for static multi-page output
+3. Point `xcurve.co` DNS at Vercel per their domain docs
+
+## Founder
+
+**Onyeka Ofoegbu** — Founder & CEO
+Email: onyeka.ofoegbu@xcurve.co
+LinkedIn: [onyeka-ofoegbu-446b8630a](https://www.linkedin.com/in/onyeka-ofoegbu-446b8630a/)
+
+---
+© 2026 XCurve AI. Proprietary & Confidential.
