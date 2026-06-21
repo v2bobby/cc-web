@@ -1,308 +1,423 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Product — XCurve AI | The Anticipation Engine</title>
-<meta name="description" content="Explore XCurve AI's product: Nodal Ingestion, Curve-Fidelity Score™, the Unsaturated Opportunity Matrix, and automated strategic briefs." />
-<meta name="theme-color" content="#0E8C7C" />
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23FBFAF7'/><path d='M4 24C10 24 12 18 16 14 20 10 22 9 28 5' fill='none' stroke='%230E8C7C' stroke-width='3' stroke-linecap='round'/><circle cx='16' cy='14' r='2.5' fill='%23B8893B'/></svg>" />
-<link rel="stylesheet" href="css/xcurve.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product — XCurve AI | The Anticipation Engine</title>
+  <meta name="description"
+    content="Explore XCurve AI's product: Nodal Ingestion, Curve-Fidelity Score™, the Unsaturated Opportunity Matrix, and automated strategic briefs." />
+  <meta name="theme-color" content="#0E8C7C" />
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23FBFAF7'/><path d='M4 24C10 24 12 18 16 14 20 10 22 9 28 5' fill='none' stroke='%230E8C7C' stroke-width='3' stroke-linecap='round'/><circle cx='16' cy='14' r='2.5' fill='%23B8893B'/></svg>" />
+  <link rel="stylesheet" href="./xcurve.css" />
 </head>
+
 <body>
 
-<nav id="nav">
-  <a href="index.html" class="nav__logo">
-    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"><rect width="30" height="30" rx="7" fill="#14181D"/><path d="M4 23C9 23 11 17 14 13.5 17 10 19 8 26 4" stroke="#0E8C7C" stroke-width="2.4" stroke-linecap="round" fill="none"/><circle cx="14" cy="13.5" r="2.2" fill="#B8893B"/></svg>
-    <span>X<em>Curve</em></span>
-  </a>
-  <ul class="nav__links" id="nav-links">
-    <li><a href="product.html">Product</a></li>
-    <li><a href="company.html">Company</a></li>
-    <li><a href="investors.html">Investors</a></li>
-    <li><a href="pricing.html">Pricing</a></li>
-    <li><a href="demo.html" class="nav__cta">Launch Demo</a></li>
-  </ul>
-  <button class="nav__burger" id="nav-burger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
-</nav>
+  <nav id="nav">
+    <a href="index.html" class="nav__logo">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <rect width="30" height="30" rx="7" fill="#14181D" />
+        <path d="M4 23C9 23 11 17 14 13.5 17 10 19 8 26 4" stroke="#0E8C7C" stroke-width="2.4" stroke-linecap="round"
+          fill="none" />
+        <circle cx="14" cy="13.5" r="2.2" fill="#B8893B" />
+      </svg>
+      <span>X<em>Curve</em></span>
+    </a>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="product.html">Product</a></li>
+      <li><a href="company.html">Company</a></li>
+      <li><a href="investors.html">Investors</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="demo.html" class="nav__cta">Launch Demo</a></li>
+    </ul>
+    <button class="nav__burger" id="nav-burger"
+      aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </nav>
 
-<!-- ── PAGE HERO ── -->
-<header class="page-hero">
-  <div class="wrap g-2-uneven" style="gap:3rem; align-items:center;">
-    <div>
-      <p class="page-hero__kicker">The Product</p>
-      <h1 class="h-display" style="font-size:clamp(2.4rem,4.2vw,3.6rem);">An anticipation engine, <span class="italic txt-teal">not a dashboard</span></h1>
-      <p class="lede" style="margin-top:1.2rem;">Four systems work in sequence to turn scattered cross-platform chatter into a single, timed, actionable brief.</p>
-    </div>
-    <svg viewBox="0 0 400 200" style="width:100%; height:auto;" aria-hidden="true">
-      <path d="M10,170 C 60,160 100,120 140,100 C 190,75 230,40 290,25 C 320,18 360,14 390,10" fill="none" stroke="#0E8C7C" stroke-width="2.2" stroke-linecap="round"/>
-      <circle cx="390" cy="10" r="4" fill="#0E8C7C"/>
-      <path d="M10,185 C 70,182 130,160 190,165 C 240,169 280,178 330,182 C 350,184 370,186 390,188" fill="none" stroke="#B8893B" stroke-width="1.4" stroke-dasharray="4 5"/>
-    </svg>
-  </div>
-</header>
-
-<!-- ── NODAL INGESTION ── -->
-<section class="section-pad">
-  <div class="wrap g-2" style="gap:4rem; align-items:center;">
-    <div>
-      <span class="fine">LAYER 01</span>
-      <h2 class="h-section reveal" style="margin-top:.6rem;">Cognitive Data Structuring — the Ingestion Layer</h2>
-      <p class="body-text reveal">XCurve goes beyond standard SEO APIs with a proprietary "Nodal Ingestion" system that tracks a concept as it moves through the adoption curve.</p>
-      <ul style="display:flex; flex-direction:column; gap:1rem; margin-top:1.5rem;">
-        <li class="reveal" style="display:flex; gap:.8rem;">
-          <span style="color:var(--teal); font-weight:700;">→</span>
-          <span class="body-text" style="margin:0;"><strong style="color:var(--ink);">Cross-Platform Correlation</strong> — from niche forums (Reddit, Discord) to visual platforms (Instagram, TikTok) to retail intent (Amazon, Google).</span>
-        </li>
-        <li class="reveal" style="display:flex; gap:.8rem;">
-          <span style="color:var(--teal); font-weight:700;">→</span>
-          <span class="body-text" style="margin:0;"><strong style="color:var(--ink);">Noise Filtration</strong> — distinguishing Flash Fads (high velocity, short lifespan) from Structural Shifts (sustainable, long-term).</span>
-        </li>
-        <li class="reveal" style="display:flex; gap:.8rem;">
-          <span style="color:var(--teal); font-weight:700;">→</span>
-          <span class="body-text" style="margin:0;"><strong style="color:var(--ink);">The "Why" Factor</strong> — qualitative reasoning identifies the underlying driver, e.g. "Minimalist Wallets" trending because of "Physical Security Anxiety," unlocking adjacent niches like RFID-blocking tech.</span>
-        </li>
-      </ul>
-    </div>
-    <div class="card reveal" style="padding:1.75rem;">
-      <span class="fine">SIGNAL FLOW</span>
-      <svg viewBox="0 0 420 260" style="width:100%; height:auto; margin-top:1rem;" aria-hidden="true">
-        <rect x="10" y="20" width="110" height="44" rx="8" fill="#E4F2EF" stroke="#0E8C7C" stroke-width="1"/>
-        <text x="65" y="46" text-anchor="middle" font-family="Inter" font-size="11" fill="#0A6B5F">Reddit / Discord</text>
-        <rect x="155" y="100" width="110" height="44" rx="8" fill="#E4F2EF" stroke="#0E8C7C" stroke-width="1"/>
-        <text x="210" y="126" text-anchor="middle" font-family="Inter" font-size="11" fill="#0A6B5F">TikTok / IG</text>
-        <rect x="300" y="180" width="110" height="44" rx="8" fill="#FAF1E1" stroke="#B8893B" stroke-width="1"/>
-        <text x="355" y="206" text-anchor="middle" font-family="Inter" font-size="11" fill="#8F6A2A">Amazon / Google</text>
-        <path d="M65,64 C 65,90 140,90 165,100" fill="none" stroke="#8A92A0" stroke-width="1.4" marker-end="url(#arrow)"/>
-        <path d="M210,144 C 230,165 290,165 305,180" fill="none" stroke="#8A92A0" stroke-width="1.4" marker-end="url(#arrow)"/>
-        <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#8A92A0"/></marker></defs>
+  <!-- ── PAGE HERO ── -->
+  <header class="page-hero">
+    <div class="wrap g-2-uneven" style="gap:3rem; align-items:center;">
+      <div>
+        <p class="page-hero__kicker">The Product</p>
+        <h1 class="h-display" style="font-size:clamp(2.4rem,4.2vw,3.6rem);">An anticipation engine, <span
+            class="italic txt-teal">not a dashboard</span></h1>
+        <p class="lede" style="margin-top:1.2rem;">Four systems work in sequence to turn scattered cross-platform
+          chatter into a single, timed, actionable brief.</p>
+      </div>
+      <svg viewBox="0 0 400 200" style="width:100%; height:auto;" aria-hidden="true">
+        <path d="M10,170 C 60,160 100,120 140,100 C 190,75 230,40 290,25 C 320,18 360,14 390,10" fill="none"
+          stroke="#0E8C7C" stroke-width="2.2" stroke-linecap="round" />
+        <circle cx="390" cy="10" r="4" fill="#0E8C7C" />
+        <path d="M10,185 C 70,182 130,160 190,165 C 240,169 280,178 330,182 C 350,184 370,186 390,188" fill="none"
+          stroke="#B8893B" stroke-width="1.4" stroke-dasharray="4 5" />
       </svg>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- ── PREDICTIVE MODELING ── -->
-<section class="section-pad" style="background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
-  <div class="wrap g-2-uneven-r" style="gap:4rem; align-items:center;">
-    <div class="card reveal" style="padding:1.75rem; order:2;">
-      <span class="fine">CURVE-FIDELITY SCORE™</span>
-      <div style="display:flex; align-items:baseline; gap:.5rem; margin:.8rem 0 1.2rem;">
-        <span style="font-family:var(--f-display); font-size:3.2rem; font-weight:700; color:var(--teal-deep);">87</span>
-        <span class="fine">/ 100 confidence</span>
+  <!-- ── NODAL INGESTION ── -->
+  <section class="section-pad">
+    <div class="wrap g-2" style="gap:4rem; align-items:center;">
+      <div>
+        <span class="fine">LAYER 01</span>
+        <h2 class="h-section reveal" style="margin-top:.6rem;">Cognitive Data Structuring — the Ingestion Layer</h2>
+        <p class="body-text reveal">XCurve goes beyond standard SEO APIs with a proprietary "Nodal Ingestion" system
+          that tracks a concept as it moves through the adoption curve.</p>
+        <ul style="display:flex; flex-direction:column; gap:1rem; margin-top:1.5rem;">
+          <li class="reveal" style="display:flex; gap:.8rem;">
+            <span style="color:var(--teal); font-weight:700;">→</span>
+            <span class="body-text" style="margin:0;"><strong style="color:var(--ink);">Cross-Platform
+                Correlation</strong> — from niche forums (Reddit, Discord) to visual platforms (Instagram, TikTok) to
+              retail intent (Amazon, Google).</span>
+          </li>
+          <li class="reveal" style="display:flex; gap:.8rem;">
+            <span style="color:var(--teal); font-weight:700;">→</span>
+            <span class="body-text" style="margin:0;"><strong style="color:var(--ink);">Noise Filtration</strong> —
+              distinguishing Flash Fads (high velocity, short lifespan) from Structural Shifts (sustainable,
+              long-term).</span>
+          </li>
+          <li class="reveal" style="display:flex; gap:.8rem;">
+            <span style="color:var(--teal); font-weight:700;">→</span>
+            <span class="body-text" style="margin:0;"><strong style="color:var(--ink);">The "Why" Factor</strong> —
+              qualitative reasoning identifies the underlying driver, e.g. "Minimalist Wallets" trending because of
+              "Physical Security Anxiety," unlocking adjacent niches like RFID-blocking tech.</span>
+          </li>
+        </ul>
       </div>
-      <div style="height:8px; background:var(--line); border-radius:99px; overflow:hidden; margin-bottom:1.2rem;">
-        <div style="width:87%; height:100%; background:linear-gradient(90deg,var(--teal),var(--teal-deep));"></div>
+      <div class="card reveal" style="padding:1.75rem;">
+        <span class="fine">SIGNAL FLOW</span>
+        <svg viewBox="0 0 420 260" style="width:100%; height:auto; margin-top:1rem;" aria-hidden="true">
+          <rect x="10" y="20" width="110" height="44" rx="8" fill="#E4F2EF" stroke="#0E8C7C" stroke-width="1" />
+          <text x="65" y="46" text-anchor="middle" font-family="Inter" font-size="11" fill="#0A6B5F">Reddit /
+            Discord</text>
+          <rect x="155" y="100" width="110" height="44" rx="8" fill="#E4F2EF" stroke="#0E8C7C" stroke-width="1" />
+          <text x="210" y="126" text-anchor="middle" font-family="Inter" font-size="11" fill="#0A6B5F">TikTok /
+            IG</text>
+          <rect x="300" y="180" width="110" height="44" rx="8" fill="#FAF1E1" stroke="#B8893B" stroke-width="1" />
+          <text x="355" y="206" text-anchor="middle" font-family="Inter" font-size="11" fill="#8F6A2A">Amazon /
+            Google</text>
+          <path d="M65,64 C 65,90 140,90 165,100" fill="none" stroke="#8A92A0" stroke-width="1.4"
+            marker-end="url(#arrow)" />
+          <path d="M210,144 C 230,165 290,165 305,180" fill="none" stroke="#8A92A0" stroke-width="1.4"
+            marker-end="url(#arrow)" />
+          <defs>
+            <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L6,3 L0,6 Z" fill="#8A92A0" />
+            </marker>
+          </defs>
+        </svg>
       </div>
-      <p class="body-text" style="font-size:.85rem;">Blends quantitative growth modeling (search volume, CPC, inventory turnover) with qualitative AI reasoning on how a trend will mutate.</p>
     </div>
-    <div style="order:1;">
-      <span class="fine">LAYER 02</span>
-      <h2 class="h-section reveal" style="margin-top:.6rem;">The Predictive Modeling Engine</h2>
-      <p class="body-text reveal">A hybrid of Time-Series Forecasting and Transformer-based Trend Extrapolation generates a single confidence score for every opportunity.</p>
-      <div class="g-2" style="gap:1rem; margin-top:1.5rem;">
-        <div class="reveal" style="border-left:2px solid var(--teal); padding-left:1rem;">
-          <h4 style="font-size:.95rem; margin-bottom:.3rem;">Quantitative Growth</h4>
-          <p class="body-text" style="font-size:.84rem;">Statistical modeling of search volume, CPC fluctuations, and inventory turnover.</p>
+  </section>
+
+  <!-- ── PREDICTIVE MODELING ── -->
+  <section class="section-pad"
+    style="background:var(--paper-dim); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+    <div class="wrap g-2-uneven-r" style="gap:4rem; align-items:center;">
+      <div class="card reveal" style="padding:1.75rem; order:2;">
+        <span class="fine">CURVE-FIDELITY SCORE™</span>
+        <div style="display:flex; align-items:baseline; gap:.5rem; margin:.8rem 0 1.2rem;">
+          <span
+            style="font-family:var(--f-display); font-size:3.2rem; font-weight:700; color:var(--teal-deep);">87</span>
+          <span class="fine">/ 100 confidence</span>
         </div>
-        <div class="reveal" style="border-left:2px solid var(--gold); padding-left:1rem;">
-          <h4 style="font-size:.95rem; margin-bottom:.3rem;">Qualitative Evolution</h4>
-          <p class="body-text" style="font-size:.84rem;">AI predicts how a trend mutates — e.g. "at-home fitness" → "smart recovery tools."</p>
+        <div style="height:8px; background:var(--line); border-radius:99px; overflow:hidden; margin-bottom:1.2rem;">
+          <div style="width:87%; height:100%; background:linear-gradient(90deg,var(--teal),var(--teal-deep));"></div>
+        </div>
+        <p class="body-text" style="font-size:.85rem;">Blends quantitative growth modeling (search volume, CPC,
+          inventory turnover) with qualitative AI reasoning on how a trend will mutate.</p>
+      </div>
+      <div style="order:1;">
+        <span class="fine">LAYER 02</span>
+        <h2 class="h-section reveal" style="margin-top:.6rem;">The Predictive Modeling Engine</h2>
+        <p class="body-text reveal">A hybrid of Time-Series Forecasting and Transformer-based Trend Extrapolation
+          generates a single confidence score for every opportunity.</p>
+        <div class="g-2" style="gap:1rem; margin-top:1.5rem;">
+          <div class="reveal" style="border-left:2px solid var(--teal); padding-left:1rem;">
+            <h4 style="font-size:.95rem; margin-bottom:.3rem;">Quantitative Growth</h4>
+            <p class="body-text" style="font-size:.84rem;">Statistical modeling of search volume, CPC fluctuations, and
+              inventory turnover.</p>
+          </div>
+          <div class="reveal" style="border-left:2px solid var(--gold); padding-left:1rem;">
+            <h4 style="font-size:.95rem; margin-bottom:.3rem;">Qualitative Evolution</h4>
+            <p class="body-text" style="font-size:.84rem;">AI predicts how a trend mutates — e.g. "at-home fitness" →
+              "smart recovery tools."</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ── OPPORTUNITY MATRIX ── -->
-<section class="section-pad" id="matrix">
-  <div class="wrap g-2-uneven-r" style="gap:4rem; align-items:center;">
-    <div>
-      <span class="fine">LAYER 03</span>
-      <h2 class="h-section reveal" style="margin-top:.6rem;">The Unsaturated Opportunity Matrix</h2>
-      <p class="body-text reveal">A proprietary visual interface plotting every market niche on a competitive heatmap. The goal: find the <strong>XCurve Zone</strong> — where demand is accelerating but supply is stale or non-existent.</p>
-      <div style="display:flex; gap:1.5rem; margin-top:1.5rem; flex-wrap:wrap;">
-        <span class="fine"><span style="color:var(--teal);">●</span> XCurve Zone opportunities</span>
-        <span class="fine"><span style="color:var(--ink-faint);">●</span> Saturated / declining</span>
-      </div>
-    </div>
-    <div class="card reveal" style="padding:1.5rem;">
-      <svg viewBox="0 0 420 320" style="width:100%; height:auto;" aria-hidden="true">
-        <rect x="40" y="20" width="180" height="140" fill="#E4F2EF" opacity=".5"/>
-        <rect x="220" y="20" width="160" height="140" fill="#FBEDEA" opacity=".4"/>
-        <rect x="40" y="160" width="180" height="120" fill="#FAF1E1" opacity=".4"/>
-        <rect x="220" y="160" width="160" height="120" fill="#F3F1EA" opacity=".6"/>
-        <line x1="220" y1="20" x2="220" y2="280" stroke="#D2CEC0" stroke-width="1"/>
-        <line x1="40" y1="160" x2="380" y2="160" stroke="#D2CEC0" stroke-width="1"/>
-        <text x="50" y="36" font-family="JetBrains Mono" font-size="9" fill="#0A6B5F">XCURVE ZONE</text>
-        <text x="370" y="36" text-anchor="end" font-family="JetBrains Mono" font-size="9" fill="#C04A41">SATURATED</text>
-        <circle cx="95" cy="80" r="16" fill="#0E8C7C" opacity=".7"/>
-        <circle cx="140" cy="110" r="11" fill="#0E8C7C" opacity=".7"/>
-        <circle cx="70" cy="130" r="8" fill="#0E8C7C" opacity=".6"/>
-        <circle cx="290" cy="220" r="20" fill="#8A92A0" opacity=".35"/>
-        <circle cx="330" cy="240" r="16" fill="#8A92A0" opacity=".35"/>
-        <text x="95" y="84" text-anchor="middle" font-family="Inter" font-size="8" fill="#fff" font-weight="700">RFID</text>
-      </svg>
-    </div>
-  </div>
-</section>
-
-<!-- ── STRATEGIC BRIEFS ── -->
-<section class="section-pad" style="background:var(--ink); color:#fff;">
-  <div class="wrap">
-    <span class="fine" style="color:var(--teal);">LAYER 04</span>
-    <h2 class="h-section reveal" style="color:#fff; margin-top:.6rem;">Automated Strategic Briefs</h2>
-    <p class="lede reveal" style="color:rgba(251,250,247,.65);">XCurve doesn't just provide a graph — it provides a roadmap.</p>
-    <div class="g-2" style="gap:1.5rem; margin-top:2.5rem;">
-      <div class="reveal" style="background:rgba(251,250,247,.05); border:1px solid rgba(251,250,247,.12); border-radius:var(--r3); padding:1.75rem;">
-        <span class="fine" style="color:var(--teal);">FOR E-COMMERCE</span>
-        <p style="font-family:var(--f-mono); font-size:.88rem; line-height:1.7; margin-top:.8rem; color:rgba(251,250,247,.85); border-left:2px solid var(--teal); padding-left:1rem;">"Launch a bamboo-based sustainable office chair by Q3 to capture the 24% projected rise in eco-conscious remote work setups."</p>
-      </div>
-      <div class="reveal" style="background:rgba(251,250,247,.05); border:1px solid rgba(251,250,247,.12); border-radius:var(--r3); padding:1.75rem;">
-        <span class="fine" style="color:var(--gold);">FOR CONTENT CREATORS</span>
-        <p style="font-family:var(--f-mono); font-size:.88rem; line-height:1.7; margin-top:.8rem; color:rgba(251,250,247,.85); border-left:2px solid var(--gold); padding-left:1rem;">"'Productivity' is saturated, but 'analog productivity for ADHD' has a 400% gap in high-quality video content."</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── USE CASES / USER JOURNEYS ── -->
-<section class="section-pad" id="usecases">
-  <div class="wrap">
-    <p class="eyebrow eyebrow--center" style="justify-content:center;">User Journeys</p>
-    <h2 class="h-section reveal" style="text-align:center; max-width:680px; margin:0 auto 3rem;">Built for whoever moves markets first</h2>
-
-    <div class="tabs" style="display:inline-flex; gap:.3rem; background:var(--paper-dim); border:1px solid var(--line); border-radius:var(--r-pill); padding:.3rem; margin-bottom:2.5rem;">
-      <button class="tab-btn active" data-tab="ecom" style="font-size:.85rem; font-weight:500; padding:.55rem 1.3rem; border-radius:var(--r-pill); color:var(--ink-soft);">E-Commerce</button>
-      <button class="tab-btn" data-tab="creator" style="font-size:.85rem; font-weight:500; padding:.55rem 1.3rem; border-radius:var(--r-pill); color:var(--ink-soft);">Content Creators</button>
-      <button class="tab-btn" data-tab="enterprise" style="font-size:.85rem; font-weight:500; padding:.55rem 1.3rem; border-radius:var(--r-pill); color:var(--ink-soft);">Enterprise</button>
-    </div>
-
-    <div class="tab-panel active g-2" id="tab-ecom" style="gap:3rem; align-items:center;">
+  <!-- ── OPPORTUNITY MATRIX ── -->
+  <section class="section-pad" id="matrix">
+    <div class="wrap g-2-uneven-r" style="gap:4rem; align-items:center;">
       <div>
-        <h3 class="h-sub">A seller's week with XCurve</h3>
-        <ol style="display:flex; flex-direction:column; gap:1rem; margin-top:1rem; counter-reset:step;">
-          <li style="display:flex; gap:.8rem;"><span class="fine">MON</span><span class="body-text" style="margin:0; font-size:.92rem;">Opens the Opportunity Matrix, filters to "home office."</span></li>
-          <li style="display:flex; gap:.8rem;"><span class="fine">MON</span><span class="body-text" style="margin:0; font-size:.92rem;">Spots bamboo office chairs in the XCurve Zone — Score 87/100.</span></li>
-          <li style="display:flex; gap:.8rem;"><span class="fine">TUE</span><span class="body-text" style="margin:0; font-size:.92rem;">Reads the Strategic Brief, sources a sample from a supplier.</span></li>
-          <li style="display:flex; gap:.8rem;"><span class="fine">FRI</span><span class="body-text" style="margin:0; font-size:.92rem;">Lists the product 5–8 weeks ahead of mainstream competition.</span></li>
-        </ol>
+        <span class="fine">LAYER 03</span>
+        <h2 class="h-section reveal" style="margin-top:.6rem;">The Unsaturated Opportunity Matrix</h2>
+        <p class="body-text reveal">A proprietary visual interface plotting every market niche on a competitive heatmap.
+          The goal: find the <strong>XCurve Zone</strong> — where demand is accelerating but supply is stale or
+          non-existent.</p>
+        <div style="display:flex; gap:1.5rem; margin-top:1.5rem; flex-wrap:wrap;">
+          <span class="fine"><span style="color:var(--teal);">●</span> XCurve Zone opportunities</span>
+          <span class="fine"><span style="color:var(--ink-faint);">●</span> Saturated / declining</span>
+        </div>
       </div>
-      <div class="card" style="padding:1.75rem;">
-        <span class="fine">SAMPLE BRIEF</span>
-        <p class="body-text" style="margin-top:.8rem; font-size:.92rem;">"RFID-blocking wallet accessories entering exponential growth. Physical Security Anxiety spreading from tech early-adopters to mainstream. Window: 6–9 weeks."</p>
+      <div class="card reveal" style="padding:1.5rem;">
+        <svg viewBox="0 0 420 320" style="width:100%; height:auto;" aria-hidden="true">
+          <rect x="40" y="20" width="180" height="140" fill="#E4F2EF" opacity=".5" />
+          <rect x="220" y="20" width="160" height="140" fill="#FBEDEA" opacity=".4" />
+          <rect x="40" y="160" width="180" height="120" fill="#FAF1E1" opacity=".4" />
+          <rect x="220" y="160" width="160" height="120" fill="#F3F1EA" opacity=".6" />
+          <line x1="220" y1="20" x2="220" y2="280" stroke="#D2CEC0" stroke-width="1" />
+          <line x1="40" y1="160" x2="380" y2="160" stroke="#D2CEC0" stroke-width="1" />
+          <text x="50" y="36" font-family="JetBrains Mono" font-size="9" fill="#0A6B5F">XCURVE ZONE</text>
+          <text x="370" y="36" text-anchor="end" font-family="JetBrains Mono" font-size="9"
+            fill="#C04A41">SATURATED</text>
+          <circle cx="95" cy="80" r="16" fill="#0E8C7C" opacity=".7" />
+          <circle cx="140" cy="110" r="11" fill="#0E8C7C" opacity=".7" />
+          <circle cx="70" cy="130" r="8" fill="#0E8C7C" opacity=".6" />
+          <circle cx="290" cy="220" r="20" fill="#8A92A0" opacity=".35" />
+          <circle cx="330" cy="240" r="16" fill="#8A92A0" opacity=".35" />
+          <text x="95" y="84" text-anchor="middle" font-family="Inter" font-size="8" fill="#fff"
+            font-weight="700">RFID</text>
+        </svg>
       </div>
     </div>
+  </section>
 
-    <div class="tab-panel" id="tab-creator" style="display:none; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
-      <div>
-        <h3 class="h-sub">A creator's content gap workflow</h3>
-        <ol style="display:flex; flex-direction:column; gap:1rem; margin-top:1rem;">
-          <li style="display:flex; gap:.8rem;"><span class="fine">STEP</span><span class="body-text" style="margin:0; font-size:.92rem;">Searches "productivity" — sees it flagged saturated.</span></li>
-          <li style="display:flex; gap:.8rem;"><span class="fine">STEP</span><span class="body-text" style="margin:0; font-size:.92rem;">XCurve surfaces "analog productivity for ADHD" — 400% content gap.</span></li>
-          <li style="display:flex; gap:.8rem;"><span class="fine">STEP</span><span class="body-text" style="margin:0; font-size:.92rem;">Publishes long-form video inside the 18-month dominance window.</span></li>
-        </ol>
-      </div>
-      <div class="card" style="padding:1.75rem;">
-        <span class="fine">SAMPLE BRIEF</span>
-        <p class="body-text" style="margin-top:.8rem; font-size:.92rem;">"'Smart recovery tools' emerging from an 'at-home fitness' mutation. TikTok signal: 3 weeks old. YouTube still empty. Optimal publish window: next 12 days."</p>
+  <!-- ── STRATEGIC BRIEFS ── -->
+  <section class="section-pad" style="background:var(--ink); color:#fff;">
+    <div class="wrap">
+      <span class="fine" style="color:var(--teal);">LAYER 04</span>
+      <h2 class="h-section reveal" style="color:#fff; margin-top:.6rem;">Automated Strategic Briefs</h2>
+      <p class="lede reveal" style="color:rgba(251,250,247,.65);">XCurve doesn't just provide a graph — it provides a
+        roadmap.</p>
+      <div class="g-2" style="gap:1.5rem; margin-top:2.5rem;">
+        <div class="reveal"
+          style="background:rgba(251,250,247,.05); border:1px solid rgba(251,250,247,.12); border-radius:var(--r3); padding:1.75rem;">
+          <span class="fine" style="color:var(--teal);">FOR E-COMMERCE</span>
+          <p
+            style="font-family:var(--f-mono); font-size:.88rem; line-height:1.7; margin-top:.8rem; color:rgba(251,250,247,.85); border-left:2px solid var(--teal); padding-left:1rem;">
+            "Launch a bamboo-based sustainable office chair by Q3 to capture the 24% projected rise in eco-conscious
+            remote work setups."</p>
+        </div>
+        <div class="reveal"
+          style="background:rgba(251,250,247,.05); border:1px solid rgba(251,250,247,.12); border-radius:var(--r3); padding:1.75rem;">
+          <span class="fine" style="color:var(--gold);">FOR CONTENT CREATORS</span>
+          <p
+            style="font-family:var(--f-mono); font-size:.88rem; line-height:1.7; margin-top:.8rem; color:rgba(251,250,247,.85); border-left:2px solid var(--gold); padding-left:1rem;">
+            "'Productivity' is saturated, but 'analog productivity for ADHD' has a 400% gap in high-quality video
+            content."</p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="tab-panel" id="tab-enterprise" style="display:none; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
-      <div>
-        <h3 class="h-sub">A marketing team's intelligence layer</h3>
-        <ol style="display:flex; flex-direction:column; gap:1rem; margin-top:1rem;">
-          <li style="display:flex; gap:.8rem;"><span class="fine">SETUP</span><span class="body-text" style="margin:0; font-size:.92rem;">Connects the XCurve API to the product roadmap pipeline.</span></li>
-          <li style="display:flex; gap:.8rem;"><span class="fine">ALERT</span><span class="body-text" style="margin:0; font-size:.92rem;">Custom thresholds trigger Slack alerts on XCurve Zone entry.</span></li>
-          <li style="display:flex; gap:.8rem;"><span class="fine">SCALE</span><span class="body-text" style="margin:0; font-size:.92rem;">White-labels insights into client-facing dashboards.</span></li>
-        </ol>
-      </div>
-      <div class="card" style="padding:1.75rem;">
-        <span class="fine">CAPABILITY</span>
-        <p class="body-text" style="margin-top:.8rem; font-size:.92rem;">Full REST API, custom dashboards, 10+ team seats, dedicated account intelligence and SLA support.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <!-- ── USE CASES / USER JOURNEYS ── -->
+  <section class="section-pad" id="usecases">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--center" style="justify-content:center;">User Journeys</p>
+      <h2 class="h-section reveal" style="text-align:center; max-width:680px; margin:0 auto 3rem;">Built for whoever
+        moves markets first</h2>
 
-<!-- ── HUMAN PHOTOGRAPHY STRIP ── -->
-<section class="section-pad-sm">
-  <div class="wrap g-2" style="gap:1.5rem;">
-    <div class="reveal" style="border-radius:var(--r3); overflow:hidden; aspect-ratio:16/10;">
-      <img src="https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?w=800&q=80&auto=format&fit=crop" alt="Team analyzing the Opportunity Matrix together" style="width:100%; height:100%; object-fit:cover;" loading="lazy"/>
-    </div>
-    <div class="reveal" style="border-radius:var(--r3); overflow:hidden; aspect-ratio:16/10;">
-      <img src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=800&q=80&auto=format&fit=crop" alt="Cross-functional team reviewing strategic briefs" style="width:100%; height:100%; object-fit:cover;" loading="lazy"/>
-    </div>
-  </div>
-</section>
-
-<!-- ── TECHNICAL DIFFERENTIATORS ── -->
-<section class="section-pad" style="background:var(--paper-dim); border-top:1px solid var(--line);">
-  <div class="wrap">
-    <p class="eyebrow eyebrow--center" style="justify-content:center;">Under the Hood</p>
-    <h2 class="h-section reveal" style="text-align:center; max-width:680px; margin:0 auto 3rem;">Technical differentiators</h2>
-    <div class="g-3" style="gap:1.25rem;">
-      <div class="card reveal" style="padding:1.75rem;">
-        <h3 class="h-sub" style="font-size:1.02rem;">Beyond SEO APIs</h3>
-        <p class="body-text" style="font-size:.88rem;">Standard tools track keywords. Nodal Ingestion tracks the migration of a concept across platform types — a structurally different signal.</p>
+      <div class="tabs"
+        style="display:inline-flex; gap:.3rem; background:var(--paper-dim); border:1px solid var(--line); border-radius:var(--r-pill); padding:.3rem; margin-bottom:2.5rem;">
+        <button class="tab-btn active" data-tab="ecom"
+          style="font-size:.85rem; font-weight:500; padding:.55rem 1.3rem; border-radius:var(--r-pill); color:var(--ink-soft);">E-Commerce</button>
+        <button class="tab-btn" data-tab="creator"
+          style="font-size:.85rem; font-weight:500; padding:.55rem 1.3rem; border-radius:var(--r-pill); color:var(--ink-soft);">Content
+          Creators</button>
+        <button class="tab-btn" data-tab="enterprise"
+          style="font-size:.85rem; font-weight:500; padding:.55rem 1.3rem; border-radius:var(--r-pill); color:var(--ink-soft);">Enterprise</button>
       </div>
-      <div class="card reveal" style="padding:1.75rem;">
-        <h3 class="h-sub" style="font-size:1.02rem;">Hybrid forecasting</h3>
-        <p class="body-text" style="font-size:.88rem;">Time-Series Forecasting captures quantitative momentum; Transformer-based extrapolation captures qualitative mutation patterns.</p>
+
+      <div class="tab-panel active g-2" id="tab-ecom" style="gap:3rem; align-items:center;">
+        <div>
+          <h3 class="h-sub">A seller's week with XCurve</h3>
+          <ol style="display:flex; flex-direction:column; gap:1rem; margin-top:1rem; counter-reset:step;">
+            <li style="display:flex; gap:.8rem;"><span class="fine">MON</span><span class="body-text"
+                style="margin:0; font-size:.92rem;">Opens the Opportunity Matrix, filters to "home office."</span></li>
+            <li style="display:flex; gap:.8rem;"><span class="fine">MON</span><span class="body-text"
+                style="margin:0; font-size:.92rem;">Spots bamboo office chairs in the XCurve Zone — Score 87/100.</span>
+            </li>
+            <li style="display:flex; gap:.8rem;"><span class="fine">TUE</span><span class="body-text"
+                style="margin:0; font-size:.92rem;">Reads the Strategic Brief, sources a sample from a supplier.</span>
+            </li>
+            <li style="display:flex; gap:.8rem;"><span class="fine">FRI</span><span class="body-text"
+                style="margin:0; font-size:.92rem;">Lists the product 5–8 weeks ahead of mainstream competition.</span>
+            </li>
+          </ol>
+        </div>
+        <div class="card" style="padding:1.75rem;">
+          <span class="fine">SAMPLE BRIEF</span>
+          <p class="body-text" style="margin-top:.8rem; font-size:.92rem;">"RFID-blocking wallet accessories entering
+            exponential growth. Physical Security Anxiety spreading from tech early-adopters to mainstream. Window: 6–9
+            weeks."</p>
+        </div>
       </div>
-      <div class="card reveal" style="padding:1.75rem;">
-        <h3 class="h-sub" style="font-size:1.02rem;">Reasoning-driven "Why"</h3>
-        <p class="body-text" style="font-size:.88rem;">Integrated LLM reasoning surfaces the underlying psychological or behavioral driver behind a trend — not just that it exists.</p>
+
+      <div class="tab-panel" id="tab-creator"
+        style="display:none; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
+        <div>
+          <h3 class="h-sub">A creator's content gap workflow</h3>
+          <ol style="display:flex; flex-direction:column; gap:1rem; margin-top:1rem;">
+            <li style="display:flex; gap:.8rem;"><span class="fine">STEP</span><span class="body-text"
+                style="margin:0; font-size:.92rem;">Searches "productivity" — sees it flagged saturated.</span></li>
+            <li style="display:flex; gap:.8rem;"><span class="fine">STEP</span><span class="body-text"
+                style="margin:0; font-size:.92rem;">XCurve surfaces "analog productivity for ADHD" — 400% content
+                gap.</span></li>
+            <li style="display:flex; gap:.8rem;"><span class="fine">STEP</span><span class="body-text"
+                style="margin:0; font-size:.92rem;">Publishes long-form video inside the 18-month dominance
+                window.</span></li>
+          </ol>
+        </div>
+        <div class="card" style="padding:1.75rem;">
+          <span class="fine">SAMPLE BRIEF</span>
+          <p class="body-text" style="margin-top:.8rem; font-size:.92rem;">"'Smart recovery tools' emerging from an
+            'at-home fitness' mutation. TikTok signal: 3 weeks old. YouTube still empty. Optimal publish window: next 12
+            days."</p>
+        </div>
+      </div>
+
+      <div class="tab-panel" id="tab-enterprise"
+        style="display:none; grid-template-columns:1fr 1fr; gap:3rem; align-items:center;">
+        <div>
+          <h3 class="h-sub">A marketing team's intelligence layer</h3>
+          <ol style="display:flex; flex-direction:column; gap:1rem; margin-top:1rem;">
+            <li style="display:flex; gap:.8rem;"><span class="fine">SETUP</span><span class="body-text"
+                style="margin:0; font-size:.92rem;">Connects the XCurve API to the product roadmap pipeline.</span></li>
+            <li style="display:flex; gap:.8rem;"><span class="fine">ALERT</span><span class="body-text"
+                style="margin:0; font-size:.92rem;">Custom thresholds trigger Slack alerts on XCurve Zone entry.</span>
+            </li>
+            <li style="display:flex; gap:.8rem;"><span class="fine">SCALE</span><span class="body-text"
+                style="margin:0; font-size:.92rem;">White-labels insights into client-facing dashboards.</span></li>
+          </ol>
+        </div>
+        <div class="card" style="padding:1.75rem;">
+          <span class="fine">CAPABILITY</span>
+          <p class="body-text" style="margin-top:.8rem; font-size:.92rem;">Full REST API, custom dashboards, 10+ team
+            seats, dedicated account intelligence and SLA support.</p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section-pad" style="text-align:center;">
-  <div class="wrap" style="max-width:600px; margin:0 auto;">
-    <h2 class="h-section reveal">See it work on a live niche</h2>
-    <a href="demo.html" class="btn btn--teal btn--lg" style="margin-top:1rem;">Launch Demo</a>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <a href="index.html" class="footer-brand">
-          <svg width="28" height="28" viewBox="0 0 30 30" fill="none"><rect width="30" height="30" rx="7" fill="#0E8C7C"/><path d="M4 23C9 23 11 17 14 13.5 17 10 19 8 26 4" stroke="#FBFAF7" stroke-width="2.4" stroke-linecap="round" fill="none"/><circle cx="14" cy="13.5" r="2.2" fill="#B8893B"/></svg>
-          X<em>Curve</em>
-        </a>
-        <p class="footer-desc">Predictive intelligence for the next market frontier. Find the gaps. Ride the curve.</p>
-        <p class="footer-locale">Building globally · Founder based in Nigeria</p>
+  <!-- ── HUMAN PHOTOGRAPHY STRIP ── -->
+  <section class="section-pad-sm">
+    <div class="wrap g-2" style="gap:1.5rem;">
+      <div class="reveal" style="border-radius:var(--r3); overflow:hidden; aspect-ratio:16/10;">
+        <img src="https://images.unsplash.com/photo-1758873268745-dd2cf0d677b5?w=800&q=80&auto=format&fit=crop"
+          alt="Team analyzing the Opportunity Matrix together" style="width:100%; height:100%; object-fit:cover;"
+          loading="lazy" />
       </div>
-      <div class="footer-col"><h4>Platform</h4><ul><li><a href="product.html">Product</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="demo.html">Launch Demo</a></li></ul></div>
-      <div class="footer-col"><h4>Company</h4><ul><li><a href="company.html">About</a></li><li><a href="company.html#business-model">Business Model</a></li><li><a href="investors.html">Investors</a></li></ul></div>
-      <div class="footer-col"><h4>Connect</h4><ul><li><a href="mailto:onyeka.ofoegbu@xcurve.co">onyeka.ofoegbu@xcurve.co</a></li><li><a href="https://www.linkedin.com/in/onyeka-ofoegbu-446b8630a/" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
+      <div class="reveal" style="border-radius:var(--r3); overflow:hidden; aspect-ratio:16/10;">
+        <img src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=800&q=80&auto=format&fit=crop"
+          alt="Cross-functional team reviewing strategic briefs" style="width:100%; height:100%; object-fit:cover;"
+          loading="lazy" />
+      </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2026 XCurve AI. Built with intention.</p>
-      <p>Founder: <a href="https://www.linkedin.com/in/onyeka-ofoegbu-446b8630a/" target="_blank" rel="noopener">Onyeka Ofoegbu</a></p>
-      <p>Proprietary &amp; Confidential</p>
-    </div>
-  </div>
-</footer>
+  </section>
 
-<script src="js/shared.js"></script>
-<script>
-  // tab panel display fix (panels use inline display none/grid)
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.style.background='transparent'; b.style.color='var(--ink-soft)'; });
-      document.querySelectorAll('.tab-panel').forEach(p => p.style.display = 'none');
-      btn.classList.add('active'); btn.style.background = 'var(--ink)'; btn.style.color = '#fff';
-      const panel = document.getElementById('tab-' + btn.dataset.tab);
-      if (panel) panel.style.display = 'grid';
+  <!-- ── TECHNICAL DIFFERENTIATORS ── -->
+  <section class="section-pad" style="background:var(--paper-dim); border-top:1px solid var(--line);">
+    <div class="wrap">
+      <p class="eyebrow eyebrow--center" style="justify-content:center;">Under the Hood</p>
+      <h2 class="h-section reveal" style="text-align:center; max-width:680px; margin:0 auto 3rem;">Technical
+        differentiators</h2>
+      <div class="g-3" style="gap:1.25rem;">
+        <div class="card reveal" style="padding:1.75rem;">
+          <h3 class="h-sub" style="font-size:1.02rem;">Beyond SEO APIs</h3>
+          <p class="body-text" style="font-size:.88rem;">Standard tools track keywords. Nodal Ingestion tracks the
+            migration of a concept across platform types — a structurally different signal.</p>
+        </div>
+        <div class="card reveal" style="padding:1.75rem;">
+          <h3 class="h-sub" style="font-size:1.02rem;">Hybrid forecasting</h3>
+          <p class="body-text" style="font-size:.88rem;">Time-Series Forecasting captures quantitative momentum;
+            Transformer-based extrapolation captures qualitative mutation patterns.</p>
+        </div>
+        <div class="card reveal" style="padding:1.75rem;">
+          <h3 class="h-sub" style="font-size:1.02rem;">Reasoning-driven "Why"</h3>
+          <p class="body-text" style="font-size:.88rem;">Integrated LLM reasoning surfaces the underlying psychological
+            or behavioral driver behind a trend — not just that it exists.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad" style="text-align:center;">
+    <div class="wrap" style="max-width:600px; margin:0 auto;">
+      <h2 class="h-section reveal">See it work on a live niche</h2>
+      <a href="demo.html" class="btn btn--teal btn--lg" style="margin-top:1rem;">Launch Demo</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a href="index.html" class="footer-brand">
+            <svg width="28" height="28" viewBox="0 0 30 30" fill="none">
+              <rect width="30" height="30" rx="7" fill="#0E8C7C" />
+              <path d="M4 23C9 23 11 17 14 13.5 17 10 19 8 26 4" stroke="#FBFAF7" stroke-width="2.4"
+                stroke-linecap="round" fill="none" />
+              <circle cx="14" cy="13.5" r="2.2" fill="#B8893B" />
+            </svg>
+            X<em>Curve</em>
+          </a>
+          <p class="footer-desc">Predictive intelligence for the next market frontier. Find the gaps. Ride the curve.
+          </p>
+          <p class="footer-locale">Building globally · Founder based in Nigeria</p>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="demo.html">Launch Demo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="company.html">About</a></li>
+            <li><a href="company.html#business-model">Business Model</a></li>
+            <li><a href="investors.html">Investors</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="mailto:onyeka.ofoegbu@xcurve.co">onyeka.ofoegbu@xcurve.co</a></li>
+            <li><a href="https://www.linkedin.com/in/onyeka-ofoegbu-446b8630a/" target="_blank"
+                rel="noopener">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 XCurve AI. Built with intention.</p>
+        <p>Founder: <a href="https://www.linkedin.com/in/onyeka-ofoegbu-446b8630a/" target="_blank"
+            rel="noopener">Onyeka Ofoegbu</a></p>
+        <p>Proprietary &amp; Confidential</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/shared.js"></script>
+  <script>
+    // tab panel display fix (panels use inline display none/grid)
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => { b.classList.remove('active'); b.style.background = 'transparent'; b.style.color = 'var(--ink-soft)'; });
+        document.querySelectorAll('.tab-panel').forEach(p => p.style.display = 'none');
+        btn.classList.add('active'); btn.style.background = 'var(--ink)'; btn.style.color = '#fff';
+        const panel = document.getElementById('tab-' + btn.dataset.tab);
+        if (panel) panel.style.display = 'grid';
+      });
     });
-  });
-  const firstTab = document.querySelector('.tab-btn.active');
-  if (firstTab) { firstTab.style.background = 'var(--ink)'; firstTab.style.color = '#fff'; }
-</script>
+    const firstTab = document.querySelector('.tab-btn.active');
+    if (firstTab) { firstTab.style.background = 'var(--ink)'; firstTab.style.color = '#fff'; }
+  </script>
 </body>
+
 </html>
