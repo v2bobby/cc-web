@@ -52,12 +52,15 @@ const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
   burger?.addEventListener('click', () => {
     const open = burger.classList.toggle('open');
     links?.classList.toggle('open', open);
+    // Lock body scroll when menu is open so content doesn't scroll behind drawer
     document.body.style.overflow = open ? 'hidden' : '';
+    burger.setAttribute('aria-expanded', open);
   });
 
   $$('#nav-links a').forEach(a => {
     a.addEventListener('click', () => {
       burger?.classList.remove('open');
+      burger?.setAttribute('aria-expanded', 'false');
       links?.classList.remove('open');
       document.body.style.overflow = '';
     });
