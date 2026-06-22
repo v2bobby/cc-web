@@ -298,60 +298,84 @@ h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 600; letter-spacing
   #nav { padding: 0 1.25rem; }
   .nav__burger { display: flex; }
 
-  /* Always in the DOM — slides down when .open is added */
+  /* Drawer — always in DOM, animated in/out via visibility+opacity */
   .nav__links {
-    position: fixed; top: var(--nav-h); left: 0; right: 0; bottom: 0;
-    flex-direction: column; align-items: stretch; justify-content: flex-start;
-    padding: 1rem 1.5rem 2.5rem;
-    background: var(--paper);
-    border-top: 1px solid var(--line);
-    z-index: 999;
-    /* hidden state */
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    padding-top: var(--nav-h);        /* push content below the nav bar */
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 2.5rem;
+
+    /* Fully opaque — no transparency, no backdrop-filter bleed */
+    background: #FBFAF7;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    border-top: 1px solid #E4E1D8;
+    z-index: 1001;   /* above the nav bar (z-index 1000) so it covers it */
+
+    /* Hidden state */
     visibility: hidden;
     pointer-events: none;
     opacity: 0;
-    transform: translateY(-8px);
-    transition: opacity var(--t2) var(--ease-out),
-                transform var(--t2) var(--ease-out),
-                visibility 0s linear var(--t2);
-    /* override the desktop flex from the base rule */
+    transform: translateY(-6px);
+    transition: opacity .28s ease,
+                transform .28s ease,
+                visibility 0s linear .28s;
+
     display: flex !important;
   }
+
   .nav__links.open {
     visibility: visible;
     pointer-events: auto;
     opacity: 1;
     transform: translateY(0);
-    transition: opacity var(--t2) var(--ease-out),
-                transform var(--t2) var(--ease-out),
+    transition: opacity .28s ease,
+                transform .28s ease,
                 visibility 0s linear 0s;
   }
 
-  /* Each list item full-width, hairline separator */
+  /* List items — full-width, separated by hairlines */
   .nav__links li {
     width: 100%;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid #E4E1D8;
   }
   .nav__links li:last-child { border-bottom: none; }
 
-  /* Plain text links — large, comfortable tap targets */
+  /* Text links — large comfortable tap targets */
   .nav__links li a {
     display: block;
-    padding: 1rem 0;
-    font-size: 1.05rem; font-weight: 500;
-    color: var(--ink);
+    padding: 1.1rem 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #14181D;
+    background: transparent;
   }
   .nav__links li a::after { display: none !important; }
+  .nav__links li a:hover { color: #0E8C7C; }
 
-  /* CTA button — full-width, clearly a button at bottom of list */
+  /* CTA button at the bottom — clearly distinct from text links */
   .nav__links li a.nav__cta {
-    display: block; text-align: center;
-    margin-top: 1.25rem;
+    display: block;
+    text-align: center;
+    margin-top: 1.5rem;
     padding: 1rem 1.5rem;
-    font-size: 1rem; border-radius: var(--r2);
-    color: #fff !important;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 12px;
+    background: #14181D;
+    color: #FBFAF7 !important;
   }
-  .nav__links li a.nav__cta:hover { transform: none; box-shadow: none; }
+  .nav__links li a.nav__cta:hover {
+    background: #0A6B5F;
+    transform: none;
+    box-shadow: none;
+  }
 }
 
 /* ── Cards ──────────────────────────────────────────────────── */
