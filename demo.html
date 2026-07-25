@@ -3,13 +3,87 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Launch Demo — XCurve AI | Coming Soon</title>
-<meta name="description" content="XCurve AI's interactive demo is coming soon. Join the waitlist to be first in line for early access." />
+<title>Live Product Demo — XCurve AI | Opportunity Matrix Explorer</title>
+<meta name="description" content="Explore XCurve AI's Opportunity Matrix live in your browser. Filter niches, click into any opportunity, and see a real Curve-Fidelity Score and Strategic Brief generated on the spot." />
 <meta name="theme-color" content="#0E8C7C" />
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%23FBFAF7'/><path d='M4 24C10 24 12 18 16 14 20 10 22 9 28 5' fill='none' stroke='%230E8C7C' stroke-width='3' stroke-linecap='round'/><circle cx='16' cy='14' r='2.5' fill='%23B8893B'/></svg>" />
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
 <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
 <link rel="stylesheet" href="./xcurve.css" />
+<style>
+  /* ── Product tool — page-specific styles ─────────────────── */
+  .tool-shell {
+    display: grid; grid-template-columns: 1.35fr 1fr; gap: 1.5rem;
+    align-items: start;
+  }
+  @media (max-width: 960px) { .tool-shell { grid-template-columns: 1fr; } }
+
+  .filter-row { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1.25rem; }
+  .filter-pill {
+    font-family: var(--f-body); font-size: .82rem; font-weight: 600;
+    padding: .5rem 1.05rem; border-radius: var(--r-pill);
+    border: 1.5px solid var(--line-strong); background: var(--card); color: var(--ink-soft);
+    transition: background var(--t2) var(--ease), border-color var(--t2) var(--ease), color var(--t2) var(--ease);
+  }
+  .filter-pill:hover { border-color: var(--teal); color: var(--teal-deep); }
+  .filter-pill.active { background: var(--ink); border-color: var(--ink); color: #fff; }
+
+  .matrix-stage {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--r3);
+    padding: 1.25rem; position: relative;
+  }
+  #matrixSvg { width: 100%; height: auto; display: block; }
+  .node {
+    cursor: pointer; transition: transform .2s var(--ease-spring), opacity .2s ease;
+    transform-origin: center; transform-box: fill-box;
+  }
+  .node:hover, .node:focus-visible { transform: scale(1.18); outline: none; }
+  .node.is-selected { transform: scale(1.28); }
+  .node-label {
+    font-family: var(--f-body); font-size: 8.5px; font-weight: 700; fill: #fff;
+    pointer-events: none; text-anchor: middle;
+  }
+
+  .detail-panel {
+    background: var(--ink); color: #fff; border-radius: var(--r3);
+    padding: 1.75rem; min-height: 420px;
+    display: flex; flex-direction: column;
+  }
+  .detail-empty { color: #8FA0AE; font-size: .9rem; margin-top: 2rem; text-align: center; }
+  .detail-tag {
+    display: inline-flex; align-items: center; gap: .4rem;
+    font-family: var(--f-mono); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase;
+    padding: .25rem .65rem; border-radius: var(--r1); width: fit-content;
+  }
+  .detail-tag.opportunity { background: rgba(14,140,124,.22); color: #3FFFEA; }
+  .detail-tag.watch       { background: rgba(184,137,59,.22); color: #E8C27E; }
+  .detail-tag.saturated   { background: rgba(255,255,255,.08); color: #8FA0AE; }
+
+  .score-ring-wrap { display: flex; align-items: center; gap: 1rem; margin: 1.1rem 0; }
+  .score-num { font-family: var(--f-display); font-size: 2.6rem; font-weight: 700; color: #3FFFEA; line-height: 1; }
+  .score-bar-track { flex: 1; height: 8px; background: #2A3746; border-radius: 99px; overflow: hidden; }
+  .score-bar-fill { height: 100%; background: linear-gradient(90deg, #0E8C7C, #3FFFEA); width: 0%; transition: width .8s var(--ease-out); border-radius: 99px; }
+
+  .brief-text {
+    font-family: var(--f-mono); font-size: .92rem; line-height: 1.65; color: #E4EAF0;
+    border-left: 2px solid var(--teal); padding-left: 1rem; margin-top: .5rem;
+  }
+
+  .data-table-wrap { margin-top: 2.5rem; overflow-x: auto; }
+  .data-row { cursor: pointer; transition: background var(--t1) var(--ease); }
+  .data-row:hover, .data-row.is-selected { background: var(--teal-tint); }
+  .status-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: .5rem; }
+  .status-dot.opportunity { background: var(--teal); }
+  .status-dot.watch { background: var(--gold); }
+  .status-dot.saturated { background: var(--ink-faint); }
+
+  .sample-note {
+    display: flex; gap: .5rem; align-items: flex-start;
+    background: var(--paper-dim); border: 1px solid var(--line);
+    border-radius: var(--r2); padding: .8rem 1rem; margin-top: 1rem;
+    font-size: .8rem; color: var(--ink-soft); line-height: 1.5;
+  }
+</style>
 </head>
 <body>
 
@@ -23,79 +97,104 @@
     <li><a href="company.html">Company</a></li>
     <li><a href="investors.html">Investors</a></li>
     <li><a href="pricing.html">Pricing</a></li>
-    <li><a href="demo.html" class="nav__cta">Launch Demo</a></li>
+    <li><a href="demo.html" class="nav__cta is-active">Try the Product</a></li>
   </ul>
   <button class="nav__burger" id="nav-burger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 </nav>
 
-<section style="min-height:100svh; display:flex; align-items:center; padding:calc(var(--nav-h) + 3rem) 0 4rem; position:relative; overflow:hidden;">
+<header class="page-hero">
+  <div class="wrap">
+    <p class="page-hero__kicker">Live Product</p>
+    <h1 class="h-display" style="font-size:clamp(2.2rem,4vw,3.2rem); max-width:820px;">The Opportunity Matrix, <span class="italic txt-teal">running right now</span></h1>
+    <p class="lede" style="margin-top:1rem;">This is the actual interface, not a mockup. Filter by segment, click any niche, and watch the Curve-Fidelity Score and Strategic Brief update in real time.</p>
+  </div>
+</header>
 
-  <svg class="curve-divider curve-animated" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" style="position:absolute; inset:0; width:100%; height:100%; opacity:.35;" aria-hidden="true">
-    <path d="M-50,600 C 250,610 380,460 550,380 C 720,300 820,180 1050,140 C 1250,105 1380,90 1500,60" fill="none" stroke="#0E8C7C" stroke-width="1.2" opacity=".2" style="--dash-len:2000;"/>
-    <path d="M-50,720 C 250,700 380,580 550,520 C 720,460 850,340 1050,310 C 1250,280 1380,270 1500,250" fill="none" stroke="#B8893B" stroke-width="1" opacity=".15" style="--dash-len:2000; animation-delay:.5s;"/>
-  </svg>
+<section class="section-pad-sm">
+  <div class="wrap">
 
-  <div class="wrap" style="position:relative; z-index:2; max-width:620px; margin:0 auto; text-align:center;">
-
-    <div class="eyebrow eyebrow--center hero-enter__item" style="--d:0s; justify-content:center;">
-      <span style="width:6px;height:6px;border-radius:50%;background:var(--teal);display:inline-block;"></span>
-      Demo Access
+    <div class="filter-row" id="filterRow">
+      <button class="filter-pill active" data-filter="all">All Niches</button>
+      <button class="filter-pill" data-filter="ecommerce">E-Commerce</button>
+      <button class="filter-pill" data-filter="content">Content</button>
+      <button class="filter-pill" data-filter="enterprise">Enterprise</button>
     </div>
 
-    <h1 class="h-display hero-enter__item" style="--d:.08s; font-size:clamp(2.4rem,5vw,3.6rem);">The live demo is <span class="italic txt-teal">coming soon</span></h1>
-    <p class="lede hero-enter__item" style="--d:.16s; margin:1.2rem auto 0; text-align:center;">We're polishing the Opportunity Matrix and Strategic Brief engine before opening it up. Join the waitlist and you'll be first to get hands-on access — no credit card, no spam.</p>
+    <div class="tool-shell">
 
-    <!-- waitlist form -->
-    <form id="waitlist-form" novalidate class="hero-enter__item" style="--d:.24s; margin-top:2.5rem; display:flex; flex-direction:column; gap:.8rem; max-width:440px; margin-left:auto; margin-right:auto;">
-      <input
-        type="email"
-        id="waitlist-email"
-        class="field"
-        placeholder="your@email.com"
-        autocomplete="email"
-        required
-      />
-      <select id="waitlist-role" class="field" style="color:var(--ink-soft); appearance:none; -webkit-appearance:none; -moz-appearance:none; padding-right:2.8rem; background-image:url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2212%22 height=%228%22 viewBox=%220 0 12 8%22%3E%3Cpath d=%22M1 1l5 5 5-5%22 stroke=%22%2379818E%22 stroke-width=%221.5%22 fill=%22none%22/%3E%3C/svg%3E'); background-repeat:no-repeat; background-position:right 1.4rem center;">
-        <option value="ecommerce">I'm an e-commerce seller</option>
-        <option value="creator">I'm a content creator</option>
-        <option value="enterprise">I'm on an enterprise/marketing team</option>
-        <option value="investor">I'm an investor / accelerator</option>
-        <option value="other">Other</option>
-      </select>
-      <button type="submit" class="btn btn--teal btn--lg" style="justify-content:center; margin-top:.4rem;">Join the Waitlist</button>
-    </form>
+      <!-- ── Scatter stage ── -->
+      <div class="matrix-stage reveal">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:.75rem;">
+          <span class="fine">◉ DEMAND vs. COMPETITION — CLICK A NODE</span>
+          <span class="tag">LIVE INTERFACE</span>
+        </div>
+        <svg id="matrixSvg" viewBox="0 0 480 340" role="group" aria-label="Opportunity matrix — clickable niche nodes">
+          <!-- quadrant fills -->
+          <rect x="50" y="20" width="200" height="160" fill="#E4F2EF" opacity=".45"/>
+          <rect x="250" y="20" width="180" height="160" fill="#FBEDEA" opacity=".35"/>
+          <rect x="50" y="180" width="200" height="130" fill="#FAF1E1" opacity=".35"/>
+          <rect x="250" y="180" width="180" height="130" fill="#F3F1EA" opacity=".55"/>
+          <line x1="250" y1="20" x2="250" y2="310" stroke="#D2CEC0" stroke-width="1"/>
+          <line x1="50" y1="180" x2="430" y2="180" stroke="#D2CEC0" stroke-width="1"/>
+          <text x="58" y="35" font-family="Satoshi" font-size="9" fill="#0A6B5F" font-weight="700">XCURVE ZONE</text>
+          <text x="422" y="35" text-anchor="end" font-family="Satoshi" font-size="9" fill="#C04A41" font-weight="700">SATURATED</text>
+          <text x="240" y="330" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="#79818E">← LOW COMPETITION · HIGH COMPETITION →</text>
+          <g id="nodesLayer"></g>
+        </svg>
+        <p class="sample-note">
+          <span>ⓘ</span>
+          <span>This preview runs on a fixed sample dataset so anyone can explore it instantly. The full account connects each node to our live Reddit → TikTok → Amazon signal pipeline.</span>
+        </p>
+      </div>
 
-    <div class="waitlist-success" id="waitlist-success" style="display:none; flex-direction:column; align-items:center; gap:.5rem; margin-top:1.5rem;">
-      <span style="font-family:var(--f-display); font-size:1.25rem; font-weight:700; color:var(--teal-deep);">✓ You're on the list</span>
-      <p class="body-text" style="text-align:center; font-size:.9rem;">We'll email you the moment demo access opens. In the meantime, explore the product and business model pages.</p>
-      <div style="display:flex; gap:.8rem; margin-top:.8rem;">
-        <a href="product.html" class="btn btn--ghost">Explore Product</a>
-        <a href="index.html" class="btn btn--ghost">Back Home</a>
+      <!-- ── Detail panel ── -->
+      <div class="detail-panel reveal" id="detailPanel">
+        <div id="detailEmpty" class="detail-empty">
+          ↖ Click any node in the matrix, or a row in the table below, to open its Strategic Brief.
+        </div>
+        <div id="detailContent" style="display:none;">
+          <span class="detail-tag" id="detailTag">Opportunity</span>
+          <h3 style="font-family:var(--f-display); font-size:1.4rem; font-weight:700; margin-top:.7rem;" id="detailName">—</h3>
+          <span class="fine" style="color:#8FA0AE;" id="detailCategory">—</span>
+
+          <div class="score-ring-wrap">
+            <span class="score-num" id="detailScore">0</span>
+            <div class="score-bar-track"><div class="score-bar-fill" id="detailScoreBar"></div></div>
+          </div>
+
+          <span class="fine" style="color:#8FA0AE; text-transform:uppercase;">Strategic Brief</span>
+          <p class="brief-text" id="detailBrief">—</p>
+        </div>
       </div>
     </div>
 
-    <p class="fine hero-enter__item" style="--d:.3s; margin-top:1.3rem;">This is a waitlist only — no live account is created yet.</p>
+    <!-- ── Synced data table ── -->
+    <div class="data-table-wrap">
+      <table class="xc-table" id="dataTable" aria-label="All tracked niches">
+        <thead>
+          <tr><th>Niche</th><th>Segment</th><th>Status</th><th>Score</th></tr>
+        </thead>
+        <tbody id="dataTableBody"></tbody>
+      </table>
+    </div>
+
   </div>
 </section>
 
-<!-- ── WHAT TO EXPECT ── -->
-<section class="section-pad" style="background:var(--paper-dim); border-top:1px solid var(--line);">
-  <div class="wrap">
-    <p class="eyebrow eyebrow--center" style="justify-content:center;">What's Inside</p>
-    <h2 class="h-section reveal" style="text-align:center; max-width:600px; margin:0 auto 3rem;">What the demo will show you</h2>
-    <div class="g-3" style="gap:1.25rem;">
-      <div class="card reveal" style="padding:1.75rem;">
-        <h3 class="h-sub" style="font-size:1rem;">Live Opportunity Matrix</h3>
-        <p class="body-text" style="font-size:.86rem;">Explore real niche examples plotted across demand momentum and competitive saturation.</p>
-      </div>
-      <div class="card reveal" style="padding:1.75rem;">
-        <h3 class="h-sub" style="font-size:1rem;">Sample Strategic Briefs</h3>
-        <p class="body-text" style="font-size:.86rem;">See exactly what a timed, ready-to-execute roadmap looks like for your segment.</p>
-      </div>
-      <div class="card reveal" style="padding:1.75rem;">
-        <h3 class="h-sub" style="font-size:1rem;">Curve-Fidelity scoring</h3>
-        <p class="body-text" style="font-size:.86rem;">Understand how confidence scores are built from quantitative and qualitative signals.</p>
-      </div>
+<!-- ── Secondary CTA — full account, not the primary gate ── -->
+<section class="section-pad-sm" style="background:var(--paper-dim); border-top:1px solid var(--line);">
+  <div class="wrap" style="max-width:640px; margin:0 auto; text-align:center;">
+    <p class="eyebrow eyebrow--center" style="justify-content:center;">Full Account</p>
+    <h2 class="h-section reveal" style="font-size:1.6rem;">Want live data instead of the sample set?</h2>
+    <p class="lede reveal" style="margin:0 auto 1.5rem; text-align:center; font-size:1rem;">Full accounts connect this exact interface to our live cross-platform signal pipeline, unlimited niches, and saved briefs.</p>
+
+    <form id="waitlist-form" novalidate style="display:flex; gap:.6rem; max-width:440px; margin:0 auto; flex-wrap:wrap;">
+      <input type="email" id="waitlist-email" class="field" placeholder="your@email.com" autocomplete="email" required style="flex:1; min-width:220px;" />
+      <button type="submit" class="btn btn--teal" style="justify-content:center;">Request Access</button>
+    </form>
+    <div class="waitlist-success" id="waitlist-success" style="display:none; flex-direction:column; align-items:center; gap:.4rem; margin-top:1.25rem;">
+      <span style="font-family:var(--f-display); font-size:1.1rem; font-weight:700; color:var(--teal-deep);">✓ Request received</span>
+      <p class="body-text" style="font-size:.88rem;">We'll follow up by email. The interface above stays open — explore it any time.</p>
     </div>
   </div>
 </section>
@@ -111,9 +210,9 @@
         <p class="footer-desc">Predictive intelligence for the next market frontier. Find the gaps. Ride the curve.</p>
         <p class="footer-locale">Building globally · Founder based in Nigeria</p>
       </div>
-      <div class="footer-col"><h4>Platform</h4><ul><li><a href="product.html">Product</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="demo.html">Launch Demo</a></li></ul></div>
+      <div class="footer-col"><h4>Platform</h4><ul><li><a href="product.html">Product</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="demo.html">Try the Product</a></li></ul></div>
       <div class="footer-col"><h4>Company</h4><ul><li><a href="company.html">About</a></li><li><a href="company.html#business-model">Business Model</a></li><li><a href="investors.html">Investors</a></li></ul></div>
-      <div class="footer-col"><h4>Connect</h4><ul><li><a href="mailto:onyeka.ofoegbu@xcurve.co">onyeka.ofoegbu@xcurve.co</a></li><li><a href="https://www.linkedin.com/in/onyeka-ofoegbu-446b8630a/" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
+      <div class="footer-col"><h4>Connect</h4><ul><li><a href="mailto:onyeka.ofoegbu@xcurve.co">onyeka.ofoegbu@xcurve.co</a></li><li><a href="https://www.linkedin.com/in/onyeka-ofoegbu-446b8630a/" target="_blank" rel="noopener">LinkedIn — Onyeka Ofoegbu</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <p>© 2026 XCurve AI. Built with intention.</p>
@@ -124,5 +223,139 @@
 </footer>
 
 <script src="./shared.js"></script>
+<script>
+(function () {
+  // ── Sample dataset — clearly illustrative, not a live feed ──
+  const NICHES = [
+    { id: "bamboo",     name: "Bamboo Office Chairs",      cat: "ecommerce", demand: 78, comp: 22, score: 87, status: "opportunity",
+      brief: "Eco-conscious remote-work demand is climbing while quality bamboo office seating supply stays thin. Sourcing window: Q3 before mainstream retailers catch up." },
+    { id: "adhd",       name: "Analog ADHD Productivity",  cat: "content",    demand: 82, comp: 15, score: 92, status: "opportunity",
+      brief: "\u2018Productivity\u2019 is saturated, but \u2018analog productivity for ADHD\u2019 shows a 400% gap in high-quality video content. First movers can hold this niche 18+ months." },
+    { id: "rfid",       name: "RFID-Blocking Wallets",     cat: "ecommerce", demand: 70, comp: 28, score: 84, status: "opportunity",
+      brief: "Physical Security Anxiety is migrating from tech early-adopters to mainstream buyers. Estimated 6\u20139 week window before the category saturates." },
+    { id: "recovery",   name: "Smart Recovery Tools",      cat: "content",    demand: 60, comp: 32, score: 79, status: "opportunity",
+      brief: "A mutation of \u2018at-home fitness.\u2019 TikTok signal is roughly 3 weeks old; long-form YouTube coverage is still empty." },
+    { id: "packaging",  name: "Eco Packaging (B2B)",       cat: "enterprise", demand: 74, comp: 30, score: 81, status: "opportunity",
+      brief: "Enterprise procurement teams are shifting supplier requirements toward sustainable packaging ahead of upcoming regulatory cycles." },
+    { id: "fashion",    name: "Sustainable Fashion",       cat: "ecommerce", demand: 48, comp: 60, score: 51, status: "watch",
+      brief: "Demand is real but competitive density is rising fast. Still resolving whether this is a Flash Fad or a Structural Shift \u2014 worth monitoring, not betting on yet." },
+    { id: "decor",      name: "Home Office Decor",         cat: "ecommerce", demand: 42, comp: 55, score: 47, status: "watch",
+      brief: "Moderate, steady opportunity. Differentiation on execution will matter more here than pure timing." },
+    { id: "fitness",    name: "Generic Fitness Apps",      cat: "content",    demand: 25, comp: 88, score: 22, status: "saturated",
+      brief: "Fully saturated \u2014 hundreds of new entrants monthly and near-zero organic differentiation left in this category." },
+    { id: "prodapps",   name: "Generic Productivity Apps", cat: "enterprise", demand: 30, comp: 82, score: 28, status: "saturated",
+      brief: "Mainstream productivity tooling is a red ocean. Incumbents dominate every major discovery surface." },
+  ];
+
+  const svgNS = "http://www.w3.org/2000/svg";
+  const nodesLayer = document.getElementById("nodesLayer");
+  const tableBody = document.getElementById("dataTableBody");
+  const detailEmpty = document.getElementById("detailEmpty");
+  const detailContent = document.getElementById("detailContent");
+
+  const plotX = v => 50 + (v / 100) * 380;   // competition axis (x)
+  const plotY = v => 310 - (v / 100) * 290;  // demand axis (y, inverted)
+
+  const statusColor = { opportunity: "#0E8C7C", watch: "#B8893B", saturated: "#9AA3AF" };
+
+  let selectedId = null;
+
+  function render() {
+    const activeFilter = document.querySelector(".filter-pill.active")?.dataset.filter || "all";
+    nodesLayer.innerHTML = "";
+    tableBody.innerHTML = "";
+
+    NICHES.forEach(n => {
+      const visible = activeFilter === "all" || n.cat === activeFilter;
+      if (!visible) return;
+
+      // ── SVG node ──
+      const r = 10 + (n.demand / 100) * 14;
+      const g = document.createElementNS(svgNS, "g");
+      g.setAttribute("class", "node" + (n.id === selectedId ? " is-selected" : ""));
+      g.setAttribute("tabindex", "0");
+      g.setAttribute("role", "button");
+      g.setAttribute("aria-label", n.name + ", score " + n.score);
+
+      const circle = document.createElementNS(svgNS, "circle");
+      circle.setAttribute("cx", plotX(n.comp));
+      circle.setAttribute("cy", plotY(n.demand));
+      circle.setAttribute("r", r);
+      circle.setAttribute("fill", statusColor[n.status]);
+      circle.setAttribute("opacity", n.status === "saturated" ? "0.55" : "0.85");
+      circle.setAttribute("stroke", "#fff");
+      circle.setAttribute("stroke-width", "1.5");
+      g.appendChild(circle);
+
+      const title = document.createElementNS(svgNS, "title");
+      title.textContent = n.name + " — score " + n.score + "/100";
+      g.appendChild(title);
+
+      const select = () => selectNiche(n.id);
+      g.addEventListener("click", select);
+      g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(); } });
+
+      nodesLayer.appendChild(g);
+
+      // ── Table row ──
+      const tr = document.createElement("tr");
+      tr.className = "data-row" + (n.id === selectedId ? " is-selected" : "");
+      tr.tabIndex = 0;
+      tr.innerHTML = `
+        <td>${n.name}</td>
+        <td style="text-transform:capitalize;">${n.cat}</td>
+        <td><span class="status-dot ${n.status}"></span>${n.status.charAt(0).toUpperCase() + n.status.slice(1)}</td>
+        <td>${n.score}/100</td>
+      `;
+      tr.addEventListener("click", () => selectNiche(n.id));
+      tr.addEventListener("keydown", e => { if (e.key === "Enter") selectNiche(n.id); });
+      tableBody.appendChild(tr);
+    });
+  }
+
+  function selectNiche(id) {
+    selectedId = id;
+    const n = NICHES.find(x => x.id === id);
+    if (!n) return;
+
+    detailEmpty.style.display = "none";
+    detailContent.style.display = "block";
+
+    const tagEl = document.getElementById("detailTag");
+    tagEl.textContent = n.status.charAt(0).toUpperCase() + n.status.slice(1);
+    tagEl.className = "detail-tag " + n.status;
+
+    document.getElementById("detailName").textContent = n.name;
+    document.getElementById("detailCategory").textContent = n.cat.charAt(0).toUpperCase() + n.cat.slice(1) + " segment";
+    document.getElementById("detailBrief").textContent = n.brief;
+
+    const scoreNum = document.getElementById("detailScore");
+    const scoreBar = document.getElementById("detailScoreBar");
+    scoreBar.style.width = "0%";
+    let start = null;
+    const dur = 700;
+    function animate(ts) {
+      if (!start) start = ts;
+      const p = Math.min((ts - start) / dur, 1);
+      scoreNum.textContent = Math.floor(p * n.score);
+      if (p < 1) requestAnimationFrame(animate);
+    }
+    requestAnimationFrame(animate);
+    scoreBar.style.width = n.score + "%";
+
+    render(); // re-render to update selected highlight states
+  }
+
+  document.getElementById("filterRow").addEventListener("click", e => {
+    const btn = e.target.closest(".filter-pill");
+    if (!btn) return;
+    document.querySelectorAll(".filter-pill").forEach(p => p.classList.remove("active"));
+    btn.classList.add("active");
+    render();
+  });
+
+  render();
+})();
+</script>
 </body>
 </html>
